@@ -5,16 +5,24 @@
     <url>/2023/03/10/FutureStudyStep/</url>
     <content><![CDATA[<div class="tabs" id="tab-plan"><ul class="nav-tabs"><li class="tab active"><a class="#plan-1">短期</a></li><li class="tab"><a class="#plan-2">远期</a></li><li class="tab"><a class="#plan-3">穿插</a></li></ul><div class="tab-content"><div class="tab-pane active" id="plan-1"><p><strong>主要是具体的事件</strong></p>
 <ul>
-<li>spring</li>
+<li>spring boot</li>
 <li>gis开发</li>
 <li>笛子</li>
+<li>速写</li>
 <li>mod</li>
 <li>android开发</li>
 </ul></div><div class="tab-pane" id="plan-2"><p><strong>更加抽象一些</strong></p>
 <ul>
+<li>编程<ul>
 <li>java</li>
 <li>go</li>
-<li>艺术</li>
+</ul>
+</li>
+<li>艺术<ul>
+<li>器乐</li>
+<li>美术</li>
+</ul>
+</li>
 </ul></div><div class="tab-pane" id="plan-3"><p><strong>需要一直做的</strong></p>
 <ul>
 <li>总结经验，写博客</li>
