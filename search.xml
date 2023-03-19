@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>博客的部署</title>
+    <url>/2023/03/10/first%20Blog/</url>
+    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>我基本一直跟着这个教程走的，非常的详细非常的优质！</p>
+<a class="button  center large" href='https://www.bilibili.com/read/cv12633102' title='保姆级教程'><i class='fa-solid fa-arrow-right'></i> 保姆级教程</a>
+<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><div class="note-large notel-blue"><div class="notel-title"><p>提示</p>
+</div><div class="notel-content"><p>4.2第二步中</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:master</span></span><br></pre></td></tr></table></figure></div>
+<p>由于github将master分支改名为main，所以最后要进行更改</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:main</span></span><br></pre></td></tr></table></figure></div> </div></div>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>今天加了aplayer插件（是这个主题里面自带的直接配置就行），但是应该是因为这个主题创建者没有放太多功能进来，只有一部分可以设置<br>这是网上由找到的几个文章，可以添加网易云歌单的，近期事情太多，先放这里，以后有时间再慢慢弄吧</p>
+<a class="button  center regular" href='https://developer.aliyun.com/article/894787' title='给自己的网站添加网易云音乐歌单'><i class='fa-solid fa-arrow-right'></i> 给自己的网站添加网易云音乐歌单</a>  
+<a class="button  regular" href='https://cloud.tencent.com/developer/article/1833968' title='引入Aplayer播放音乐(踩坑向)'><i class='fa-solid fa-arrow-right'></i> 引入Aplayer播放音乐(踩坑向)</a>
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><h4 id=""><a href="#" class="headerlink" title=""></a><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>几个控制台命令 </summary>
+              <div class='content'>
+              <div class="note-large notel-default"><div class="notel-title"><p>d:</p></div><div class="notel-content"><p>到d盘</p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>cd xxx</p></div><div class="notel-content"><p>到当前目录下的xxx中</p> </div></div>
+              </div>
+            </details></h4><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>几个hexo 命令 </summary>
+              <div class='content'>
+              <div class="note-large notel-default"><div class="notel-title"><p>hexo clean</p></div><div class="notel-content"><p>清除缓存文件 db.json 和已生成的静态文件 public。  </p><ul><li>网站显示异常时可以执行这条命令试试。</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo g</p></div><div class="notel-content"><p>生成网站静态文件到默认设置的 public 文件夹。</p><ul><li>便于查看网站生成的静态文件或者手动部署网站；</li><li>如果使用自动部署，不需要先执行该命令；</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo s</p></div><div class="notel-content"><p>启动本地服务器，用于预览主题。<br>默认地址 <a class="link"   href="http://localhost:4000/" >http://localhost:4000/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo d</p></div><div class="notel-content"><p>自动生成网站静态文件，并部署到设定的仓库。</p> </div></div>
+              </div>
+            </details></h4><h3 id="找资源"><a href="#找资源" class="headerlink" title="找资源"></a>找资源</h3><h4 id="壁纸"><a href="#壁纸" class="headerlink" title="壁纸"></a>壁纸</h4><p>英文网站 <a class="link"   href="https://wallhaven.cc/" >wallhaven <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h4><p> <a class="link"   href="https://fontawesome.com/" >Fontawesome <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 也就是本模板中使用的</p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学习计划</title>
+    <url>/2023/03/10/FutureStudyStep/</url>
+    <content><![CDATA[<div class="tabs" id="tab-plan"><ul class="nav-tabs"><li class="tab active"><a class="#plan-1">短期</a></li><li class="tab"><a class="#plan-2">远期</a></li><li class="tab"><a class="#plan-3">穿插</a></li></ul><div class="tab-content"><div class="tab-pane active" id="plan-1"><p><strong>主要是具体的事件</strong></p>
+<ul>
+<li>spring</li>
+<li>gis开发</li>
+<li>笛子</li>
+<li>速写</li>
+<li>mod</li>
+<li>android开发</li>
+</ul></div><div class="tab-pane" id="plan-2"><p><strong>更加抽象一些</strong></p>
+<ul>
+<li>编程<ul>
+<li>java</li>
+<li>go</li>
+</ul>
+</li>
+<li>艺术<ul>
+<li>器乐</li>
+<li>美术</li>
+</ul>
+</li>
+</ul></div><div class="tab-pane" id="plan-3"><p><strong>需要一直做的</strong></p>
+<ul>
+<li>总结经验，写博客</li>
+<li>保持健康，开心</li>
+<li>坚持思考，冷静</li>
+</ul></div></div></div>]]></content>
+      <tags>
+        <tag>learn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS打开mxd文件无法显示的问题</title>
+    <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
+    <content><![CDATA[<details class="yellow"><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
+              <div class='content'>
+              <p>如图，将mxd文件托进来之后工作空间仍无图像<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/1.png"
+                      alt="1"
+                ><br>注意看这里，我们可以看到这里有看红色感叹号，此时对图层右键的话很多功能无法正常使用<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/2.png"
+                      alt="2"
+                ><br>把框框里的勾取消再点，会让你选择文件，这里选择对应的shp文件，点击确定<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/3.png"
+                      alt="3"
+                ><br>其他图层也自动定位了，现在可以正常工作了<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/4.png"
+                      alt="4"
+                ></p>
+              </div>
+            </details>
+
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>原因 </summary>
+              <div class='content'>
+              <p><strong>数据路径有问题。</strong><br>ArcGIS中的.mxd地图文档文件虽然含有各类图层，但其实际上仅仅包含了对这些图层的引用，而非图层数据本身；图层数据还是存储在其各自的.shp文件或地理数据库中。<br>因此，一旦我们导入一个新的.mxd地图文档文件（例如从其他电脑中拷贝过来的一个.mxd地图文档文件），就可能导致ArcMap软件虽然知道这个.mxd地图文档文件应该包含有哪些图层（即可以显示图层数量与图层名称），但是这些图层的具体数据ArcMap软件没有办法找到（即在图层名称左侧出现红色感叹号）。</p>
+              </div>
+            </details>
+
+<a class="button  regular" href='https://baijiahao.baidu.com/s?id=1746372843012256129' title='更详细的解释与操作'><i class='fa-solid fa-play-circle'></i> 更详细的解释与操作</a>
+
+]]></content>
+      <tags>
+        <tag>ArcGIS</tag>
+        <tag>BUG</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/03/08/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>地图投影</title>
+    <url>/2023/03/14/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/</url>
+    <content><![CDATA[<h2 id="地图投影基本概念介绍"><a href="#地图投影基本概念介绍" class="headerlink" title="地图投影基本概念介绍"></a>地图投影基本概念介绍</h2><h3 id="什么是地图学的数学基础？"><a href="#什么是地图学的数学基础？" class="headerlink" title="什么是地图学的数学基础？"></a>什么是地图学的数学基础？</h3><p>地图的数学基础，是指使地图上各种地理要素与相应的地面景物之间保持一定对应关系的经纬网、坐标网、大地控制点、比例尺等数学要素。</p>
+<ul>
+<li>两个矛盾：<ul>
+<li>一个是大（详）与小（略）的矛盾。——比例尺</li>
+<li>一个是球面与平面之间的矛盾。——经纬网、坐标网、大地控制点——<strong>地图投影</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="大地基准面"><a href="#大地基准面" class="headerlink" title="大地基准面"></a>大地基准面</h3><p>大地基准面（Datum）是利用特定椭球体对特定地区地球表面的逼近，椭球形态由椭球体参数确定。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-1-2.png"
+                      alt="椭球体参数"
+                ></p>
+<h3 id="地理坐标系与投影坐标系"><a href="#地理坐标系与投影坐标系" class="headerlink" title="地理坐标系与投影坐标系"></a>地理坐标系与投影坐标系</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-1-3.png"
+                      alt="地理坐标系与投影坐标系"
+                ></p>
+<h3 id="投影的实质和定义"><a href="#投影的实质和定义" class="headerlink" title="投影的实质和定义"></a>投影的实质和定义</h3><p>建立平面上的点（用平面直角坐标或极坐标表示）和地球表面上的点（用纬度和经度表示）之间的函数关系。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-1-4.png"
+                      alt="投影的实质和定义"
+                ></p>
+<h3 id="我国常用地图投影"><a href="#我国常用地图投影" class="headerlink" title="我国常用地图投影"></a>我国常用地图投影</h3><h4 id="高斯-克吕格投影————横轴等角椭圆柱投影"><a href="#高斯-克吕格投影————横轴等角椭圆柱投影" class="headerlink" title="高斯-克吕格投影————横轴等角椭圆柱投影"></a>高斯-克吕格投影————横轴等角椭圆柱投影</h4><p><strong>应用:</strong> 我国基本比例尺地形图≥1:50万的地形图<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-1-5.png"
+                      alt="高斯-克吕格投影"
+                ></p>
+<ul>
+<li>中央经线上无长度变形，长度比等于1，其它经线上长度比大于1，长度变形为正</li>
+<li>沿纬线方向，离中央经线越远，长度变形越大</li>
+<li>沿经线方向，纬度越低，长度变形越大。</li>
+<li>最大变形位于赤道与边纬的交点上，6度带最大长度变形为0.138%，最大面积变形为0.27%.</li>
+</ul>
+<h4 id="Lambert投影————双标准纬线正轴等角圆锥投影"><a href="#Lambert投影————双标准纬线正轴等角圆锥投影" class="headerlink" title="Lambert投影————双标准纬线正轴等角圆锥投影"></a>Lambert投影————双标准纬线正轴等角圆锥投影</h4><p><strong>应用:</strong> 我国新编1:100万地形图采用该投影<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-1-6.png"
+                      alt="Lambert投影"
+                ></p>
+<ul>
+<li>没有角度变形，等变形线与纬线一致</li>
+<li>两条标准纬线上没有变形</li>
+<li>同一经线上，两标准纬线外侧为正变形（长度比大于1），而内侧为负变形</li>
+<li>同一纬线上，等经差的线段长度相等，两条纬线之间的经线长度处处相等</li>
+</ul>
+<h4 id="中国地图一般采用正轴等面积（Albers）或等角圆锥投影"><a href="#中国地图一般采用正轴等面积（Albers）或等角圆锥投影" class="headerlink" title="中国地图一般采用正轴等面积（Albers）或等角圆锥投影"></a>中国地图一般采用正轴等面积（Albers）或等角圆锥投影</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-1-7.png"
+                      alt="中国地图"
+                ><br><a class="link"   href="http://bzdt.ch.mnr.gov.cn/index.html" >http://bzdt.ch.mnr.gov.cn/index.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="本次实验总体目标"><a href="#本次实验总体目标" class="headerlink" title="本次实验总体目标"></a>本次实验总体目标</h4><ul>
+<li>掌握地图投影的基本概念和地图投影判别的基本方法；</li>
+<li>掌握ARCGIS地图投影定义、投影转换、投影参数设置的基本操作方法；</li>
+<li>理解常用地图投影的数学原理，熟悉常用地图投影计算方法的编程实现过程。</li>
+</ul>
+<h2 id="地图投影判读实验"><a href="#地图投影判读实验" class="headerlink" title="地图投影判读实验"></a>地图投影判读实验</h2><h3 id=""><a href="#" class="headerlink" title=""></a><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>实验目的 </summary>
+              <div class='content'>
+              <ul><li>掌握地图投影判读的基本方法</li><li>加深对地图投影的概念、投影变形性质等内容的理解</li><li>加强对常用地图投影经纬网形状变化特点的了解</li><li>能够快速判别出地图投影的类别和变形性质</li></ul>
+              </div>
+            </details></h3><h3 id="投影判读的基本方法"><a href="#投影判读的基本方法" class="headerlink" title="投影判读的基本方法"></a>投影判读的基本方法</h3><p>往往是针对正轴投影<br>这是<strong>正轴圆柱投影</strong>，它的经纬线分布的很规律，相互垂直相交<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-2-1.png"
+                      alt="正轴圆柱投影"
+                ><br>这是以极地伟投影范围，地极为投影中心的<strong>正轴方位投影</strong>  </p>
+<p>对于方位投影来说，如何判别</p>
+<div class="tabs" id="tab-plan"><ul class="nav-tabs"><li class="tab active"><a class="#plan-1">等距投影</a></li><li class="tab"><a class="#plan-2">等角投影</a></li><li class="tab"><a class="#plan-3">等面积投影</a></li><li class="tab"><a class="#plan-4">圆锥投影</a></li></ul><div class="tab-content"><div class="tab-pane active" id="plan-1"><ul>
+<li>分布在等差纬线的经线段长度是否相等</li>
+</ul></div><div class="tab-pane" id="plan-2"><ul>
+<li>同样的也是看经线段，是否是是从极地到赤道逐渐变长的</li>
+</ul></div><div class="tab-pane" id="plan-3"><p>如若图中逐渐变小，就是<strong>等面积</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-2-2.png"
+                      alt="正轴方位投影"
+                ></p></div><div class="tab-pane" id="plan-4"><p><del>像扇子</del><br>纬线是同心圆弧<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-2-3.png"
+                      alt="圆锥投影"
+                ></p></div></div></div>
+
+
+<h3 id="常见投影的基本特征"><a href="#常见投影的基本特征" class="headerlink" title="常见投影的基本特征"></a>常见投影的基本特征</h3><p>每种投影有不同适用的区域，因为她的变形特点不一样嘛<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-2-4.png"
+                      alt="常见投影的基本特征"
+                ></p>
+<a class="button  regular" href='https://malagis.com/map-projection-shape-characteristics-latitude-longitude.html' title='常见一些地图投影的经纬线形状特征'><i class='fa-solid fa-arrow-right'></i> 常见一些地图投影的经纬线形状特征</a>
+
+<p>比如这个：</p>
+<details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>彭纳投影 </summary>
+              <div class='content'>
+              <p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-2-5.png"
+                      alt="彭纳投影"
+                ></p><div class="note note-default icon-padding"><i class="note-icon fa-solid fa-info-circle"></i><p>它是一个伪圆锥投影</p></div><details class="green"><summary><i class="fa-solid fa-chevron-right"></i>特点 </summary>              <div class='content'>              <ul><li>中央经线为直线，其他经线为对称于中央经线的曲线</li><li>纬线与经线交叉的同心圆弧</li><li>中央经线上纬线间隔相等</li><li>常用于亚洲图、欧洲图</li></ul>              </div>            </details>
+              </div>
+            </details>
+
+
+<p>只要纬线是同心圆弧，你就可以说他是一个圆锥投影，<em><strong>哪怕她长得像个桃心</strong></em></p>
+<h3 id="地图投影判读作业"><a href="#地图投影判读作业" class="headerlink" title="地图投影判读作业"></a>地图投影判读作业</h3><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>题目 </summary>
+              <div class='content'>
+              <p>（1）属正轴等积方位投影的是其中的哪一幅地图？沿其经纬线方向的变形特点如何？<br>（2）属正轴等距方位投影的是其中哪一幅地图？沿其经纬线方向的变形特点如何？<br>（3）属正轴等积圆锥投影的是其中哪一幅地图？沿其经纬线方向的变形特点如何？<br>（4）属正轴等角方位投影的是其中哪一幅地图？沿其经纬线方向的变形特点如何？<br>（5）属正轴等积圆柱投影的是其中哪一幅地图？沿其经纬线方向的变形特点如何？<br>（6）属墨卡托投影的是其中哪一幅地图？如果要在该投影上绘制澳大利亚的堪培拉（Canberra）到秘鲁的利马（Lima）的等角航线，应该如何绘制？沿着等角航线它们之间的距离是多少？</p><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-2-6.png"
+                      alt="作业"
+                ></p>
+              </div>
+            </details>
+
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>答案 </summary>
+              <div class='content'>
+              <details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>（1）c </summary>              <div class='content'>              <p>经线：放射状直线，纬线：同心圆，中央经线上纬线间隔的变化：从两极向赤道逐渐减小</p>              </div>            </details><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>（2）e </summary>              <div class='content'>              <p>经线：放射状直线，纬线：同心圆，中央经线上纬线间隔的变化：相等</p><p>Azimuthal Equidistant 等距方位投影<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-2-8.jpg"
+                      alt="答案"
+                ><br>等距方位投影可以保留距中心点的距离和方向。将地球上的所有点投影到一个平面上。虽然所有投影方法（赤道投影、极方位投影和斜轴投影）均可用，但使用频率最高的是极方位投影，这种投影会将所有经线和纬线划分为相等的部分，以保持等距离属性。<br>据说这种投影最初是埃及人绘制星图时使用的。</p>              </div>            </details><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>（3）d </summary>              <div class='content'>              <p>经线：放射状直线，纬线：同心圆弧，中央经线上纬线间隔的变化：由地图中心向南北方向逐渐缩小</p>              </div>            </details><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>（4）f </summary>              <div class='content'>              <p>经线：放射状直线，纬线：同心圆，中央经线上纬线间隔的变化：从两极向赤道逐渐增大</p>              </div>            </details><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>（5）b </summary>              <div class='content'>              <p>经线：间隔相等的平行直线，纬线：与经线垂直的平行直线，中央经线上纬线间隔的变化：从赤道向两级逐渐增大</p><p>圆柱等积投影可将世界呈现为一个矩形，同时保持地图上的相对面积。瑞士数学家 Johann H.Lambert 于 1772 年首次描述了这种投影。自那以后许多年，出现了多种变体。该投影适合绘制赤道附近地区的大比例地图，且一般不建议用于绘制小比例（世界）地图。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-2-7.jpg"
+                      alt="答案"
+                ></p><details class="green"><summary><i class="fa-solid fa-chevron-right"></i>贝尔曼投影 </summary>              <div class='content'>              <p>Behrmann 贝尔曼投影<br>贝尔曼投影是圆柱等积地图投影的一种，其标准纬线设置为南北纬 30°。<br>由于其等积的属性,它可以高度压缩极地地区。</p>              </div>            </details>              </div>            </details><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>（6）a </summary>              <div class='content'>              <p>经线：间隔相等的平行直线，纬线：与经线垂直的平行直线，中央经线上纬线间隔的变化：从赤道向两级逐渐增大</p><p>右键打开属性表<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/2-1-1.jpg"
+                      alt="答案"
+                ><br>双击这里可以聚焦<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/2-1-2.png"
+                      alt="答案"
+                ><br>按住ctrl在单机可以多选，这时再看大地图，两地已经被标识出来<br>使用测量工具<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/2-1-3.png"
+                      alt="答案"
+                ></p>              </div>            </details>
+              </div>
+            </details>
+
+<div class="note note-info icon-padding"><i class="note-icon fa-solid fa-info-circle"></i><p><a class="button  regular" href='https://www.thepaper.cn/newsDetail_forward_10750264' title='25种地图投影类型'><i class='fa-solid fa-arrow-right'></i> 25种地图投影类型</a></p>
+<p><a class="button  regular" href='https://pro.arcgis.com/zh-cn/pro-app/latest/help/mapping/properties/list-of-supported-map-projections.htm' title='ArcGISPro支持的地图投影'><i class='fa-solid fa-arrow-right'></i> ArcGISPro支持的地图投影</a></p>
+</div>
+
+<h2 id="ArcGIS中地图投影实验"><a href="#ArcGIS中地图投影实验" class="headerlink" title="ArcGIS中地图投影实验"></a>ArcGIS中地图投影实验</h2><h3 id="-1"><a href="#-1" class="headerlink" title=""></a><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>实验目的 </summary>
+              <div class='content'>
+              <ul><li>了解ArcGIS中的地图数据组织和SHP数据格式</li><li>了解ArcGIS软件中对于空间参考的定义以及PRJ文件</li><li>理解ArcGIS中的动态投影</li><li>实践ArcGIS软件中的投影设置工具</li><li>实践ArcGIS软件中的投影变换工具</li></ul>
+              </div>
+            </details></h3><h3 id="ArcGIS地图数据模型与SHP数据格式"><a href="#ArcGIS地图数据模型与SHP数据格式" class="headerlink" title="ArcGIS地图数据模型与SHP数据格式"></a>ArcGIS地图数据模型与SHP数据格式</h3><p>.shp空间数据<br>.dbf属性数据<br>.sbx索引文件  </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-2-1.png"
+                      alt="格式"
+                ></p>
+<h3 id="PRJ文件的内容"><a href="#PRJ文件的内容" class="headerlink" title="PRJ文件的内容"></a>PRJ文件的内容</h3><p>把.prj用记事本打开<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-2-2.png"
+                      alt="prj"
+                ><br>对照图层坐标属性看一下<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-2-3.png"
+                      alt="prj"
+                ><br>可以看到这里图层的坐标系和数据框的坐标系是不同的，但是他仍然显示为墨卡托投影<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-2-4.png"
+                      alt="prj"
+                ><br>这是因为ArcGIS对数据显示的时候采用了<strong>动态投影</strong>的过程</p>
+<h3 id="动态投影及其设置"><a href="#动态投影及其设置" class="headerlink" title="动态投影及其设置"></a>动态投影及其设置</h3><p>如果我们数据框采用了A坐标系统，而我们加进来的数据系统默认的不是A,那么ArcGIS会把后加进来的数据按照地图框的系统进行转换，所以我们放大缩小可以看到地图有“延迟”，这就是再一边转换一边显示，显示每一个点都是<strong>动态转换</strong>过来的</p>
+<p>所以当我们对坐标系进行更改<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-2-5.png"
+                      alt="更改坐标系"
+                ><br>应用，是<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-2-6.png"
+                      alt="更改坐标系"
+                ><br>动态投影就会变成这样</p>
+<div class="note-large notel-blue"><div class="notel-title"><p>动态投影</p>
+</div><div class="notel-content"><p>动态投影指，ArcMap中的地图数据框的空间参考</p>
+<ul>
+<li>默认为第一加载到当前工作区的那个文件的坐标系统</li>
+<li>当加入的数据文件的坐标系与之不同时，ArcMap会自动做投影变换，把后加入的数据投影变换到当前坐标系统下显示，但此时数据文件所存储的数据和坐标参数并没有改变</li>
+</ul>
+ </div></div>
+
+<p>找到投影工具<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-4-1.png"
+                      alt="更改坐标系"
+                ><br>选择输出坐标系<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-4-2.png"
+                      alt="更改坐标系"
+                ></p>
+<div class="note note-info icon-padding"><i class="note-icon fa-solid fa-info-circle"></i><p>具体位置 投影坐标系&#x2F;Gauss Kruger&#x2F;CGS2000&#x2F;CGCS2000 3 Degree GK CM 114E</p>
+</div>
+
+<p>这里下面的<em><strong>地理（坐标）变换 可选</strong></em>不可选是因为这里并不需要做地理坐标变换，假设输入输出之间地理坐标系也不相同，这里就需要做选择怎样转换。  </p>
+<p><a href="#arcgis%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9D%90%E6%A0%87%E7%B3%BB">关于选择地理坐标转换</a></p>
+<p>注意看，转换完毕之后的地图自动添加进工作空间了，但是可以发现转换前转换后却完全重叠了<br>这是因为转换后的地图添加进来之后进行了动态投影<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-4-3.png"
+                      alt="更改坐标系"
+                ></p>
+<p>同样地很轻松就能做出转换成其他坐标系</p>
+<h3 id="ArcGIS中的“定义投影”工具"><a href="#ArcGIS中的“定义投影”工具" class="headerlink" title="ArcGIS中的“定义投影”工具"></a>ArcGIS中的“定义投影”工具</h3><p>前面说了.prj文件<br>定义投影实际上就是在改变prj文件，但是仅仅改变了prj文件并没有改变数据对应的值，他肯定会出问题，所以我们一般不用<strong>定义投影</strong>工具，除非说这个地图文件本来就没有prj文件，我们恰好知道他的对应坐标系是什么<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-5-01.png"
+                      alt="定义投影"
+                ></p>
+<h3 id="ArcGIS中的“投影-x2F-批量投影”工具"><a href="#ArcGIS中的“投影-x2F-批量投影”工具" class="headerlink" title="ArcGIS中的“投影&#x2F;批量投影”工具"></a>ArcGIS中的“投影&#x2F;批量投影”工具</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-6-01.png"
+                      alt="批量投影"
+                ></p>
+<h3 id="地理坐标系及其转换"><a href="#地理坐标系及其转换" class="headerlink" title="地理坐标系及其转换"></a>地理坐标系及其转换</h3><p>前面在讲<a href="#%E5%A4%A7%E5%9C%B0%E5%9F%BA%E5%87%86%E9%9D%A2">大地基准</a>的时候我们说是<strong>不定</strong>的</p>
+<details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>我们国家常用地理坐标系 </summary>
+              <div class='content'>
+              <ul><li>北京54</li><li>西安80</li><li>WGS84</li><li>CGCS2000坐标系</li><li>高德火星坐标系GCJ02</li><li>百度加密坐标系BD09</li></ul>
+              </div>
+            </details>
+
+<p>他们都是应对不同的需要而建立的，总的来说分为两种</p>
+<ul>
+<li>地心基准面（Geocentric datums）</li>
+<li>本地基准面（Local datums）</li>
+</ul>
+<p>我们之需要地理坐标转换是因为我们在不同的时期应不同的需要，产生了很多的地理坐标系，<br>这样不同的坐标系的大地基准可能都不一样，我们就需要把他们拿过来整合到一个系统里，这样我们就需要一套地理坐标转换的方法。</p>
+<p>正如前面所说地理坐标系转换蛮简单的<br>只不过这里不是选<del>投影坐标系</del>，而是选<em><strong>地理坐标系</strong></em></p>
+<p>你可以来试一下下面这两个</p>
+<ul>
+<li>CGCS2000转Beijing1954</li>
+<li>Bejing1954转Xian1980</li>
+</ul>
+<details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>当你做到第二个北京54转西安80你可能就会发现有问题 </summary>
+              <div class='content'>
+              <p>这里会显示“未定义的地理（坐标）变换”<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-7-4.png"
+                      alt="更改坐标系"
+                ><br>像前面所说的，这里需要选择转换方式，但是我们并没有北京54转西安80的方法<br>这里我们就需要<strong>自定义坐标转换</strong><br>工具位置就在前面用的投影工具的下面<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-7-5.png"
+                      alt="更改坐标系"
+                ><br>方法我们就选择COORDINATE_Frame&#x2F;Position Vector（也就是七参数变换）</p><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>七参数坐标转换原理（COORDINATE_FRAME） </summary>              <div class='content'>              <ul><li>如果原点相同，通过三次旋转，就可以两个坐标系重合；</li><li>如果原点不同，通过沿三个坐标轴的平移和旋转可以取得一致；</li><li>如果两个坐标系的尺度也不尽一致，就需要再增加一个尺度变化参数。</li></ul>              </div>            </details><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-7-6.png"
+                      alt="更改坐标系"
+                ></p>
+              </div>
+            </details>
+
+<details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>ArcGIS中提供地理变换方法主要有这几种 </summary>
+              <div class='content'>
+              <ul><li>Geocentric_Translation</li><li>Molodensky</li><li>Molodensky_Abridged</li><li>Position_Vector</li><li>Coordinate_Frame</li><li>Molodensky_Badekas</li><li>NADCON</li><li>HARN</li><li>NTV2</li><li>Longitude_Rotation</li><li>Unit_Change</li><li>Geographic_2D_Offset<br>可使用“创建自定义地理变换（Creat Custom Geographic Transformation）”工具来创建转换方法</li></ul>
+              </div>
+            </details>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-7-02.png"
+                      alt="三七参转换"
+                ></p>
+<h3 id="ArcGIS种其他投影和变换功能"><a href="#ArcGIS种其他投影和变换功能" class="headerlink" title="ArcGIS种其他投影和变换功能"></a>ArcGIS种其他投影和变换功能</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-8-01.png"
+                      alt="三七参转换"
+                ></p>
+<ul>
+<li><p><strong>转换坐标记法工具</strong>，用于将包含坐标数据的表格转换为点要素类（Feature Class），且支持多种坐标系下的不同记法</p>
+</li>
+<li><p><strong>栅格数据的投影变换</strong>指将栅格数据集从一种地图投影转换到另一种地图投影，与矢量数据的投影变换原理本质相同。</p>
+</li>
+<li><p><strong>栅格数据变换</strong>是指对数据的平移、扭曲、旋转、翻转、比例、形状、位置的改变等。</p>
+</li>
+</ul>
+<h3 id="投影变换小结"><a href="#投影变换小结" class="headerlink" title="投影变换小结"></a>投影变换小结</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-8-02.png"
+                      alt="三七参转换"
+                ></p>
+<details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>变换形式 </summary>
+              <div class='content'>
+              <ul><li>地理坐标之间变换</li><li>平面坐标之间变换</li><li>投影</li><li>逆投影</li></ul>
+              </div>
+            </details>
+<details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>变换方法 </summary>
+              <div class='content'>
+              <ul><li>解析变换</li><li>数值变换</li><li>数值-解析变换法</li><li>七参数变换</li></ul>
+              </div>
+            </details>
+<h3 id="ArcGIS中自定义坐标系"><a href="#ArcGIS中自定义坐标系" class="headerlink" title="ArcGIS中自定义坐标系"></a>ArcGIS中自定义坐标系</h3><h2 id="地图投影计算方法实验"><a href="#地图投影计算方法实验" class="headerlink" title="地图投影计算方法实验"></a>地图投影计算方法实验</h2><h3 id="-2"><a href="#-2" class="headerlink" title=""></a><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>实验目的 </summary>
+              <div class='content'>
+              <ul><li>理解常见投影的数学原理</li><li>掌握投影计算方法各种各待定参数的确定方法</li><li>了解高斯-克吕格投影的计算机程序实现方法</li><li>了解Lambert投影的计算机程序实现方法</li><li>了解地图投影的数值变换的计算机程序实现方法</li></ul>
+              </div>
+            </details></h3><h3 id="编程环境配置"><a href="#编程环境配置" class="headerlink" title="编程环境配置"></a>编程环境配置</h3><h3 id="高斯-克吕格投影公式"><a href="#高斯-克吕格投影公式" class="headerlink" title="高斯-克吕格投影公式"></a>高斯-克吕格投影公式</h3><h3 id="高斯-克吕格投影计算核心代码"><a href="#高斯-克吕格投影计算核心代码" class="headerlink" title="高斯-克吕格投影计算核心代码"></a>高斯-克吕格投影计算核心代码</h3><h3 id="Lambert投影计算公式"><a href="#Lambert投影计算公式" class="headerlink" title="Lambert投影计算公式"></a>Lambert投影计算公式</h3><h3 id="地图投影的数值变换计算公式"><a href="#地图投影的数值变换计算公式" class="headerlink" title="地图投影的数值变换计算公式"></a>地图投影的数值变换计算公式</h3><h3 id="程序结构说明"><a href="#程序结构说明" class="headerlink" title="程序结构说明"></a>程序结构说明</h3><h3 id="投影计算程序测试"><a href="#投影计算程序测试" class="headerlink" title="投影计算程序测试"></a>投影计算程序测试</h3>]]></content>
+      <tags>
+        <tag>ArcGIS</tag>
+      </tags>
+  </entry>
+</search>
