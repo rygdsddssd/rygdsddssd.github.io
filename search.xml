@@ -82,49 +82,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS打开mxd文件无法显示的问题</title>
-    <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
-    <content><![CDATA[<details class="yellow"><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
-              <div class='content'>
-              <p>如图，将mxd文件托进来之后工作空间仍无图像<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/1.png"
-                      alt="1"
-                ><br>注意看这里，我们可以看到这里有看红色感叹号，此时对图层右键的话很多功能无法正常使用<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/2.png"
-                      alt="2"
-                ><br>把框框里的勾取消再点，会让你选择文件，这里选择对应的shp文件，点击确定<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/3.png"
-                      alt="3"
-                ><br>其他图层也自动定位了，现在可以正常工作了<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/4.png"
-                      alt="4"
-                ></p>
-              </div>
-            </details>
-
-<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>原因 </summary>
-              <div class='content'>
-              <p><strong>数据路径有问题。</strong><br>ArcGIS中的.mxd地图文档文件虽然含有各类图层，但其实际上仅仅包含了对这些图层的引用，而非图层数据本身；图层数据还是存储在其各自的.shp文件或地理数据库中。<br>因此，一旦我们导入一个新的.mxd地图文档文件（例如从其他电脑中拷贝过来的一个.mxd地图文档文件），就可能导致ArcMap软件虽然知道这个.mxd地图文档文件应该包含有哪些图层（即可以显示图层数量与图层名称），但是这些图层的具体数据ArcMap软件没有办法找到（即在图层名称左侧出现红色感叹号）。</p>
-              </div>
-            </details>
-
-<a class="button  regular" href='https://baijiahao.baidu.com/s?id=1746372843012256129' title='更详细的解释与操作'><i class='fa-solid fa-play-circle'></i> 更详细的解释与操作</a>
-
-]]></content>
-      <tags>
-        <tag>ArcGIS</tag>
-        <tag>BUG</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MATLAB拼接图片</title>
     <url>/2023/03/20/matlab%E6%8B%BC%E6%8E%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<a class="button  large center" href='https://blog.csdn.net/qq_45059457/article/details/106438378' title='找到的题目来源'><i class='fa-solid fa-arrow-right'></i> 找到的题目来源</a>
@@ -163,7 +120,8 @@
 <h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p>这里先把图片全读进来（在a里）再二值化放到b里</p>
 <div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">a1=imread(<span class="string">&#x27;c:\Users\22251\Desktop\工程文件\数模\matlab-数据准备\000.bmp&#x27;</span>);</span><br><span class="line">[m,n]=<span class="built_in">size</span>(a1);</span><br><span class="line"></span><br><span class="line">dirname = <span class="string">&#x27;c:\Users\22251\Desktop\工程文件\数模\matlab-数据准备\ImageChips&#x27;</span>;</span><br><span class="line">files = dir(fullfile(dirname,<span class="string">&#x27;*.bmp&#x27;</span>));</span><br><span class="line">a=<span class="built_in">zeros</span>(m,n,<span class="number">19</span>);</span><br><span class="line">pic=[];</span><br><span class="line"><span class="keyword">for</span> f_n = <span class="number">1</span>:<span class="built_in">length</span>(files)</span><br><span class="line">    filename = fullfile(dirname,files(f_n).name);</span><br><span class="line">    a(:,:,f_n)=imread(filename);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%二值化</span></span><br><span class="line">a=double(a);</span><br><span class="line">b=a/<span class="number">255</span>;</span><br></pre></td></tr></table></figure></div>
 
-<p>这里是构建rrs数组<br>本来我是准备用笨方法，类似于排序算法那种，疯狂的写flag值每一轮判断相关性一直要一直记住最大相关性的index与值，凭借之后进行下一轮比较。<br>想想都觉得非常麻烦啊，简化一下，创建一个数组变量arr【index，value】,第i轮直接比较arr【i，value】放进去。<br>我的方法类似于数据结构中的有向图，我直接创建一个二维数组rr【,】，rrs【i,j】是i的最右列与j的最左列的相关性。<br>这样的话for循环就非常好写，最后直接遍历找相似的拼接就可以了</p>
+<p>这里是构建rrs数组<br>本来我是准备用笨方法，类似于排序算法那种，疯狂的写flag值每一轮判断相关性一直要一直记住最大相关性的index与值，凭借之后进行下一轮比较。<br>想想都觉得非常麻烦啊，简化一下，创建一个数组变量<strong>arr[index，value]</strong>,第i轮直接比较 <strong>arr[i，value]</strong> 放进去。  </p>
+<p>我的方法类似于数据结构中的有向图，我直接创建一个二维数组<strong>rr[,]</strong> ，<strong>rrs[i,j]</strong> 是i的最右列与j的最左列的相关性。<br>这样的话for循环就非常好写，最后直接遍历找相似的拼接就可以了</p>
 <div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">rrs=<span class="built_in">zeros</span>(<span class="number">19</span>,<span class="number">19</span>)</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">i</span>==<span class="built_in">j</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        x=b(:,<span class="number">72</span>,<span class="built_in">i</span>);</span><br><span class="line">        y=b(:,<span class="number">1</span>,<span class="built_in">j</span>);</span><br><span class="line">        r1=sum((x-<span class="built_in">mean</span>(x)).*(y-<span class="built_in">mean</span>(y)));</span><br><span class="line">        r2=<span class="built_in">sqrt</span>(sum((x-<span class="built_in">mean</span>(x)).^<span class="number">2</span>))*<span class="built_in">sqrt</span>(sum((y-<span class="built_in">mean</span>(y)).^<span class="number">2</span>));</span><br><span class="line">        rrs(<span class="built_in">i</span>,<span class="built_in">j</span>)=r1/r2;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></div>
 <p>一开始我是直接写flag_index&#x3D;1就准备开始遍历图进行拼接了，然后想到第一张图实际上不一定就是最左侧的。<br>看了一下我的rrs<br><img  
                      lazyload
@@ -533,6 +491,49 @@
             </details></h3><h3 id="编程环境配置"><a href="#编程环境配置" class="headerlink" title="编程环境配置"></a>编程环境配置</h3><h3 id="高斯-克吕格投影公式"><a href="#高斯-克吕格投影公式" class="headerlink" title="高斯-克吕格投影公式"></a>高斯-克吕格投影公式</h3><h3 id="高斯-克吕格投影计算核心代码"><a href="#高斯-克吕格投影计算核心代码" class="headerlink" title="高斯-克吕格投影计算核心代码"></a>高斯-克吕格投影计算核心代码</h3><h3 id="Lambert投影计算公式"><a href="#Lambert投影计算公式" class="headerlink" title="Lambert投影计算公式"></a>Lambert投影计算公式</h3><h3 id="地图投影的数值变换计算公式"><a href="#地图投影的数值变换计算公式" class="headerlink" title="地图投影的数值变换计算公式"></a>地图投影的数值变换计算公式</h3><h3 id="程序结构说明"><a href="#程序结构说明" class="headerlink" title="程序结构说明"></a>程序结构说明</h3><h3 id="投影计算程序测试"><a href="#投影计算程序测试" class="headerlink" title="投影计算程序测试"></a>投影计算程序测试</h3>]]></content>
       <tags>
         <tag>ArcGIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS打开mxd文件无法显示的问题</title>
+    <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
+    <content><![CDATA[<details class="yellow"><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
+              <div class='content'>
+              <p>如图，将mxd文件托进来之后工作空间仍无图像<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/1.png"
+                      alt="1"
+                ><br>注意看这里，我们可以看到这里有看红色感叹号，此时对图层右键的话很多功能无法正常使用<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/2.png"
+                      alt="2"
+                ><br>把框框里的勾取消再点，会让你选择文件，这里选择对应的shp文件，点击确定<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/3.png"
+                      alt="3"
+                ><br>其他图层也自动定位了，现在可以正常工作了<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/4.png"
+                      alt="4"
+                ></p>
+              </div>
+            </details>
+
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>原因 </summary>
+              <div class='content'>
+              <p><strong>数据路径有问题。</strong><br>ArcGIS中的.mxd地图文档文件虽然含有各类图层，但其实际上仅仅包含了对这些图层的引用，而非图层数据本身；图层数据还是存储在其各自的.shp文件或地理数据库中。<br>因此，一旦我们导入一个新的.mxd地图文档文件（例如从其他电脑中拷贝过来的一个.mxd地图文档文件），就可能导致ArcMap软件虽然知道这个.mxd地图文档文件应该包含有哪些图层（即可以显示图层数量与图层名称），但是这些图层的具体数据ArcMap软件没有办法找到（即在图层名称左侧出现红色感叹号）。</p>
+              </div>
+            </details>
+
+<a class="button  regular" href='https://baijiahao.baidu.com/s?id=1746372843012256129' title='更详细的解释与操作'><i class='fa-solid fa-play-circle'></i> 更详细的解释与操作</a>
+
+]]></content>
+      <tags>
+        <tag>ArcGIS</tag>
+        <tag>BUG</tag>
       </tags>
   </entry>
 </search>
