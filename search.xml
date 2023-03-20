@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>学习计划</title>
+    <url>/2023/03/10/FutureStudyStep/</url>
+    <content><![CDATA[<div class="tabs" id="tab-plan"><ul class="nav-tabs"><li class="tab active"><a class="#plan-1">短期</a></li><li class="tab"><a class="#plan-2">远期</a></li><li class="tab"><a class="#plan-3">穿插</a></li></ul><div class="tab-content"><div class="tab-pane active" id="plan-1"><p><strong>主要是具体的事件</strong></p>
+<ul>
+<li>spring</li>
+<li>gis开发</li>
+<li>matlab数模</li>
+<li>笛子</li>
+<li>速写</li>
+<li>mod</li>
+<li>android开发</li>
+</ul></div><div class="tab-pane" id="plan-2"><p><strong>更加抽象一些</strong></p>
+<ul>
+<li>编程<ul>
+<li>java</li>
+<li>go</li>
+</ul>
+</li>
+<li>艺术<ul>
+<li>器乐</li>
+<li>美术</li>
+</ul>
+</li>
+</ul></div><div class="tab-pane" id="plan-3"><p><strong>需要一直做的</strong></p>
+<ul>
+<li>总结经验，写博客</li>
+<li>保持健康，开心</li>
+<li>坚持思考，冷静</li>
+</ul></div></div></div>]]></content>
+      <tags>
+        <tag>learn</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2023/03/08/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
@@ -48,37 +82,46 @@
       </tags>
   </entry>
   <entry>
-    <title>学习计划</title>
-    <url>/2023/03/10/FutureStudyStep/</url>
-    <content><![CDATA[<div class="tabs" id="tab-plan"><ul class="nav-tabs"><li class="tab active"><a class="#plan-1">短期</a></li><li class="tab"><a class="#plan-2">远期</a></li><li class="tab"><a class="#plan-3">穿插</a></li></ul><div class="tab-content"><div class="tab-pane active" id="plan-1"><p><strong>主要是具体的事件</strong></p>
-<ul>
-<li>spring</li>
-<li>gis开发</li>
-<li>matlab数模</li>
-<li>笛子</li>
-<li>速写</li>
-<li>mod</li>
-<li>android开发</li>
-</ul></div><div class="tab-pane" id="plan-2"><p><strong>更加抽象一些</strong></p>
-<ul>
-<li>编程<ul>
-<li>java</li>
-<li>go</li>
-</ul>
-</li>
-<li>艺术<ul>
-<li>器乐</li>
-<li>美术</li>
-</ul>
-</li>
-</ul></div><div class="tab-pane" id="plan-3"><p><strong>需要一直做的</strong></p>
-<ul>
-<li>总结经验，写博客</li>
-<li>保持健康，开心</li>
-<li>坚持思考，冷静</li>
-</ul></div></div></div>]]></content>
+    <title>ArcGIS打开mxd文件无法显示的问题</title>
+    <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
+    <content><![CDATA[<details class="yellow"><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
+              <div class='content'>
+              <p>如图，将mxd文件托进来之后工作空间仍无图像<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/1.png"
+                      alt="1"
+                ><br>注意看这里，我们可以看到这里有看红色感叹号，此时对图层右键的话很多功能无法正常使用<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/2.png"
+                      alt="2"
+                ><br>把框框里的勾取消再点，会让你选择文件，这里选择对应的shp文件，点击确定<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/3.png"
+                      alt="3"
+                ><br>其他图层也自动定位了，现在可以正常工作了<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/4.png"
+                      alt="4"
+                ></p>
+              </div>
+            </details>
+
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>原因 </summary>
+              <div class='content'>
+              <p><strong>数据路径有问题。</strong><br>ArcGIS中的.mxd地图文档文件虽然含有各类图层，但其实际上仅仅包含了对这些图层的引用，而非图层数据本身；图层数据还是存储在其各自的.shp文件或地理数据库中。<br>因此，一旦我们导入一个新的.mxd地图文档文件（例如从其他电脑中拷贝过来的一个.mxd地图文档文件），就可能导致ArcMap软件虽然知道这个.mxd地图文档文件应该包含有哪些图层（即可以显示图层数量与图层名称），但是这些图层的具体数据ArcMap软件没有办法找到（即在图层名称左侧出现红色感叹号）。</p>
+              </div>
+            </details>
+
+<a class="button  regular" href='https://baijiahao.baidu.com/s?id=1746372843012256129' title='更详细的解释与操作'><i class='fa-solid fa-play-circle'></i> 更详细的解释与操作</a>
+
+]]></content>
       <tags>
-        <tag>learn</tag>
+        <tag>ArcGIS</tag>
+        <tag>BUG</tag>
       </tags>
   </entry>
   <entry>
@@ -127,10 +170,10 @@
                      src="/images/loading.svg"
                      data-src="/images/%E6%95%B0%E6%A8%A1-%E6%8B%BC%E6%8E%A5%E5%9B%BE%E7%89%87/rrs.png"
                       alt="rrs"
-                ><br>显然最左侧最右侧十分明显，不过我一开始以为NaN是null，因为我想当然的认为：<br>嗯，最右侧已经找不到最左侧能和它匹配了最左侧亦然，但是  </p>
+                ><br>显然最左侧最右侧十分明显，不过我一开始以为<strong>NaN</strong>是null，因为我想当然的认为：<br>嗯，最右侧已经找不到最左侧能和它匹配了最左侧亦然。<br>但是  </p>
 <ul>
-<li>我写的是两个fori&#x3D;1:19,最左列和最右列是会比较的</li>
-<li>拼接后的图片左右两侧有留白，所以最侧边的两给图片边缘列是无穷大的相似——NaN<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%先找谁在最左边</span></span><br><span class="line"><span class="comment">%（i,:）最大值为0的在最左边</span></span><br><span class="line"><span class="comment">%更正：（:,i）最大值为0在最左边，因为是是文档截屏，最左最右是留白完全一样</span></span><br><span class="line">flag_index=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">    temp_index=<span class="built_in">find</span>(rrs(:,<span class="built_in">i</span>)==<span class="built_in">max</span>(rrs(:,<span class="built_in">i</span>)));</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">max</span>(rrs(:,<span class="built_in">i</span>))==<span class="number">0</span></span><br><span class="line">        flag_index=temp_index;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">pic=[pic,a(:,:,flag_index)];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">    temp_index=<span class="built_in">find</span>(rrs(flag_index,:)==<span class="built_in">max</span>(rrs(flag_index,:)));</span><br><span class="line">    pic=[pic,a(:,:,temp_index)];</span><br><span class="line">    flag_index=temp_index;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">double(pic);</span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">imshow(pic,[])</span><br></pre></td></tr></table></figure></div></li>
+<li>我写的是两个for i&#x3D;1:19,最左列和最右列是会比较的</li>
+<li>拼接后的图片左右两侧有留白，所以最侧边的两给图片边缘列是无穷大的相似——<strong>NaN</strong><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%先找谁在最左边</span></span><br><span class="line"><span class="comment">%（i,:）最大值为0的在最左边</span></span><br><span class="line"><span class="comment">%更正：（:,i）最大值为0在最左边，因为是是文档截屏，最左最右是留白完全一样</span></span><br><span class="line">flag_index=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">    temp_index=<span class="built_in">find</span>(rrs(:,<span class="built_in">i</span>)==<span class="built_in">max</span>(rrs(:,<span class="built_in">i</span>)));</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">max</span>(rrs(:,<span class="built_in">i</span>))==<span class="number">0</span></span><br><span class="line">        flag_index=temp_index;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">pic=[pic,a(:,:,flag_index)];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">    temp_index=<span class="built_in">find</span>(rrs(flag_index,:)==<span class="built_in">max</span>(rrs(flag_index,:)));</span><br><span class="line">    pic=[pic,a(:,:,temp_index)];</span><br><span class="line">    flag_index=temp_index;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">double(pic);</span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">imshow(pic,[])</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><details class="black"><summary><i class="fa-solid fa-chevron-right"></i>做完题目的一点想法 </summary>
               <div class='content'>
@@ -156,49 +199,6 @@
       <tags>
         <tag>MATLAB</tag>
         <tag>数模</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ArcGIS打开mxd文件无法显示的问题</title>
-    <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
-    <content><![CDATA[<details class="yellow"><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
-              <div class='content'>
-              <p>如图，将mxd文件托进来之后工作空间仍无图像<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/1.png"
-                      alt="1"
-                ><br>注意看这里，我们可以看到这里有看红色感叹号，此时对图层右键的话很多功能无法正常使用<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/2.png"
-                      alt="2"
-                ><br>把框框里的勾取消再点，会让你选择文件，这里选择对应的shp文件，点击确定<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/3.png"
-                      alt="3"
-                ><br>其他图层也自动定位了，现在可以正常工作了<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/4.png"
-                      alt="4"
-                ></p>
-              </div>
-            </details>
-
-<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>原因 </summary>
-              <div class='content'>
-              <p><strong>数据路径有问题。</strong><br>ArcGIS中的.mxd地图文档文件虽然含有各类图层，但其实际上仅仅包含了对这些图层的引用，而非图层数据本身；图层数据还是存储在其各自的.shp文件或地理数据库中。<br>因此，一旦我们导入一个新的.mxd地图文档文件（例如从其他电脑中拷贝过来的一个.mxd地图文档文件），就可能导致ArcMap软件虽然知道这个.mxd地图文档文件应该包含有哪些图层（即可以显示图层数量与图层名称），但是这些图层的具体数据ArcMap软件没有办法找到（即在图层名称左侧出现红色感叹号）。</p>
-              </div>
-            </details>
-
-<a class="button  regular" href='https://baijiahao.baidu.com/s?id=1746372843012256129' title='更详细的解释与操作'><i class='fa-solid fa-play-circle'></i> 更详细的解释与操作</a>
-
-]]></content>
-      <tags>
-        <tag>ArcGIS</tag>
-        <tag>BUG</tag>
       </tags>
   </entry>
   <entry>
