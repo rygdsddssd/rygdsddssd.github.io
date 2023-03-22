@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>博客的部署</title>
+    <url>/2023/03/10/first%20Blog/</url>
+    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>我基本一直跟着这个教程走的，非常的详细非常的优质！</p>
+<a class="button  center large" href='https://www.bilibili.com/read/cv12633102' title='保姆级教程'><i class='fa-solid fa-arrow-right'></i> 保姆级教程</a>
+<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><div class="note-large notel-blue"><div class="notel-title"><p>提示</p>
+</div><div class="notel-content"><p>4.2第二步中</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:master</span></span><br></pre></td></tr></table></figure></div>
+<p>由于github将master分支改名为main，所以最后要进行更改</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:main</span></span><br></pre></td></tr></table></figure></div> </div></div>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>今天加了aplayer插件（是这个主题里面自带的直接配置就行），但是应该是因为这个主题创建者没有放太多功能进来，只有一部分可以设置<br>这是网上由找到的几个文章，可以添加网易云歌单的，近期事情太多，先放这里，以后有时间再慢慢弄吧</p>
+<a class="button  center regular" href='https://developer.aliyun.com/article/894787' title='给自己的网站添加网易云音乐歌单'><i class='fa-solid fa-arrow-right'></i> 给自己的网站添加网易云音乐歌单</a>  
+<a class="button  regular" href='https://cloud.tencent.com/developer/article/1833968' title='引入Aplayer播放音乐(踩坑向)'><i class='fa-solid fa-arrow-right'></i> 引入Aplayer播放音乐(踩坑向)</a>
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><h4 id=""><a href="#" class="headerlink" title=""></a><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>几个控制台命令 </summary>
+              <div class='content'>
+              <div class="note-large notel-default"><div class="notel-title"><p>d:</p></div><div class="notel-content"><p>到d盘</p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>cd xxx</p></div><div class="notel-content"><p>到当前目录下的xxx中</p> </div></div>
+              </div>
+            </details></h4><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>几个hexo 命令 </summary>
+              <div class='content'>
+              <div class="note-large notel-default"><div class="notel-title"><p>hexo clean</p></div><div class="notel-content"><p>清除缓存文件 db.json 和已生成的静态文件 public。  </p><ul><li>网站显示异常时可以执行这条命令试试。</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo g</p></div><div class="notel-content"><p>生成网站静态文件到默认设置的 public 文件夹。</p><ul><li>便于查看网站生成的静态文件或者手动部署网站；</li><li>如果使用自动部署，不需要先执行该命令；</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo s</p></div><div class="notel-content"><p>启动本地服务器，用于预览主题。<br>默认地址 <a class="link"   href="http://localhost:4000/" >http://localhost:4000/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo d</p></div><div class="notel-content"><p>自动生成网站静态文件，并部署到设定的仓库。</p> </div></div>
+              </div>
+            </details></h4><h3 id="找资源"><a href="#找资源" class="headerlink" title="找资源"></a>找资源</h3><h4 id="壁纸"><a href="#壁纸" class="headerlink" title="壁纸"></a>壁纸</h4><p>英文网站 <a class="link"   href="https://wallhaven.cc/" >wallhaven <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h4><p> <a class="link"   href="https://fontawesome.com/" >Fontawesome <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 也就是本模板中使用的</p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2023/03/08/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
@@ -53,32 +82,46 @@
       </tags>
   </entry>
   <entry>
-    <title>博客的部署</title>
-    <url>/2023/03/10/first%20Blog/</url>
-    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>我基本一直跟着这个教程走的，非常的详细非常的优质！</p>
-<a class="button  center large" href='https://www.bilibili.com/read/cv12633102' title='保姆级教程'><i class='fa-solid fa-arrow-right'></i> 保姆级教程</a>
-<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><div class="note-large notel-blue"><div class="notel-title"><p>提示</p>
-</div><div class="notel-content"><p>4.2第二步中</p>
-<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:master</span></span><br></pre></td></tr></table></figure></div>
-<p>由于github将master分支改名为main，所以最后要进行更改</p>
-<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:main</span></span><br></pre></td></tr></table></figure></div> </div></div>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>今天加了aplayer插件（是这个主题里面自带的直接配置就行），但是应该是因为这个主题创建者没有放太多功能进来，只有一部分可以设置<br>这是网上由找到的几个文章，可以添加网易云歌单的，近期事情太多，先放这里，以后有时间再慢慢弄吧</p>
-<a class="button  center regular" href='https://developer.aliyun.com/article/894787' title='给自己的网站添加网易云音乐歌单'><i class='fa-solid fa-arrow-right'></i> 给自己的网站添加网易云音乐歌单</a>  
-<a class="button  regular" href='https://cloud.tencent.com/developer/article/1833968' title='引入Aplayer播放音乐(踩坑向)'><i class='fa-solid fa-arrow-right'></i> 引入Aplayer播放音乐(踩坑向)</a>
+    <title>ArcGIS打开mxd文件无法显示的问题</title>
+    <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
+    <content><![CDATA[<details class="yellow"><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
+              <div class='content'>
+              <p>如图，将mxd文件托进来之后工作空间仍无图像<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/1.png"
+                      alt="1"
+                ><br>注意看这里，我们可以看到这里有看红色感叹号，此时对图层右键的话很多功能无法正常使用<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/2.png"
+                      alt="2"
+                ><br>把框框里的勾取消再点，会让你选择文件，这里选择对应的shp文件，点击确定<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/3.png"
+                      alt="3"
+                ><br>其他图层也自动定位了，现在可以正常工作了<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/4.png"
+                      alt="4"
+                ></p>
+              </div>
+            </details>
 
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><h4 id=""><a href="#" class="headerlink" title=""></a><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>几个控制台命令 </summary>
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>原因 </summary>
               <div class='content'>
-              <div class="note-large notel-default"><div class="notel-title"><p>d:</p></div><div class="notel-content"><p>到d盘</p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>cd xxx</p></div><div class="notel-content"><p>到当前目录下的xxx中</p> </div></div>
+              <p><strong>数据路径有问题。</strong><br>ArcGIS中的.mxd地图文档文件虽然含有各类图层，但其实际上仅仅包含了对这些图层的引用，而非图层数据本身；图层数据还是存储在其各自的.shp文件或地理数据库中。<br>因此，一旦我们导入一个新的.mxd地图文档文件（例如从其他电脑中拷贝过来的一个.mxd地图文档文件），就可能导致ArcMap软件虽然知道这个.mxd地图文档文件应该包含有哪些图层（即可以显示图层数量与图层名称），但是这些图层的具体数据ArcMap软件没有办法找到（即在图层名称左侧出现红色感叹号）。</p>
               </div>
-            </details></h4><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>几个hexo 命令 </summary>
-              <div class='content'>
-              <div class="note-large notel-default"><div class="notel-title"><p>hexo clean</p></div><div class="notel-content"><p>清除缓存文件 db.json 和已生成的静态文件 public。  </p><ul><li>网站显示异常时可以执行这条命令试试。</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo g</p></div><div class="notel-content"><p>生成网站静态文件到默认设置的 public 文件夹。</p><ul><li>便于查看网站生成的静态文件或者手动部署网站；</li><li>如果使用自动部署，不需要先执行该命令；</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo s</p></div><div class="notel-content"><p>启动本地服务器，用于预览主题。<br>默认地址 <a class="link"   href="http://localhost:4000/" >http://localhost:4000/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo d</p></div><div class="notel-content"><p>自动生成网站静态文件，并部署到设定的仓库。</p> </div></div>
-              </div>
-            </details></h4><h3 id="找资源"><a href="#找资源" class="headerlink" title="找资源"></a>找资源</h3><h4 id="壁纸"><a href="#壁纸" class="headerlink" title="壁纸"></a>壁纸</h4><p>英文网站 <a class="link"   href="https://wallhaven.cc/" >wallhaven <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h4 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h4><p> <a class="link"   href="https://fontawesome.com/" >Fontawesome <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 也就是本模板中使用的</p>
+            </details>
+
+<a class="button  regular" href='https://baijiahao.baidu.com/s?id=1746372843012256129' title='更详细的解释与操作'><i class='fa-solid fa-play-circle'></i> 更详细的解释与操作</a>
+
 ]]></content>
       <tags>
-        <tag>Hexo</tag>
+        <tag>ArcGIS</tag>
+        <tag>BUG</tag>
       </tags>
   </entry>
   <entry>
@@ -186,49 +229,6 @@
       <tags>
         <tag>MATLAB</tag>
         <tag>数模</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ArcGIS打开mxd文件无法显示的问题</title>
-    <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
-    <content><![CDATA[<details class="yellow"><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
-              <div class='content'>
-              <p>如图，将mxd文件托进来之后工作空间仍无图像<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/1.png"
-                      alt="1"
-                ><br>注意看这里，我们可以看到这里有看红色感叹号，此时对图层右键的话很多功能无法正常使用<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/2.png"
-                      alt="2"
-                ><br>把框框里的勾取消再点，会让你选择文件，这里选择对应的shp文件，点击确定<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/3.png"
-                      alt="3"
-                ><br>其他图层也自动定位了，现在可以正常工作了<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/4.png"
-                      alt="4"
-                ></p>
-              </div>
-            </details>
-
-<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>原因 </summary>
-              <div class='content'>
-              <p><strong>数据路径有问题。</strong><br>ArcGIS中的.mxd地图文档文件虽然含有各类图层，但其实际上仅仅包含了对这些图层的引用，而非图层数据本身；图层数据还是存储在其各自的.shp文件或地理数据库中。<br>因此，一旦我们导入一个新的.mxd地图文档文件（例如从其他电脑中拷贝过来的一个.mxd地图文档文件），就可能导致ArcMap软件虽然知道这个.mxd地图文档文件应该包含有哪些图层（即可以显示图层数量与图层名称），但是这些图层的具体数据ArcMap软件没有办法找到（即在图层名称左侧出现红色感叹号）。</p>
-              </div>
-            </details>
-
-<a class="button  regular" href='https://baijiahao.baidu.com/s?id=1746372843012256129' title='更详细的解释与操作'><i class='fa-solid fa-play-circle'></i> 更详细的解释与操作</a>
-
-]]></content>
-      <tags>
-        <tag>ArcGIS</tag>
-        <tag>BUG</tag>
       </tags>
   </entry>
   <entry>
@@ -575,13 +575,13 @@
 <div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a, b, i, n;</span><br><span class="line">    <span class="keyword">for</span> (a = <span class="number">1</span>; a &lt; <span class="number">10000</span>; a++)</span><br><span class="line">    &#123;</span><br><span class="line">        b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= a / <span class="number">2</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a % i == <span class="number">0</span>)</span><br><span class="line">                b += i;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        n = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= b / <span class="number">2</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (b % i == <span class="number">0</span>)</span><br><span class="line">                n += i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n == a &amp;&amp; a &lt; b)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;(%4d,%4d)\n&quot;</span>, a, b);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <h2 id="头脑风暴"><a href="#头脑风暴" class="headerlink" title="头脑风暴"></a>头脑风暴</h2><p>上面Matlab的思路是直接一个a[]数组，a[i]放的就是第i个数的因数和<br>所以第一次for循环就是在做这个数组，做完之后我只要看a[i]与a[(a[i])]是否相等就能判断是不是亲和数<br>不过很容易想到的一个弊端：</p>
 <ul>
-<li>会出现重复比较的情况—— <strong>一对亲和数出现两次</strong> <ul>
+<li>会出现重复比较的情况—— <strong>一对亲和数出现两次</strong> ，比如：<ul>
 <li>220,284</li>
 <li>284,220</li>
 </ul>
 </li>
 </ul>
-<p>目前解决办法只想到链表代替，找到一个之后立刻删除另外一个对应结点，但是只用链表显然无法做到立刻删除一个index为i的结点，或许加一个黑名单，每次比较之前判断在不在黑名单内？<br>但是这样有明显画蛇添足，还不如就让他多比较一次，因为本身亲和数就是相对于范围来说很少的，为了这少量的几次比较反而用更复杂的链表实在是。。。<br>不过貌似可以使用哈希表，嗯，非常可行，嗯对，可以。<br>突然想到这是Matlab啊，链表哈希表都没有！<br>唉，不考虑编程语言的话哈希表确实时比较完美的解决方案了，不过我貌似又忽略了使用哈希表本身也降低了程序的处理速度啊</p>
+<p>目前解决办法只想到链表代替，找到一个之后立刻删除另外一个对应结点，但是只用链表显然无法做到立刻删除一个index为i的结点，或许加一个 <strong>黑名单</strong> ，每次比较之前判断在不在黑名单内？<br>但是这样有明显画蛇添足，还不如就让他多比较一次，因为本身亲和数就是相对于范围来说很少的(目前已经知道的有1000多对亲和数，而10000以内的只有5对，在100000以内有13对)，为了这少量的几次比较反而用更复杂的链表实在是。。。<br>不过貌似可以使用哈希表，嗯，非常可行，嗯对，可以。<br>突然想到这是Matlab啊，链表哈希表都没有！<br>唉，不考虑编程语言的话哈希表确实是比较完美的解决方案了，不过我貌似又忽略了使用哈希表本身也降低了程序的处理速度啊</p>
 <p>如果你有更完美的方案，欢迎与我交流！</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这次最大的收获是意识到了Matlab的一个重要特点，今后写Matlab一定要着重发挥矩阵的作用。</p>
 <h3 id="解决了什么问题"><a href="#解决了什么问题" class="headerlink" title="解决了什么问题"></a>解决了什么问题</h3><ul>

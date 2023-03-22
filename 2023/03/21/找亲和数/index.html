@@ -271,8 +271,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-03-22 01:13:48</span>
-            <span class="mobile">2023-03-22 01:13</span>
+            <span class="pc">2023-03-22 12:50:45</span>
+            <span class="mobile">2023-03-22 12:50</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -298,7 +298,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>905 字</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>935 字</span>
         </span>
     
     
@@ -326,13 +326,13 @@
 <div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a, b, i, n;</span><br><span class="line">    <span class="keyword">for</span> (a = <span class="number">1</span>; a &lt; <span class="number">10000</span>; a++)</span><br><span class="line">    &#123;</span><br><span class="line">        b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= a / <span class="number">2</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a % i == <span class="number">0</span>)</span><br><span class="line">                b += i;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        n = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= b / <span class="number">2</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (b % i == <span class="number">0</span>)</span><br><span class="line">                n += i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n == a &amp;&amp; a &lt; b)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;(%4d,%4d)\n&quot;</span>, a, b);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <h2 id="头脑风暴"><a href="#头脑风暴" class="headerlink" title="头脑风暴"></a>头脑风暴</h2><p>上面Matlab的思路是直接一个a[]数组，a[i]放的就是第i个数的因数和<br>所以第一次for循环就是在做这个数组，做完之后我只要看a[i]与a[(a[i])]是否相等就能判断是不是亲和数<br>不过很容易想到的一个弊端：</p>
 <ul>
-<li>会出现重复比较的情况—— <strong>一对亲和数出现两次</strong> <ul>
+<li>会出现重复比较的情况—— <strong>一对亲和数出现两次</strong> ，比如：<ul>
 <li>220,284</li>
 <li>284,220</li>
 </ul>
 </li>
 </ul>
-<p>目前解决办法只想到链表代替，找到一个之后立刻删除另外一个对应结点，但是只用链表显然无法做到立刻删除一个index为i的结点，或许加一个黑名单，每次比较之前判断在不在黑名单内？<br>但是这样有明显画蛇添足，还不如就让他多比较一次，因为本身亲和数就是相对于范围来说很少的，为了这少量的几次比较反而用更复杂的链表实在是。。。<br>不过貌似可以使用哈希表，嗯，非常可行，嗯对，可以。<br>突然想到这是Matlab啊，链表哈希表都没有！<br>唉，不考虑编程语言的话哈希表确实时比较完美的解决方案了，不过我貌似又忽略了使用哈希表本身也降低了程序的处理速度啊</p>
+<p>目前解决办法只想到链表代替，找到一个之后立刻删除另外一个对应结点，但是只用链表显然无法做到立刻删除一个index为i的结点，或许加一个 <strong>黑名单</strong> ，每次比较之前判断在不在黑名单内？<br>但是这样有明显画蛇添足，还不如就让他多比较一次，因为本身亲和数就是相对于范围来说很少的(目前已经知道的有1000多对亲和数，而10000以内的只有5对，在100000以内有13对)，为了这少量的几次比较反而用更复杂的链表实在是。。。<br>不过貌似可以使用哈希表，嗯，非常可行，嗯对，可以。<br>突然想到这是Matlab啊，链表哈希表都没有！<br>唉，不考虑编程语言的话哈希表确实是比较完美的解决方案了，不过我貌似又忽略了使用哈希表本身也降低了程序的处理速度啊</p>
 <p>如果你有更完美的方案，欢迎与我交流！</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这次最大的收获是意识到了Matlab的一个重要特点，今后写Matlab一定要着重发挥矩阵的作用。</p>
 <h3 id="解决了什么问题"><a href="#解决了什么问题" class="headerlink" title="解决了什么问题"></a>解决了什么问题</h3><ul>
