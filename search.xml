@@ -194,54 +194,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS打开mxd文件无法显示的问题</title>
-    <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
-    <content><![CDATA[<details class="yellow"><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
-              <div class='content'>
-              <p>如图，将mxd文件托进来之后工作空间仍无图像<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/1.png"
-                      alt="1"
-                ><br>注意看这里，我们可以看到这里有看红色感叹号，此时对图层右键的话很多功能无法正常使用<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/2.png"
-                      alt="2"
-                ><br>把框框里的勾取消再点，会让你选择文件，这里选择对应的shp文件，点击确定<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/3.png"
-                      alt="3"
-                ><br>其他图层也自动定位了，现在可以正常工作了<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/4.png"
-                      alt="4"
-                ></p>
-              </div>
-            </details>
-
-<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>原因 </summary>
-              <div class='content'>
-              <p><strong>数据路径有问题。</strong><br>ArcGIS中的.mxd地图文档文件虽然含有各类图层，但其实际上仅仅包含了对这些图层的引用，而非图层数据本身；图层数据还是存储在其各自的.shp文件或地理数据库中。<br>因此，一旦我们导入一个新的.mxd地图文档文件（例如从其他电脑中拷贝过来的一个.mxd地图文档文件），就可能导致ArcMap软件虽然知道这个.mxd地图文档文件应该包含有哪些图层（即可以显示图层数量与图层名称），但是这些图层的具体数据ArcMap软件没有办法找到（即在图层名称左侧出现红色感叹号）。</p>
-              </div>
-            </details>
-
-<a class="button  regular" href='https://baijiahao.baidu.com/s?id=1746372843012256129' title='更详细的解释与操作'><i class='fa-solid fa-play-circle'></i> 更详细的解释与操作</a>
-
-]]></content>
-      <categories>
-        <category>GIS</category>
-        <category>ArcGIS</category>
-        <category>Problems</category>
-      </categories>
-      <tags>
-        <tag>ArcGIS</tag>
-        <tag>Problems</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>地图投影</title>
     <url>/2023/03/14/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/</url>
     <content><![CDATA[<h2 id="地图投影基本概念介绍"><a href="#地图投影基本概念介绍" class="headerlink" title="地图投影基本概念介绍"></a>地图投影基本概念介绍</h2><h3 id="什么是地图学的数学基础？"><a href="#什么是地图学的数学基础？" class="headerlink" title="什么是地图学的数学基础？"></a>什么是地图学的数学基础？</h3><p>地图的数学基础，是指使地图上各种地理要素与相应的地面景物之间保持一定对应关系的经纬网、坐标网、大地控制点、比例尺等数学要素。</p>
@@ -577,6 +529,54 @@
       </categories>
       <tags>
         <tag>ArcGIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS打开mxd文件无法显示的问题</title>
+    <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
+    <content><![CDATA[<details class="yellow"><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
+              <div class='content'>
+              <p>如图，将mxd文件托进来之后工作空间仍无图像<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/1.png"
+                      alt="1"
+                ><br>注意看这里，我们可以看到这里有看红色感叹号，此时对图层右键的话很多功能无法正常使用<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/2.png"
+                      alt="2"
+                ><br>把框框里的勾取消再点，会让你选择文件，这里选择对应的shp文件，点击确定<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/3.png"
+                      alt="3"
+                ><br>其他图层也自动定位了，现在可以正常工作了<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/4.png"
+                      alt="4"
+                ></p>
+              </div>
+            </details>
+
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>原因 </summary>
+              <div class='content'>
+              <p><strong>数据路径有问题。</strong><br>ArcGIS中的.mxd地图文档文件虽然含有各类图层，但其实际上仅仅包含了对这些图层的引用，而非图层数据本身；图层数据还是存储在其各自的.shp文件或地理数据库中。<br>因此，一旦我们导入一个新的.mxd地图文档文件（例如从其他电脑中拷贝过来的一个.mxd地图文档文件），就可能导致ArcMap软件虽然知道这个.mxd地图文档文件应该包含有哪些图层（即可以显示图层数量与图层名称），但是这些图层的具体数据ArcMap软件没有办法找到（即在图层名称左侧出现红色感叹号）。</p>
+              </div>
+            </details>
+
+<a class="button  regular" href='https://baijiahao.baidu.com/s?id=1746372843012256129' title='更详细的解释与操作'><i class='fa-solid fa-play-circle'></i> 更详细的解释与操作</a>
+
+]]></content>
+      <categories>
+        <category>GIS</category>
+        <category>ArcGIS</category>
+        <category>Problems</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS</tag>
+        <tag>Problems</tag>
       </tags>
   </entry>
   <entry>
