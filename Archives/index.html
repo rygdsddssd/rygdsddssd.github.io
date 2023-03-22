@@ -121,16 +121,30 @@
                         
                             <li class="menu-item">
                                 <!-- Menu -->
-                                <a class="active" 
-                                    href="/archives"  >
+                                <a class="has-dropdown" 
+                                    href="#" onClick="return false;">
                                     
                                         
                                             <i class="fa-regular fa-archive"></i>
                                         
-                                        归档
+                                        归档&nbsp;<i class="fa-solid fa-chevron-down"></i>
                                     
                                 </a>
                                 <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                    
+                                        <li>
+                                        <a href="/archives">归档
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a href="/tags">标签
+                                        </a>
+                                        </li>
+                                    
+                                    </ul>
                                 
                             </li>
                     
@@ -190,17 +204,27 @@
             
                 
                     <li class="drawer-menu-item flex-center">
-                        <a class="active" 
-                        href="/archives"  >
-                             
+                        <a class="has-dropdown" 
+                        href="#" onClick="return false;">
+                            
                                 
                                     <i class="fa-regular fa-archive"></i>
                                 
-                                归档
+                                归档&nbsp;<i class="fa-solid fa-chevron-down"></i>
                             
                         </a>
                     </li>
                     <!-- Submenu -->
+                              
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="/archives">归档</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="/tags">标签</a>
+                            </li>
+                        
                     
             
                 
@@ -242,9 +266,16 @@
         <section class="archive-item">
             <div class="archive-item-header">
                 <span class="archive-year">2023</span>
-                <span class="archive-year-post-count">[7]</span>
+                <span class="archive-year-post-count">[8]</span>
             </div>
             <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2023/03/22/hexo%E5%88%9B%E5%BB%BA%E6%96%B0%E6%96%87%E7%AB%A0/"
+                        >hexo创建新文章</a>
+                        <span class="article-date">03-22</span>
+                    </li>
                 
                     <li class="article-item">
                         <a class="article-title"
@@ -283,7 +314,7 @@
                 
                     <li class="article-item">
                         <a class="article-title"
-                           href="/2023/03/10/first%20Blog/"
+                           href="/2023/03/10/first-Blog/"
                         >博客的部署</a>
                         <span class="article-date">03-10</span>
                     </li>
