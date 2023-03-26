@@ -290,7 +290,7 @@
                         <div class="author">
                             <span class="name">rygdsddssd</span>
                             
-                                <span class="author-label">lol</span>
+                                <span class="author-label">Spirit</span>
                             
                         </div>
                         <div class="meta-info">
@@ -304,8 +304,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-03-22 14:47:04</span>
-            <span class="mobile">2023-03-22 14:47</span>
+            <span class="pc">2023-03-25 23:14:24</span>
+            <span class="mobile">2023-03-25 23:14</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -373,8 +373,6 @@
             <div class="article-content markdown-body">
                 <a class="button  large center" target="_blank" rel="noopener" href='https://blog.csdn.net/qq_45059457/article/details/106438378' title='找到的题目来源'><i class='fa-solid fa-arrow-right'></i> 找到的题目来源</a>
 
-
-
 <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>将下面这样的多个图片拼接到一起 </summary>
               <div class='content'>
               <p><img  
@@ -385,9 +383,6 @@
                 ></p>
               </div>
             </details>
-
-
-
 
 <h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><details class="black"><summary><i class="fa-solid fa-chevron-right"></i>函数 </summary>
               <div class='content'>
@@ -404,12 +399,13 @@
                 ></li></ul><details class="black"><summary><i class="fa-solid fa-chevron-right"></i>计算第4片的右边缘与第7片左边缘的相关系数 </summary>              <div class='content'>              <div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a=double(a);</span><br><span class="line">b=a/<span class="number">255</span>;</span><br><span class="line">x=b(:,<span class="number">72</span>,<span class="number">4</span>);</span><br><span class="line">y=b(:,<span class="number">1</span>,<span class="number">7</span>);</span><br><span class="line">r1=sum((x-<span class="built_in">mean</span>(x)).*(y-<span class="built_in">mean</span>(y)));</span><br><span class="line">r2=<span class="built_in">sqrt</span>(sum((x-<span class="built_in">mean</span>(x)).^<span class="number">2</span>))*<span class="built_in">sqrt</span>(sum((y-<span class="built_in">mean</span>(y)).^<span class="number">2</span>));</span><br><span class="line">r=r1/r2</span><br><span class="line"><span class="comment">%或利用库函数来求样本相关系数</span></span><br><span class="line">rr=corrcoef(x,y)</span><br></pre></td></tr></table></figure></div>              </div>            </details>              </div>            </details>
               </div>
             </details>
+
 <h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p>这里先把图片全读进来（在a里）再二值化放到b里</p>
 <div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">a1=imread(<span class="string">&#x27;c:\Users\22251\Desktop\工程文件\数模\matlab-数据准备\000.bmp&#x27;</span>);</span><br><span class="line">[m,n]=<span class="built_in">size</span>(a1);</span><br><span class="line"></span><br><span class="line">dirname = <span class="string">&#x27;c:\Users\22251\Desktop\工程文件\数模\matlab-数据准备\ImageChips&#x27;</span>;</span><br><span class="line">files = dir(fullfile(dirname,<span class="string">&#x27;*.bmp&#x27;</span>));</span><br><span class="line">a=<span class="built_in">zeros</span>(m,n,<span class="number">19</span>);</span><br><span class="line">pic=[];</span><br><span class="line"><span class="keyword">for</span> f_n = <span class="number">1</span>:<span class="built_in">length</span>(files)</span><br><span class="line">    filename = fullfile(dirname,files(f_n).name);</span><br><span class="line">    a(:,:,f_n)=imread(filename);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%二值化</span></span><br><span class="line">a=double(a);</span><br><span class="line">b=a/<span class="number">255</span>;</span><br></pre></td></tr></table></figure></div>
 
 <p>这里是构建rrs数组<br>本来我是准备用笨方法，类似于排序算法那种，疯狂的写flag值每一轮判断相关性一直要一直记住最大相关性的index与值，凭借之后进行下一轮比较。<br>想想都觉得非常麻烦啊，简化一下，创建一个数组变量<strong>arr[index，value]</strong>,第i轮直接比较 <strong>arr[i，value]</strong> 放进去。  </p>
 <p>我的方法类似于数据结构中的有向图，我直接创建一个二维数组<strong>rr[,]</strong> ，<strong>rrs[i,j]</strong> 是i的最右列与j的最左列的相关性。<br>这样的话for循环就非常好写，最后直接遍历找相似的拼接就可以了</p>
-<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">rrs=<span class="built_in">zeros</span>(<span class="number">19</span>,<span class="number">19</span>)</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">i</span>==<span class="built_in">j</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        x=b(:,<span class="number">72</span>,<span class="built_in">i</span>);</span><br><span class="line">        y=b(:,<span class="number">1</span>,<span class="built_in">j</span>);</span><br><span class="line">        r1=sum((x-<span class="built_in">mean</span>(x)).*(y-<span class="built_in">mean</span>(y)));</span><br><span class="line">        r2=<span class="built_in">sqrt</span>(sum((x-<span class="built_in">mean</span>(x)).^<span class="number">2</span>))*<span class="built_in">sqrt</span>(sum((y-<span class="built_in">mean</span>(y)).^<span class="number">2</span>));</span><br><span class="line">        rrs(<span class="built_in">i</span>,<span class="built_in">j</span>)=r1/r2;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">rrs=<span class="built_in">zeros</span>(<span class="number">19</span>,<span class="number">19</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">i</span>==<span class="built_in">j</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        x=b(:,<span class="number">72</span>,<span class="built_in">i</span>);</span><br><span class="line">        y=b(:,<span class="number">1</span>,<span class="built_in">j</span>);</span><br><span class="line">        r1=sum((x-<span class="built_in">mean</span>(x)).*(y-<span class="built_in">mean</span>(y)));</span><br><span class="line">        r2=<span class="built_in">sqrt</span>(sum((x-<span class="built_in">mean</span>(x)).^<span class="number">2</span>))*<span class="built_in">sqrt</span>(sum((y-<span class="built_in">mean</span>(y)).^<span class="number">2</span>));</span><br><span class="line">        rrs(<span class="built_in">i</span>,<span class="built_in">j</span>)=r1/r2;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></div>
 <p>一开始我是直接写flag_index&#x3D;1就准备开始遍历图进行拼接了，然后想到第一张图实际上不一定就是最左侧的。<br>看了一下我的rrs<br><img  
                      lazyload
                      src="/images/loading.svg"

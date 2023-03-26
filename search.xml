@@ -35,6 +35,54 @@
       </tags>
   </entry>
   <entry>
+    <title>LINGO软件的初步使用及解读</title>
+    <url>/2023/03/26/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/</url>
+    <content><![CDATA[<p>早上八点上到中午十一点半，休息了5分钟，我要死了。</p>
+<h2 id="例子：牛奶生产"><a href="#例子：牛奶生产" class="headerlink" title="例子：牛奶生产"></a>例子：牛奶生产</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/problem1.png"
+                      alt="problem1"
+                ><br>答案代码对照着一看就知道了<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/answer1.png"
+                      alt="answer1"
+                ></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">max=72*x1+64*x2;</span><br><span class="line">x1+x2&lt;50;</span><br><span class="line">12*x1+8*x2&lt;480+5;</span><br><span class="line">3*x1&lt;100;</span><br><span class="line">@GIN(x1);</span><br><span class="line">@gin(x2);</span><br></pre></td></tr></table></figure></div>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/%E4%BB%8B%E7%BB%8D.png"
+                      alt="介绍"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/answer2.png"
+                      alt="answer2"
+                ></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>代码窗口内容解读 </summary>
+              <div class='content'>
+              <h3 id="Global-optimal-solution-found"><a href="#Global-optimal-solution-found" class="headerlink" title="Global optimal solution found"></a>Global optimal solution found</h3><p>表示全局最优解找到</p><h3 id="Objective-value"><a href="#Objective-value" class="headerlink" title="Objective value"></a>Objective value</h3><p>表示最优目标值</p><h3 id="Total-solver-iterations"><a href="#Total-solver-iterations" class="headerlink" title="Total solver iterations"></a>Total solver iterations</h3><p>表示用单纯行法进行了两次迭代</p><h3 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h3><p>表示变量，运行结果中有两个变量为x1,x2</p><h3 id="Value"><a href="#Value" class="headerlink" title="Value"></a>Value</h3><p>给出最优解中个变量的值</p><h3 id="Reduced-Cost"><a href="#Reduced-Cost" class="headerlink" title="Reduced Cost"></a>Reduced Cost</h3><p>与最优单纯形表中的检验数相差一个符号的数。<br>为了使某个变量在解中的数值增加一个单位，目标函数必须付出的代价（增加或减少Reduced Cost的值）</p><h3 id="Slack-or-Surplus"><a href="#Slack-or-Surplus" class="headerlink" title="Slack or Surplus"></a>Slack or Surplus</h3><p>表示接近等于的程度<br>在约束条件中是&lt;&#x3D;,叫做松弛变量<br>在约束条件中是&gt;&#x3D;,叫做过剩变量<br>在约束条件中是&#x3D;,值为0,该约束为一个紧约束（或有效约束）<br>如果一个约束条件错误，作为一个不可行约束，Slack or Surplus为负数<br>Slack or Surplus表示的是：约束离相等还差多少  </p><h3 id="Dual-Price"><a href="#Dual-Price" class="headerlink" title="Dual Price"></a>Dual Price</h3><p>给出对偶价格的值<br>表示每增一个单位（约束右边的常数），目标值改变的数量（在最大化问题中目标函数是增加的，反之是减小的）<br>例如在本例中，c约束条件的Dual Price为1，表示2x1+x2&lt;&#x3D;600增加一个单位到2x1+x2&lt;&#x3D;601使目标值增加到-1(目标函数的Dual Price为-1)，则Objective value就变为799<br>对偶价格也叫影子价格，这是由于他们表示可以用多大的价格去购买单位资源  </p><div class="note-large notel-blue"><div class="notel-title"><p>提示</p></div><div class="notel-content"><p>其实也就是求导</p> </div></div>
+              </div>
+            </details></h2><h2 id="选址问题"><a href="#选址问题" class="headerlink" title="选址问题"></a>选址问题</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/problem2.jpg"
+                      alt="problem2"
+                ></p>
+<a class="button  center large" href='https://blog.csdn.net/denghls/article/details/126632426' title='保姆级教程'><i class='fa-solid fa-arrow-right'></i> 保姆级教程</a>
+
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">model:</span><br><span class="line"> </span><br><span class="line">!创建矩阵;</span><br><span class="line">sets:</span><br><span class="line">liaochang/1..2/:x1,y1;</span><br><span class="line">gongdi/1..6/:a,b,d;</span><br><span class="line">zuobiao(gongdi,liaochang):x;</span><br><span class="line">endsets</span><br><span class="line"> </span><br><span class="line">!输入数据;</span><br><span class="line">data:</span><br><span class="line">a=1.25,8.75,0.5,5.75,3,7.25;</span><br><span class="line">b=1.25,0.75,4.75,5,6.5,7.25;</span><br><span class="line">d=3,5,4,7,6,11;</span><br><span class="line">enddata</span><br><span class="line"> </span><br><span class="line">!列出目标函数及表达式;</span><br><span class="line">min = @sum(zuobiao(i,j):x(i,j)*@sqrt((a(i)-x1(j))^2+(b(i)-y1(j))^2));</span><br><span class="line">@for(gongdi(i):@sum(liaochang(j):x(i,j))=d(i));</span><br><span class="line">@for(liaochang(j):@sum(gongdi(i):x(i,j))&lt;=20);</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>Tips</category>
+      </categories>
+      <tags>
+        <tag>LINGO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客的部署</title>
     <url>/2023/03/10/first-Blog/</url>
     <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>我基本一直跟着这个教程走的，非常的详细非常的优质！</p>
@@ -82,11 +130,57 @@
 ]]></content>
   </entry>
   <entry>
+    <title>ArcGIS打开mxd文件无法显示的问题</title>
+    <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
+    <content><![CDATA[<details class="yellow"><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
+              <div class='content'>
+              <p>如图，将mxd文件托进来之后工作空间仍无图像<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/1.png"
+                      alt="1"
+                ><br>注意看这里，我们可以看到这里有看红色感叹号，此时对图层右键的话很多功能无法正常使用<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/2.png"
+                      alt="2"
+                ><br>把框框里的勾取消再点，会让你选择文件，这里选择对应的shp文件，点击确定<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/3.png"
+                      alt="3"
+                ><br>其他图层也自动定位了，现在可以正常工作了<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/4.png"
+                      alt="4"
+                ></p>
+              </div>
+            </details>
+
+<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>原因 </summary>
+              <div class='content'>
+              <p><strong>数据路径有问题。</strong><br>ArcGIS中的.mxd地图文档文件虽然含有各类图层，但其实际上仅仅包含了对这些图层的引用，而非图层数据本身；图层数据还是存储在其各自的.shp文件或地理数据库中。<br>因此，一旦我们导入一个新的.mxd地图文档文件（例如从其他电脑中拷贝过来的一个.mxd地图文档文件），就可能导致ArcMap软件虽然知道这个.mxd地图文档文件应该包含有哪些图层（即可以显示图层数量与图层名称），但是这些图层的具体数据ArcMap软件没有办法找到（即在图层名称左侧出现红色感叹号）。</p>
+              </div>
+            </details>
+
+<a class="button  regular" href='https://baijiahao.baidu.com/s?id=1746372843012256129' title='更详细的解释与操作'><i class='fa-solid fa-play-circle'></i> 更详细的解释与操作</a>
+
+]]></content>
+      <categories>
+        <category>GIS</category>
+        <category>ArcGIS</category>
+        <category>Problems</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS</tag>
+        <tag>Problems</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MATLAB拼接图片</title>
     <url>/2023/03/20/matlab%E6%8B%BC%E6%8E%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<a class="button  large center" href='https://blog.csdn.net/qq_45059457/article/details/106438378' title='找到的题目来源'><i class='fa-solid fa-arrow-right'></i> 找到的题目来源</a>
-
-
 
 <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>将下面这样的多个图片拼接到一起 </summary>
               <div class='content'>
@@ -98,9 +192,6 @@
                 ></p>
               </div>
             </details>
-
-
-
 
 <h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><details class="black"><summary><i class="fa-solid fa-chevron-right"></i>函数 </summary>
               <div class='content'>
@@ -117,12 +208,13 @@
                 ></li></ul><details class="black"><summary><i class="fa-solid fa-chevron-right"></i>计算第4片的右边缘与第7片左边缘的相关系数 </summary>              <div class='content'>              <div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">a=double(a);</span><br><span class="line">b=a/<span class="number">255</span>;</span><br><span class="line">x=b(:,<span class="number">72</span>,<span class="number">4</span>);</span><br><span class="line">y=b(:,<span class="number">1</span>,<span class="number">7</span>);</span><br><span class="line">r1=sum((x-<span class="built_in">mean</span>(x)).*(y-<span class="built_in">mean</span>(y)));</span><br><span class="line">r2=<span class="built_in">sqrt</span>(sum((x-<span class="built_in">mean</span>(x)).^<span class="number">2</span>))*<span class="built_in">sqrt</span>(sum((y-<span class="built_in">mean</span>(y)).^<span class="number">2</span>));</span><br><span class="line">r=r1/r2</span><br><span class="line"><span class="comment">%或利用库函数来求样本相关系数</span></span><br><span class="line">rr=corrcoef(x,y)</span><br></pre></td></tr></table></figure></div>              </div>            </details>              </div>            </details>
               </div>
             </details>
+
 <h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p>这里先把图片全读进来（在a里）再二值化放到b里</p>
 <div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">a1=imread(<span class="string">&#x27;c:\Users\22251\Desktop\工程文件\数模\matlab-数据准备\000.bmp&#x27;</span>);</span><br><span class="line">[m,n]=<span class="built_in">size</span>(a1);</span><br><span class="line"></span><br><span class="line">dirname = <span class="string">&#x27;c:\Users\22251\Desktop\工程文件\数模\matlab-数据准备\ImageChips&#x27;</span>;</span><br><span class="line">files = dir(fullfile(dirname,<span class="string">&#x27;*.bmp&#x27;</span>));</span><br><span class="line">a=<span class="built_in">zeros</span>(m,n,<span class="number">19</span>);</span><br><span class="line">pic=[];</span><br><span class="line"><span class="keyword">for</span> f_n = <span class="number">1</span>:<span class="built_in">length</span>(files)</span><br><span class="line">    filename = fullfile(dirname,files(f_n).name);</span><br><span class="line">    a(:,:,f_n)=imread(filename);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%二值化</span></span><br><span class="line">a=double(a);</span><br><span class="line">b=a/<span class="number">255</span>;</span><br></pre></td></tr></table></figure></div>
 
 <p>这里是构建rrs数组<br>本来我是准备用笨方法，类似于排序算法那种，疯狂的写flag值每一轮判断相关性一直要一直记住最大相关性的index与值，凭借之后进行下一轮比较。<br>想想都觉得非常麻烦啊，简化一下，创建一个数组变量<strong>arr[index，value]</strong>,第i轮直接比较 <strong>arr[i，value]</strong> 放进去。  </p>
 <p>我的方法类似于数据结构中的有向图，我直接创建一个二维数组<strong>rr[,]</strong> ，<strong>rrs[i,j]</strong> 是i的最右列与j的最左列的相关性。<br>这样的话for循环就非常好写，最后直接遍历找相似的拼接就可以了</p>
-<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">rrs=<span class="built_in">zeros</span>(<span class="number">19</span>,<span class="number">19</span>)</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">i</span>==<span class="built_in">j</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        x=b(:,<span class="number">72</span>,<span class="built_in">i</span>);</span><br><span class="line">        y=b(:,<span class="number">1</span>,<span class="built_in">j</span>);</span><br><span class="line">        r1=sum((x-<span class="built_in">mean</span>(x)).*(y-<span class="built_in">mean</span>(y)));</span><br><span class="line">        r2=<span class="built_in">sqrt</span>(sum((x-<span class="built_in">mean</span>(x)).^<span class="number">2</span>))*<span class="built_in">sqrt</span>(sum((y-<span class="built_in">mean</span>(y)).^<span class="number">2</span>));</span><br><span class="line">        rrs(<span class="built_in">i</span>,<span class="built_in">j</span>)=r1/r2;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">rrs=<span class="built_in">zeros</span>(<span class="number">19</span>,<span class="number">19</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:<span class="number">19</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">i</span>==<span class="built_in">j</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        x=b(:,<span class="number">72</span>,<span class="built_in">i</span>);</span><br><span class="line">        y=b(:,<span class="number">1</span>,<span class="built_in">j</span>);</span><br><span class="line">        r1=sum((x-<span class="built_in">mean</span>(x)).*(y-<span class="built_in">mean</span>(y)));</span><br><span class="line">        r2=<span class="built_in">sqrt</span>(sum((x-<span class="built_in">mean</span>(x)).^<span class="number">2</span>))*<span class="built_in">sqrt</span>(sum((y-<span class="built_in">mean</span>(y)).^<span class="number">2</span>));</span><br><span class="line">        rrs(<span class="built_in">i</span>,<span class="built_in">j</span>)=r1/r2;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></div>
 <p>一开始我是直接写flag_index&#x3D;1就准备开始遍历图进行拼接了，然后想到第一张图实际上不一定就是最左侧的。<br>看了一下我的rrs<br><img  
                      lazyload
                      src="/images/loading.svg"
@@ -194,51 +286,46 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS打开mxd文件无法显示的问题</title>
-    <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
-    <content><![CDATA[<details class="yellow"><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
-              <div class='content'>
-              <p>如图，将mxd文件托进来之后工作空间仍无图像<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/1.png"
-                      alt="1"
-                ><br>注意看这里，我们可以看到这里有看红色感叹号，此时对图层右键的话很多功能无法正常使用<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/2.png"
-                      alt="2"
-                ><br>把框框里的勾取消再点，会让你选择文件，这里选择对应的shp文件，点击确定<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/3.png"
-                      alt="3"
-                ><br>其他图层也自动定位了，现在可以正常工作了<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/4.png"
-                      alt="4"
-                ></p>
-              </div>
-            </details>
+    <title>spring学习(一)</title>
+    <url>/2023/03/25/spring%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</url>
+    <content><![CDATA[<h1 id="spring的概述"><a href="#spring的概述" class="headerlink" title="spring的概述"></a>spring的概述</h1><a class="button  regular" href='https://zhuanlan.zhihu.com/p/392443841' title='spring的概述'><i class='fa-solid fa-arrow-right'></i> spring的概述</a>
 
-<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>原因 </summary>
-              <div class='content'>
-              <p><strong>数据路径有问题。</strong><br>ArcGIS中的.mxd地图文档文件虽然含有各类图层，但其实际上仅仅包含了对这些图层的引用，而非图层数据本身；图层数据还是存储在其各自的.shp文件或地理数据库中。<br>因此，一旦我们导入一个新的.mxd地图文档文件（例如从其他电脑中拷贝过来的一个.mxd地图文档文件），就可能导致ArcMap软件虽然知道这个.mxd地图文档文件应该包含有哪些图层（即可以显示图层数量与图层名称），但是这些图层的具体数据ArcMap软件没有办法找到（即在图层名称左侧出现红色感叹号）。</p>
-              </div>
-            </details>
-
-<a class="button  regular" href='https://baijiahao.baidu.com/s?id=1746372843012256129' title='更详细的解释与操作'><i class='fa-solid fa-play-circle'></i> 更详细的解释与操作</a>
-
-]]></content>
+<p>简单点说就是框架</p>
+<h2 id="spring是什么"><a href="#spring是什么" class="headerlink" title="spring是什么"></a>spring是什么</h2><h2 id="spring的两大核心"><a href="#spring的两大核心" class="headerlink" title="spring的两大核心"></a>spring的两大核心</h2><ul>
+<li>面向方面编程(AOP)</li>
+<li>控制反转(IOC)容器</li>
+</ul>
+<h2 id="spring的发展历程和优势"><a href="#spring的发展历程和优势" class="headerlink" title="spring的发展历程和优势"></a>spring的发展历程和优势</h2><h2 id="spring体系结构"><a href="#spring体系结构" class="headerlink" title="spring体系结构"></a>spring体系结构</h2><h1 id="程序的耦合及解耦"><a href="#程序的耦合及解耦" class="headerlink" title="程序的耦合及解耦"></a>程序的耦合及解耦</h1><h2 id="曾经案例中问题"><a href="#曾经案例中问题" class="headerlink" title="曾经案例中问题"></a>曾经案例中问题</h2><h2 id="工厂模式解耦"><a href="#工厂模式解耦" class="headerlink" title="工厂模式解耦"></a>工厂模式解耦</h2><h1 id="IOC概念和spring中的IOC"><a href="#IOC概念和spring中的IOC" class="headerlink" title="IOC概念和spring中的IOC"></a>IOC概念和spring中的IOC</h1><h2 id="spring中基于XML的IOC环境搭建"><a href="#spring中基于XML的IOC环境搭建" class="headerlink" title="spring中基于XML的IOC环境搭建"></a>spring中基于XML的IOC环境搭建</h2><h1 id="依赖注入-DI——Dependency-Injection"><a href="#依赖注入-DI——Dependency-Injection" class="headerlink" title="依赖注入(DI——Dependency Injection)"></a>依赖注入(DI——Dependency Injection)</h1><p>由容器动态的将某个依赖关系注入到组件之中。</p>
+<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1>]]></content>
       <categories>
-        <category>GIS</category>
-        <category>ArcGIS</category>
-        <category>Problems</category>
+        <category>java</category>
+        <category>spring</category>
       </categories>
       <tags>
-        <tag>ArcGIS</tag>
-        <tag>Problems</tag>
+        <tag>learn</tag>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关闭windows自动更新</title>
+    <url>/2023/03/26/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/</url>
+    <content><![CDATA[<a class="button  large center" href='https://www.abackup.com/easybackup-tutorials/how-to-stop-windows-10-update-automatically-666.html' title='关闭Windows自动更新的6个方法'><i class='fa-solid fa-arrow-right'></i> 关闭Windows自动更新的6个方法</a>
+
+
+
+<p>我这里使用第二种方法，结果发现报错<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/error.png"
+                      alt="Error"
+                ></p>
+<p>网上查询发现是因为Windows系统版本是家庭版，不具备这个功能</p>
+<a class="button  large center" href='https://zhuanlan.zhihu.com/p/403961135' title='找不到 gpedit.msc 的最优解决办法'><i class='fa-solid fa-arrow-right'></i> 找不到 gpedit.msc 的最优解决办法</a>]]></content>
+      <categories>
+        <category>Tips</category>
+      </categories>
+      <tags>
+        <tag>Tips</tag>
       </tags>
   </entry>
   <entry>
@@ -570,7 +657,14 @@
               <div class='content'>
               <ul><li>理解常见投影的数学原理</li><li>掌握投影计算方法各种各待定参数的确定方法</li><li>了解高斯-克吕格投影的计算机程序实现方法</li><li>了解Lambert投影的计算机程序实现方法</li><li>了解地图投影的数值变换的计算机程序实现方法</li></ul>
               </div>
-            </details></h3><h3 id="编程环境配置"><a href="#编程环境配置" class="headerlink" title="编程环境配置"></a>编程环境配置</h3><h3 id="高斯-克吕格投影公式"><a href="#高斯-克吕格投影公式" class="headerlink" title="高斯-克吕格投影公式"></a>高斯-克吕格投影公式</h3><h3 id="高斯-克吕格投影计算核心代码"><a href="#高斯-克吕格投影计算核心代码" class="headerlink" title="高斯-克吕格投影计算核心代码"></a>高斯-克吕格投影计算核心代码</h3><h3 id="Lambert投影计算公式"><a href="#Lambert投影计算公式" class="headerlink" title="Lambert投影计算公式"></a>Lambert投影计算公式</h3><h3 id="地图投影的数值变换计算公式"><a href="#地图投影的数值变换计算公式" class="headerlink" title="地图投影的数值变换计算公式"></a>地图投影的数值变换计算公式</h3><h3 id="程序结构说明"><a href="#程序结构说明" class="headerlink" title="程序结构说明"></a>程序结构说明</h3><h3 id="投影计算程序测试"><a href="#投影计算程序测试" class="headerlink" title="投影计算程序测试"></a>投影计算程序测试</h3>]]></content>
+            </details></h3><h3 id="编程环境配置"><a href="#编程环境配置" class="headerlink" title="编程环境配置"></a>编程环境配置</h3><hr>
+<h2 id="本章所采用的实习地图数据均来源于“全国地理信息资源目录服务系统”（https-www-webmap-cn-main-do-method-index）数据格式为Shapefile，示例程序采用的编程语言为Python-3，-因此实验中需要采用Python第三方开源库GDAL（https-gdal-org-）对实习中地图数据进行读写。同时也用到了Numpy、Scipy，进行各种数学计算。"><a href="#本章所采用的实习地图数据均来源于“全国地理信息资源目录服务系统”（https-www-webmap-cn-main-do-method-index）数据格式为Shapefile，示例程序采用的编程语言为Python-3，-因此实验中需要采用Python第三方开源库GDAL（https-gdal-org-）对实习中地图数据进行读写。同时也用到了Numpy、Scipy，进行各种数学计算。" class="headerlink" title="本章所采用的实习地图数据均来源于“全国地理信息资源目录服务系统”（https://www.webmap.cn/main.do?method=index）数据格式为Shapefile，示例程序采用的编程语言为Python 3， 因此实验中需要采用Python第三方开源库GDAL（https://gdal.org/）对实习中地图数据进行读写。同时也用到了Numpy、Scipy，进行各种数学计算。"></a>本章所采用的实习地图数据均来源于“全国地理信息资源目录服务系统”（<a class="link"   href="https://www.webmap.cn/main.do?method=index%EF%BC%89%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E4%B8%BAShapefile%EF%BC%8C%E7%A4%BA%E4%BE%8B%E7%A8%8B%E5%BA%8F%E9%87%87%E7%94%A8%E7%9A%84%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%B8%BAPython" >https://www.webmap.cn/main.do?method=index）数据格式为Shapefile，示例程序采用的编程语言为Python <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 3， 因此实验中需要采用Python第三方开源库GDAL（<a class="link"   href="https://gdal.org/%EF%BC%89%E5%AF%B9%E5%AE%9E%E4%B9%A0%E4%B8%AD%E5%9C%B0%E5%9B%BE%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E8%AF%BB%E5%86%99%E3%80%82%E5%90%8C%E6%97%B6%E4%B9%9F%E7%94%A8%E5%88%B0%E4%BA%86Numpy%E3%80%81Scipy%EF%BC%8C%E8%BF%9B%E8%A1%8C%E5%90%84%E7%A7%8D%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E3%80%82" >https://gdal.org/）对实习中地图数据进行读写。同时也用到了Numpy、Scipy，进行各种数学计算。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><a class="button  regular" href='https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal' title='GDAL本地安装包的下载路径：'><i class='fa-solid fa-download'></i> GDAL本地安装包的下载路径：</a>
+<p>需要根据自己python的版本和操作系统环境下载对应的版本</p>
+<p>安装命令：</p>
+<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> [GDAL whl文件所在目录]</span><br><span class="line">pip install GDAL-<span class="number">3</span>.<span class="number">4</span>.<span class="number">1</span>-cp37-cp37m-win_amd64.whl</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="高斯-克吕格投影公式"><a href="#高斯-克吕格投影公式" class="headerlink" title="高斯-克吕格投影公式"></a>高斯-克吕格投影公式</h3><h3 id="高斯-克吕格投影计算核心代码"><a href="#高斯-克吕格投影计算核心代码" class="headerlink" title="高斯-克吕格投影计算核心代码"></a>高斯-克吕格投影计算核心代码</h3><h3 id="Lambert投影计算公式"><a href="#Lambert投影计算公式" class="headerlink" title="Lambert投影计算公式"></a>Lambert投影计算公式</h3><h3 id="地图投影的数值变换计算公式"><a href="#地图投影的数值变换计算公式" class="headerlink" title="地图投影的数值变换计算公式"></a>地图投影的数值变换计算公式</h3><h3 id="程序结构说明"><a href="#程序结构说明" class="headerlink" title="程序结构说明"></a>程序结构说明</h3><h3 id="投影计算程序测试"><a href="#投影计算程序测试" class="headerlink" title="投影计算程序测试"></a>投影计算程序测试</h3><h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p><a class="link"   href="https://max.book118.com/html/2017/0428/102896080.shtm" >https://max.book118.com/html/2017/0428/102896080.shtm <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
       <categories>
         <category>GIS</category>
         <category>ArcGIS</category>

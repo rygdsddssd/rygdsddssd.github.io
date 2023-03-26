@@ -290,7 +290,7 @@
                         <div class="author">
                             <span class="name">rygdsddssd</span>
                             
-                                <span class="author-label">lol</span>
+                                <span class="author-label">Spirit</span>
                             
                         </div>
                         <div class="meta-info">
@@ -304,8 +304,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-03-22 14:08:03</span>
-            <span class="mobile">2023-03-22 14:08</span>
+            <span class="pc">2023-03-25 23:14:33</span>
+            <span class="mobile">2023-03-25 23:14</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -342,12 +342,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>3.4k 字</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>3.6k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>11 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>12 分钟</span>
         </span>
     
     
@@ -689,7 +689,14 @@
               <div class='content'>
               <ul><li>理解常见投影的数学原理</li><li>掌握投影计算方法各种各待定参数的确定方法</li><li>了解高斯-克吕格投影的计算机程序实现方法</li><li>了解Lambert投影的计算机程序实现方法</li><li>了解地图投影的数值变换的计算机程序实现方法</li></ul>
               </div>
-            </details></h3><h3 id="编程环境配置"><a href="#编程环境配置" class="headerlink" title="编程环境配置"></a>编程环境配置</h3><h3 id="高斯-克吕格投影公式"><a href="#高斯-克吕格投影公式" class="headerlink" title="高斯-克吕格投影公式"></a>高斯-克吕格投影公式</h3><h3 id="高斯-克吕格投影计算核心代码"><a href="#高斯-克吕格投影计算核心代码" class="headerlink" title="高斯-克吕格投影计算核心代码"></a>高斯-克吕格投影计算核心代码</h3><h3 id="Lambert投影计算公式"><a href="#Lambert投影计算公式" class="headerlink" title="Lambert投影计算公式"></a>Lambert投影计算公式</h3><h3 id="地图投影的数值变换计算公式"><a href="#地图投影的数值变换计算公式" class="headerlink" title="地图投影的数值变换计算公式"></a>地图投影的数值变换计算公式</h3><h3 id="程序结构说明"><a href="#程序结构说明" class="headerlink" title="程序结构说明"></a>程序结构说明</h3><h3 id="投影计算程序测试"><a href="#投影计算程序测试" class="headerlink" title="投影计算程序测试"></a>投影计算程序测试</h3>
+            </details></h3><h3 id="编程环境配置"><a href="#编程环境配置" class="headerlink" title="编程环境配置"></a>编程环境配置</h3><hr>
+<h2 id="本章所采用的实习地图数据均来源于“全国地理信息资源目录服务系统”（https-www-webmap-cn-main-do-method-index）数据格式为Shapefile，示例程序采用的编程语言为Python-3，-因此实验中需要采用Python第三方开源库GDAL（https-gdal-org-）对实习中地图数据进行读写。同时也用到了Numpy、Scipy，进行各种数学计算。"><a href="#本章所采用的实习地图数据均来源于“全国地理信息资源目录服务系统”（https-www-webmap-cn-main-do-method-index）数据格式为Shapefile，示例程序采用的编程语言为Python-3，-因此实验中需要采用Python第三方开源库GDAL（https-gdal-org-）对实习中地图数据进行读写。同时也用到了Numpy、Scipy，进行各种数学计算。" class="headerlink" title="本章所采用的实习地图数据均来源于“全国地理信息资源目录服务系统”（https://www.webmap.cn/main.do?method=index）数据格式为Shapefile，示例程序采用的编程语言为Python 3， 因此实验中需要采用Python第三方开源库GDAL（https://gdal.org/）对实习中地图数据进行读写。同时也用到了Numpy、Scipy，进行各种数学计算。"></a>本章所采用的实习地图数据均来源于“全国地理信息资源目录服务系统”（<a class="link"   target="_blank" rel="noopener" href="https://www.webmap.cn/main.do?method=index%EF%BC%89%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E4%B8%BAShapefile%EF%BC%8C%E7%A4%BA%E4%BE%8B%E7%A8%8B%E5%BA%8F%E9%87%87%E7%94%A8%E7%9A%84%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%B8%BAPython" >https://www.webmap.cn/main.do?method=index）数据格式为Shapefile，示例程序采用的编程语言为Python <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 3， 因此实验中需要采用Python第三方开源库GDAL（<a class="link"   target="_blank" rel="noopener" href="https://gdal.org/%EF%BC%89%E5%AF%B9%E5%AE%9E%E4%B9%A0%E4%B8%AD%E5%9C%B0%E5%9B%BE%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E8%AF%BB%E5%86%99%E3%80%82%E5%90%8C%E6%97%B6%E4%B9%9F%E7%94%A8%E5%88%B0%E4%BA%86Numpy%E3%80%81Scipy%EF%BC%8C%E8%BF%9B%E8%A1%8C%E5%90%84%E7%A7%8D%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E3%80%82" >https://gdal.org/）对实习中地图数据进行读写。同时也用到了Numpy、Scipy，进行各种数学计算。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><a class="button  regular" target="_blank" rel="noopener" href='https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal' title='GDAL本地安装包的下载路径：'><i class='fa-solid fa-download'></i> GDAL本地安装包的下载路径：</a>
+<p>需要根据自己python的版本和操作系统环境下载对应的版本</p>
+<p>安装命令：</p>
+<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> [GDAL whl文件所在目录]</span><br><span class="line">pip install GDAL-<span class="number">3</span>.<span class="number">4</span>.<span class="number">1</span>-cp37-cp37m-win_amd64.whl</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="高斯-克吕格投影公式"><a href="#高斯-克吕格投影公式" class="headerlink" title="高斯-克吕格投影公式"></a>高斯-克吕格投影公式</h3><h3 id="高斯-克吕格投影计算核心代码"><a href="#高斯-克吕格投影计算核心代码" class="headerlink" title="高斯-克吕格投影计算核心代码"></a>高斯-克吕格投影计算核心代码</h3><h3 id="Lambert投影计算公式"><a href="#Lambert投影计算公式" class="headerlink" title="Lambert投影计算公式"></a>Lambert投影计算公式</h3><h3 id="地图投影的数值变换计算公式"><a href="#地图投影的数值变换计算公式" class="headerlink" title="地图投影的数值变换计算公式"></a>地图投影的数值变换计算公式</h3><h3 id="程序结构说明"><a href="#程序结构说明" class="headerlink" title="程序结构说明"></a>程序结构说明</h3><h3 id="投影计算程序测试"><a href="#投影计算程序测试" class="headerlink" title="投影计算程序测试"></a>投影计算程序测试</h3><h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p><a class="link"   target="_blank" rel="noopener" href="https://max.book118.com/html/2017/0428/102896080.shtm" >https://max.book118.com/html/2017/0428/102896080.shtm <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+
             </div>
 
             
@@ -826,7 +833,7 @@
               
               理解常见投影的数学原理掌握投影计算方法各种各待定参数的确定方法了解高斯-克吕格投影的计算机程序实现方法了解Lambert投影的计算机程序实现方法了解地图投影的数值变换的计算机程序实现方法
               
-            </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">4.2.</span> <span class="nav-text">编程环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E6%96%AF-%E5%85%8B%E5%90%95%E6%A0%BC%E6%8A%95%E5%BD%B1%E5%85%AC%E5%BC%8F"><span class="nav-number">4.3.</span> <span class="nav-text">高斯-克吕格投影公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E6%96%AF-%E5%85%8B%E5%90%95%E6%A0%BC%E6%8A%95%E5%BD%B1%E8%AE%A1%E7%AE%97%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81"><span class="nav-number">4.4.</span> <span class="nav-text">高斯-克吕格投影计算核心代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lambert%E6%8A%95%E5%BD%B1%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="nav-number">4.5.</span> <span class="nav-text">Lambert投影计算公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1%E7%9A%84%E6%95%B0%E5%80%BC%E5%8F%98%E6%8D%A2%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="nav-number">4.6.</span> <span class="nav-text">地图投影的数值变换计算公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E8%AF%B4%E6%98%8E"><span class="nav-number">4.7.</span> <span class="nav-text">程序结构说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%95%E5%BD%B1%E8%AE%A1%E7%AE%97%E7%A8%8B%E5%BA%8F%E6%B5%8B%E8%AF%95"><span class="nav-number">4.8.</span> <span class="nav-text">投影计算程序测试</span></a></li></ol></li></ol>
+            </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">4.2.</span> <span class="nav-text">编程环境配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E7%AB%A0%E6%89%80%E9%87%87%E7%94%A8%E7%9A%84%E5%AE%9E%E4%B9%A0%E5%9C%B0%E5%9B%BE%E6%95%B0%E6%8D%AE%E5%9D%87%E6%9D%A5%E6%BA%90%E4%BA%8E%E2%80%9C%E5%85%A8%E5%9B%BD%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F%E2%80%9D%EF%BC%88https-www-webmap-cn-main-do-method-index%EF%BC%89%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E4%B8%BAShapefile%EF%BC%8C%E7%A4%BA%E4%BE%8B%E7%A8%8B%E5%BA%8F%E9%87%87%E7%94%A8%E7%9A%84%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%B8%BAPython-3%EF%BC%8C-%E5%9B%A0%E6%AD%A4%E5%AE%9E%E9%AA%8C%E4%B8%AD%E9%9C%80%E8%A6%81%E9%87%87%E7%94%A8Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%BA%93GDAL%EF%BC%88https-gdal-org-%EF%BC%89%E5%AF%B9%E5%AE%9E%E4%B9%A0%E4%B8%AD%E5%9C%B0%E5%9B%BE%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E8%AF%BB%E5%86%99%E3%80%82%E5%90%8C%E6%97%B6%E4%B9%9F%E7%94%A8%E5%88%B0%E4%BA%86Numpy%E3%80%81Scipy%EF%BC%8C%E8%BF%9B%E8%A1%8C%E5%90%84%E7%A7%8D%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E3%80%82"><span class="nav-number">5.</span> <span class="nav-text">本章所采用的实习地图数据均来源于“全国地理信息资源目录服务系统”（https:&#x2F;&#x2F;www.webmap.cn&#x2F;main.do?method&#x3D;index）数据格式为Shapefile，示例程序采用的编程语言为Python  3， 因此实验中需要采用Python第三方开源库GDAL（https:&#x2F;&#x2F;gdal.org&#x2F;）对实习中地图数据进行读写。同时也用到了Numpy、Scipy，进行各种数学计算。 </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E6%96%AF-%E5%85%8B%E5%90%95%E6%A0%BC%E6%8A%95%E5%BD%B1%E5%85%AC%E5%BC%8F"><span class="nav-number">5.1.</span> <span class="nav-text">高斯-克吕格投影公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E6%96%AF-%E5%85%8B%E5%90%95%E6%A0%BC%E6%8A%95%E5%BD%B1%E8%AE%A1%E7%AE%97%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81"><span class="nav-number">5.2.</span> <span class="nav-text">高斯-克吕格投影计算核心代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lambert%E6%8A%95%E5%BD%B1%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="nav-number">5.3.</span> <span class="nav-text">Lambert投影计算公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1%E7%9A%84%E6%95%B0%E5%80%BC%E5%8F%98%E6%8D%A2%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="nav-number">5.4.</span> <span class="nav-text">地图投影的数值变换计算公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E8%AF%B4%E6%98%8E"><span class="nav-number">5.5.</span> <span class="nav-text">程序结构说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%95%E5%BD%B1%E8%AE%A1%E7%AE%97%E7%A8%8B%E5%BA%8F%E6%B5%8B%E8%AF%95"><span class="nav-number">5.6.</span> <span class="nav-text">投影计算程序测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E4%B8%9A"><span class="nav-number">6.</span> <span class="nav-text">作业</span></a></li></ol>
 
     </div>
 </div>
