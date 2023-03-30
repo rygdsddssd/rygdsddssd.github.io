@@ -109,25 +109,8 @@
       </categories>
       <tags>
         <tag>LINGO</tag>
+        <tag>数模</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/03/08/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-]]></content>
   </entry>
   <entry>
     <title>博客的部署</title>
@@ -156,7 +139,26 @@
 ]]></content>
       <tags>
         <tag>Hexo</tag>
+        <tag>Blog</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/03/08/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
   </entry>
   <entry>
     <title>MATLAB拼接图片</title>
@@ -257,13 +259,11 @@
 <p>如果你有什么想法欢迎与我交流讨论！</p>
 ]]></content>
       <categories>
-        <category>Code</category>
-        <category>Language</category>
         <category>Matlab</category>
       </categories>
       <tags>
-        <tag>MATLAB</tag>
         <tag>数模</tag>
+        <tag>MATLAB</tag>
       </tags>
   </entry>
   <entry>
@@ -306,8 +306,8 @@
 ]]></content>
       <categories>
         <category>GIS</category>
-        <category>ArcGIS</category>
         <category>Problems</category>
+        <category>ArcGIS</category>
       </categories>
       <tags>
         <tag>ArcGIS</tag>
@@ -349,12 +349,29 @@
 <h2 id="spring的发展历程和优势"><a href="#spring的发展历程和优势" class="headerlink" title="spring的发展历程和优势"></a>spring的发展历程和优势</h2><h2 id="spring体系结构"><a href="#spring体系结构" class="headerlink" title="spring体系结构"></a>spring体系结构</h2><h1 id="程序的耦合及解耦"><a href="#程序的耦合及解耦" class="headerlink" title="程序的耦合及解耦"></a>程序的耦合及解耦</h1><h2 id="曾经案例中问题"><a href="#曾经案例中问题" class="headerlink" title="曾经案例中问题"></a>曾经案例中问题</h2><h2 id="工厂模式解耦"><a href="#工厂模式解耦" class="headerlink" title="工厂模式解耦"></a>工厂模式解耦</h2><h1 id="IOC概念和spring中的IOC"><a href="#IOC概念和spring中的IOC" class="headerlink" title="IOC概念和spring中的IOC"></a>IOC概念和spring中的IOC</h1><h2 id="spring中基于XML的IOC环境搭建"><a href="#spring中基于XML的IOC环境搭建" class="headerlink" title="spring中基于XML的IOC环境搭建"></a>spring中基于XML的IOC环境搭建</h2><h1 id="依赖注入-DI——Dependency-Injection"><a href="#依赖注入-DI——Dependency-Injection" class="headerlink" title="依赖注入(DI——Dependency Injection)"></a>依赖注入(DI——Dependency Injection)</h1><p>由容器动态的将某个依赖关系注入到组件之中。</p>
 <h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1>]]></content>
       <categories>
-        <category>java</category>
+        <category>Java</category>
         <category>spring</category>
       </categories>
       <tags>
         <tag>learn</tag>
         <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>升级Hexo</title>
+    <url>/2023/03/30/%E5%8D%87%E7%BA%A7Hexo/</url>
+    <content><![CDATA[<p>主要是Hexo更新的问题和Hexo本地预览时的端口占用</p>
+<h1 id="Hexo更新"><a href="#Hexo更新" class="headerlink" title="Hexo更新"></a>Hexo更新</h1><p>找了蛮多，这个写的蛮清晰<br><a class="link"   href="https://blog.csdn.net/qq_33154343/article/details/108301374" >https://blog.csdn.net/qq_33154343/article/details/108301374 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1 id="端口占用"><a href="#端口占用" class="headerlink" title="端口占用"></a>端口占用</h1><h2 id="杀进程"><a href="#杀进程" class="headerlink" title="杀进程"></a>杀进程</h2><p><a class="link"   href="https://www.mpc6.com/coding/45.html" >https://www.mpc6.com/coding/45.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="项目换端口"><a href="#项目换端口" class="headerlink" title="项目换端口"></a>项目换端口</h2><p><a class="link"   href="https://blog.csdn.net/weixin_45627031/article/details/108359235" >https://blog.csdn.net/weixin_45627031/article/details/108359235 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+      <categories>
+        <category>Problems</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Blog</tag>
+        <tag>Problems</tag>
       </tags>
   </entry>
   <entry>
@@ -735,8 +752,6 @@
 <h3 id="形成了什么结论"><a href="#形成了什么结论" class="headerlink" title="形成了什么结论"></a>形成了什么结论</h3><p>想要最大发挥Matlab的特性，一定要活用矩阵</p>
 ]]></content>
       <categories>
-        <category>Code</category>
-        <category>Language</category>
         <category>Matlab</category>
         <category>Activity</category>
         <category>数模</category>
