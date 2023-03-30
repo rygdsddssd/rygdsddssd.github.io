@@ -35,38 +35,9 @@
       </tags>
   </entry>
   <entry>
-    <title>博客的部署</title>
-    <url>/2023/03/10/first-Blog/</url>
-    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>我基本一直跟着这个教程走的，非常的详细非常的优质！</p>
-<a class="button  center large" href='https://www.bilibili.com/read/cv12633102' title='保姆级教程'><i class='fa-solid fa-arrow-right'></i> 保姆级教程</a>
-<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><div class="note-large notel-blue"><div class="notel-title"><p>提示</p>
-</div><div class="notel-content"><p>4.2第二步中</p>
-<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:master</span></span><br></pre></td></tr></table></figure></div>
-<p>由于github将master分支改名为main，所以最后要进行更改</p>
-<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:main</span></span><br></pre></td></tr></table></figure></div> </div></div>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>今天加了aplayer插件（是这个主题里面自带的直接配置就行），但是应该是因为这个主题创建者没有放太多功能进来，只有一部分可以设置<br>这是网上由找到的几个文章，可以添加网易云歌单的，近期事情太多，先放这里，以后有时间再慢慢弄吧</p>
-<a class="button  center regular" href='https://developer.aliyun.com/article/894787' title='给自己的网站添加网易云音乐歌单'><i class='fa-solid fa-arrow-right'></i> 给自己的网站添加网易云音乐歌单</a>  
-<a class="button  regular" href='https://cloud.tencent.com/developer/article/1833968' title='引入Aplayer播放音乐(踩坑向)'><i class='fa-solid fa-arrow-right'></i> 引入Aplayer播放音乐(踩坑向)</a>
-
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><h4 id=""><a href="#" class="headerlink" title=""></a><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>几个控制台命令 </summary>
-              <div class='content'>
-              <div class="note-large notel-default"><div class="notel-title"><p>d:</p></div><div class="notel-content"><p>到d盘</p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>cd xxx</p></div><div class="notel-content"><p>到当前目录下的xxx中</p> </div></div>
-              </div>
-            </details></h4><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>几个hexo 命令 </summary>
-              <div class='content'>
-              <div class="note-large notel-default"><div class="notel-title"><p>hexo clean</p></div><div class="notel-content"><p>清除缓存文件 db.json 和已生成的静态文件 public。  </p><ul><li>网站显示异常时可以执行这条命令试试。</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo g</p></div><div class="notel-content"><p>生成网站静态文件到默认设置的 public 文件夹。</p><ul><li>便于查看网站生成的静态文件或者手动部署网站；</li><li>如果使用自动部署，不需要先执行该命令；</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo s</p></div><div class="notel-content"><p>启动本地服务器，用于预览主题。<br>默认地址 <a class="link"   href="http://localhost:4000/" >http://localhost:4000/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo d</p></div><div class="notel-content"><p>自动生成网站静态文件，并部署到设定的仓库。</p> </div></div>
-              </div>
-            </details></h4><h3 id="找资源"><a href="#找资源" class="headerlink" title="找资源"></a>找资源</h3><h4 id="壁纸"><a href="#壁纸" class="headerlink" title="壁纸"></a>壁纸</h4><p>英文网站 <a class="link"   href="https://wallhaven.cc/" >wallhaven <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h4 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h4><p> <a class="link"   href="https://fontawesome.com/" >Fontawesome <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 也就是本模板中使用的</p>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LINGO软件的初步使用及解读</title>
     <url>/2023/03/26/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/</url>
-    <content><![CDATA[<p>早上八点上到中午十一点半，休息了5分钟，我要死了。</p>
+    <content><![CDATA[<p>早上八点上到中午十一点半，休息了5分钟，我要死了。——2023&#x2F;3&#x2F;26疲惫不堪的我</p>
 <h2 id="例子：牛奶生产"><a href="#例子：牛奶生产" class="headerlink" title="例子：牛奶生产"></a>例子：牛奶生产</h2><p><img  
                      lazyload
                      src="/images/loading.svg"
@@ -109,8 +80,28 @@
 <h2 id="轰炸任务"><a href="#轰炸任务" class="headerlink" title="轰炸任务"></a>轰炸任务</h2><p><img  
                      lazyload
                      src="/images/loading.svg"
+                     data-src="/images/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/problem3.png"
+                      alt="problem3"
+                ><br>对于这一道题，我先附上我一开始的解法:<br><img  
+                     lazyload
+                     src="/images/loading.svg"
                      data-src="/images/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/answer3.png"
                       alt="answer3"
+                ><br>这个做法是有问题的，虽然不是逻辑上的问题。<br>这是因为在这里目标函数”max”是一个非线性的，而LINGO是用来求解线性规划问题的工具(也可以求解非线性规划，但不能保证得到全局最优解)</p>
+<ul>
+<li>要将目标函数改为线性问题<ul>
+<li>使用log</li>
+</ul>
+</li>
+<li>限制条件要将所有未知数放在式子左边</li>
+</ul>
+<p>修改后代码如下</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">min=x1*@log(0.9)+x2*@log(0.8)+x3*@log(0.85)+x4*@log(0.75)+x5*@log(0.92)+x6*@log(0.84)+x7*@log(0.88)+x8*@log(0.8);</span><br><span class="line"></span><br><span class="line">(x1*450+x2*480+x3*540+x4*600)/2+(x5*450+x6*480+x7*540+x8*600)/3+((x1+x5)*450+(x2+x6)*480+(x3+x7)*540+(x4+x8)*600)/4+(x1+x2+x3+x4+x5+x6+x7+x8)*200&lt;48000;</span><br><span class="line">x1+x2+x3+x4&lt;48;</span><br><span class="line">x5+x6+x7+x8&lt;32;</span><br><span class="line">@gin(x1);@gin(x2);@gin(x3);@gin(x4);</span><br><span class="line">@gin(x5);@gin(x6);@gin(x7);@gin(x8);</span><br></pre></td></tr></table></figure></div>
+<p>运行结果：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/answer3_c.png"
+                      alt="answer3_c"
                 ></p>
 ]]></content>
       <categories>
@@ -137,6 +128,35 @@
 
 <p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>博客的部署</title>
+    <url>/2023/03/10/first-Blog/</url>
+    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>我基本一直跟着这个教程走的，非常的详细非常的优质！</p>
+<a class="button  center large" href='https://www.bilibili.com/read/cv12633102' title='保姆级教程'><i class='fa-solid fa-arrow-right'></i> 保姆级教程</a>
+<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><div class="note-large notel-blue"><div class="notel-title"><p>提示</p>
+</div><div class="notel-content"><p>4.2第二步中</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:master</span></span><br></pre></td></tr></table></figure></div>
+<p>由于github将master分支改名为main，所以最后要进行更改</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:main</span></span><br></pre></td></tr></table></figure></div> </div></div>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>今天加了aplayer插件（是这个主题里面自带的直接配置就行），但是应该是因为这个主题创建者没有放太多功能进来，只有一部分可以设置<br>这是网上由找到的几个文章，可以添加网易云歌单的，近期事情太多，先放这里，以后有时间再慢慢弄吧</p>
+<a class="button  center regular" href='https://developer.aliyun.com/article/894787' title='给自己的网站添加网易云音乐歌单'><i class='fa-solid fa-arrow-right'></i> 给自己的网站添加网易云音乐歌单</a>  
+<a class="button  regular" href='https://cloud.tencent.com/developer/article/1833968' title='引入Aplayer播放音乐(踩坑向)'><i class='fa-solid fa-arrow-right'></i> 引入Aplayer播放音乐(踩坑向)</a>
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><h4 id=""><a href="#" class="headerlink" title=""></a><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>几个控制台命令 </summary>
+              <div class='content'>
+              <div class="note-large notel-default"><div class="notel-title"><p>d:</p></div><div class="notel-content"><p>到d盘</p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>cd xxx</p></div><div class="notel-content"><p>到当前目录下的xxx中</p> </div></div>
+              </div>
+            </details></h4><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>几个hexo 命令 </summary>
+              <div class='content'>
+              <div class="note-large notel-default"><div class="notel-title"><p>hexo clean</p></div><div class="notel-content"><p>清除缓存文件 db.json 和已生成的静态文件 public。  </p><ul><li>网站显示异常时可以执行这条命令试试。</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo g</p></div><div class="notel-content"><p>生成网站静态文件到默认设置的 public 文件夹。</p><ul><li>便于查看网站生成的静态文件或者手动部署网站；</li><li>如果使用自动部署，不需要先执行该命令；</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo s</p></div><div class="notel-content"><p>启动本地服务器，用于预览主题。<br>默认地址 <a class="link"   href="http://localhost:4000/" >http://localhost:4000/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo d</p></div><div class="notel-content"><p>自动生成网站静态文件，并部署到设定的仓库。</p> </div></div>
+              </div>
+            </details></h4><h3 id="找资源"><a href="#找资源" class="headerlink" title="找资源"></a>找资源</h3><h4 id="壁纸"><a href="#壁纸" class="headerlink" title="壁纸"></a>壁纸</h4><p>英文网站 <a class="link"   href="https://wallhaven.cc/" >wallhaven <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h4><p> <a class="link"   href="https://fontawesome.com/" >Fontawesome <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 也就是本模板中使用的</p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>MATLAB拼接图片</title>
@@ -247,27 +267,6 @@
       </tags>
   </entry>
   <entry>
-    <title>spring学习(一)</title>
-    <url>/2023/03/25/spring%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</url>
-    <content><![CDATA[<h1 id="spring的概述"><a href="#spring的概述" class="headerlink" title="spring的概述"></a>spring的概述</h1><a class="button  regular" href='https://zhuanlan.zhihu.com/p/392443841' title='spring的概述'><i class='fa-solid fa-arrow-right'></i> spring的概述</a>
-
-<p>简单点说就是框架</p>
-<h2 id="spring是什么"><a href="#spring是什么" class="headerlink" title="spring是什么"></a>spring是什么</h2><h2 id="spring的两大核心"><a href="#spring的两大核心" class="headerlink" title="spring的两大核心"></a>spring的两大核心</h2><ul>
-<li>面向方面编程(AOP)</li>
-<li>控制反转(IOC)容器</li>
-</ul>
-<h2 id="spring的发展历程和优势"><a href="#spring的发展历程和优势" class="headerlink" title="spring的发展历程和优势"></a>spring的发展历程和优势</h2><h2 id="spring体系结构"><a href="#spring体系结构" class="headerlink" title="spring体系结构"></a>spring体系结构</h2><h1 id="程序的耦合及解耦"><a href="#程序的耦合及解耦" class="headerlink" title="程序的耦合及解耦"></a>程序的耦合及解耦</h1><h2 id="曾经案例中问题"><a href="#曾经案例中问题" class="headerlink" title="曾经案例中问题"></a>曾经案例中问题</h2><h2 id="工厂模式解耦"><a href="#工厂模式解耦" class="headerlink" title="工厂模式解耦"></a>工厂模式解耦</h2><h1 id="IOC概念和spring中的IOC"><a href="#IOC概念和spring中的IOC" class="headerlink" title="IOC概念和spring中的IOC"></a>IOC概念和spring中的IOC</h1><h2 id="spring中基于XML的IOC环境搭建"><a href="#spring中基于XML的IOC环境搭建" class="headerlink" title="spring中基于XML的IOC环境搭建"></a>spring中基于XML的IOC环境搭建</h2><h1 id="依赖注入-DI——Dependency-Injection"><a href="#依赖注入-DI——Dependency-Injection" class="headerlink" title="依赖注入(DI——Dependency Injection)"></a>依赖注入(DI——Dependency Injection)</h1><p>由容器动态的将某个依赖关系注入到组件之中。</p>
-<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1>]]></content>
-      <categories>
-        <category>java</category>
-        <category>spring</category>
-      </categories>
-      <tags>
-        <tag>learn</tag>
-        <tag>spring</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArcGIS打开mxd文件无法显示的问题</title>
     <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
     <content><![CDATA[<details class="yellow" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
@@ -335,6 +334,27 @@
       </categories>
       <tags>
         <tag>Tips</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>spring学习(一)</title>
+    <url>/2023/03/25/spring%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</url>
+    <content><![CDATA[<h1 id="spring的概述"><a href="#spring的概述" class="headerlink" title="spring的概述"></a>spring的概述</h1><a class="button  regular" href='https://zhuanlan.zhihu.com/p/392443841' title='spring的概述'><i class='fa-solid fa-arrow-right'></i> spring的概述</a>
+
+<h2 id="spring是什么"><a href="#spring是什么" class="headerlink" title="spring是什么"></a>spring是什么</h2><p>简单点概括就是框架，之前学java时有讲到工厂模式，这个就是结合工厂模式，把不必要的重复性的东西放到框架里，你要使用就只用把框架对好，往里填充东西就🆗。</p>
+<h2 id="spring的两大核心"><a href="#spring的两大核心" class="headerlink" title="spring的两大核心"></a>spring的两大核心</h2><ul>
+<li>面向方面编程(AOP)</li>
+<li>控制反转(IOC)容器</li>
+</ul>
+<h2 id="spring的发展历程和优势"><a href="#spring的发展历程和优势" class="headerlink" title="spring的发展历程和优势"></a>spring的发展历程和优势</h2><h2 id="spring体系结构"><a href="#spring体系结构" class="headerlink" title="spring体系结构"></a>spring体系结构</h2><h1 id="程序的耦合及解耦"><a href="#程序的耦合及解耦" class="headerlink" title="程序的耦合及解耦"></a>程序的耦合及解耦</h1><h2 id="曾经案例中问题"><a href="#曾经案例中问题" class="headerlink" title="曾经案例中问题"></a>曾经案例中问题</h2><h2 id="工厂模式解耦"><a href="#工厂模式解耦" class="headerlink" title="工厂模式解耦"></a>工厂模式解耦</h2><h1 id="IOC概念和spring中的IOC"><a href="#IOC概念和spring中的IOC" class="headerlink" title="IOC概念和spring中的IOC"></a>IOC概念和spring中的IOC</h1><h2 id="spring中基于XML的IOC环境搭建"><a href="#spring中基于XML的IOC环境搭建" class="headerlink" title="spring中基于XML的IOC环境搭建"></a>spring中基于XML的IOC环境搭建</h2><h1 id="依赖注入-DI——Dependency-Injection"><a href="#依赖注入-DI——Dependency-Injection" class="headerlink" title="依赖注入(DI——Dependency Injection)"></a>依赖注入(DI——Dependency Injection)</h1><p>由容器动态的将某个依赖关系注入到组件之中。</p>
+<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1>]]></content>
+      <categories>
+        <category>java</category>
+        <category>spring</category>
+      </categories>
+      <tags>
+        <tag>learn</tag>
+        <tag>spring</tag>
       </tags>
   </entry>
   <entry>
