@@ -48,11 +48,11 @@
 <a class="button  center regular" href='https://developer.aliyun.com/article/894787' title='给自己的网站添加网易云音乐歌单'><i class='fa-solid fa-arrow-right'></i> 给自己的网站添加网易云音乐歌单</a>  
 <a class="button  regular" href='https://cloud.tencent.com/developer/article/1833968' title='引入Aplayer播放音乐(踩坑向)'><i class='fa-solid fa-arrow-right'></i> 引入Aplayer播放音乐(踩坑向)</a>
 
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><h4 id=""><a href="#" class="headerlink" title=""></a><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>几个控制台命令 </summary>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><h4 id=""><a href="#" class="headerlink" title=""></a><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>几个控制台命令 </summary>
               <div class='content'>
               <div class="note-large notel-default"><div class="notel-title"><p>d:</p></div><div class="notel-content"><p>到d盘</p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>cd xxx</p></div><div class="notel-content"><p>到当前目录下的xxx中</p> </div></div>
               </div>
-            </details></h4><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>几个hexo 命令 </summary>
+            </details></h4><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>几个hexo 命令 </summary>
               <div class='content'>
               <div class="note-large notel-default"><div class="notel-title"><p>hexo clean</p></div><div class="notel-content"><p>清除缓存文件 db.json 和已生成的静态文件 public。  </p><ul><li>网站显示异常时可以执行这条命令试试。</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo g</p></div><div class="notel-content"><p>生成网站静态文件到默认设置的 public 文件夹。</p><ul><li>便于查看网站生成的静态文件或者手动部署网站；</li><li>如果使用自动部署，不需要先执行该命令；</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo s</p></div><div class="notel-content"><p>启动本地服务器，用于预览主题。<br>默认地址 <a class="link"   href="http://localhost:4000/" >http://localhost:4000/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo d</p></div><div class="notel-content"><p>自动生成网站静态文件，并部署到设定的仓库。</p> </div></div>
               </div>
@@ -85,11 +85,13 @@
                      data-src="/images/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/%E4%BB%8B%E7%BB%8D.png"
                       alt="介绍"
                 ></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>代码窗口内容解读 </summary>
+<h2 id="内容解读"><a href="#内容解读" class="headerlink" title="内容解读"></a>内容解读</h2> <details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>内容解读 </summary>
               <div class='content'>
               <div class="note-large notel-gray"><div class="notel-title"><p>Global</p></div><div class="notel-content"><p>表示全局最优解找到</p> </div></div><div class="note-large notel-gray"><div class="notel-title"><p>Objective</p></div><div class="notel-content"><p>表示最优目标值</p> </div></div><div class="note-large notel-gray"><div class="notel-title"><p>Total</p></div><div class="notel-content"><p>表示用单纯行法进行了两次迭代</p> </div></div><div class="note-large notel-gray"><div class="notel-title"><p>Variable</p></div><div class="notel-content"><p>表示变量，运行结果中有两个变量为x1,x2</p> </div></div><div class="note-large notel-gray"><div class="notel-title"><p>Value</p></div><div class="notel-content"><p>给出最优解中个变量的值</p> </div></div><div class="note-large notel-gray"><div class="notel-title"><p>Reduced</p></div><div class="notel-content"><p>与最优单纯形表中的检验数相差一个符号的数。<br>为了使某个变量在解中的数值增加一个单位，目标函数必须付出的代价（增加或减少Reduced Cost的值）</p> </div></div><div class="note-large notel-gray"><div class="notel-title"><p>Slack</p></div><div class="notel-content"><p>表示接近等于的程度<br>在约束条件中是&lt;&#x3D;,叫做松弛变量<br>在约束条件中是&gt;&#x3D;,叫做过剩变量<br>在约束条件中是&#x3D;,值为0,该约束为一个紧约束（或有效约束）<br>如果一个约束条件错误，作为一个不可行约束，Slack or Surplus为负数<br>Slack or Surplus表示的是：约束离相等还差多少  </p> </div></div><div class="note-large notel-gray"><div class="notel-title"><p>Dual</p></div><div class="notel-content"><p>给出对偶价格的值<br>表示每增一个单位（约束右边的常数），目标值改变的数量（在最大化问题中目标函数是增加的，反之是减小的）  </p><div class="note note-blue 提示"><p>其实也就是求导</p></div>例如在本例中，c约束条件的Dual Price为1，表示2x1+x2<=600增加一个单位到2x1+x2<=601使目标值增加到-1(目标函数的Dual Price为-1)，则Objective value就变为799  对偶价格也叫影子价格，这是由于他们表示可以用多大的价格去购买单位资源   </div></div>
               </div>
-            </details></h2><h2 id="选址问题"><a href="#选址问题" class="headerlink" title="选址问题"></a>选址问题</h2><p><img  
+            </details>
+
+<h2 id="选址问题"><a href="#选址问题" class="headerlink" title="选址问题"></a>选址问题</h2><p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/problem2.jpg"
@@ -103,7 +105,14 @@
                      data-src="/images/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/answer2.png"
                       alt="answer2"
                 ></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">model:</span><br><span class="line"> </span><br><span class="line">!创建矩阵;</span><br><span class="line">sets:</span><br><span class="line">liaochang/1..2/:x1,y1;</span><br><span class="line">gongdi/1..6/:a,b,d;</span><br><span class="line">zuobiao(gongdi,liaochang):x;</span><br><span class="line">endsets</span><br><span class="line"> </span><br><span class="line">!输入数据;</span><br><span class="line">data:</span><br><span class="line">a=1.25,8.75,0.5,5.75,3,7.25;</span><br><span class="line">b=1.25,0.75,4.75,5,6.5,7.25;</span><br><span class="line">d=3,5,4,7,6,11;</span><br><span class="line">enddata</span><br><span class="line"> </span><br><span class="line">!列出目标函数及表达式;</span><br><span class="line">min = @sum(zuobiao(i,j):x(i,j)*@sqrt((a(i)-x1(j))^2+(b(i)-y1(j))^2));</span><br><span class="line">@for(gongdi(i):@sum(liaochang(j):x(i,j))=d(i));</span><br><span class="line">@for(liaochang(j):@sum(gongdi(i):x(i,j))&lt;=20);</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure></div>]]></content>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">model:</span><br><span class="line"> </span><br><span class="line">!创建矩阵;</span><br><span class="line">sets:</span><br><span class="line">liaochang/1..2/:x1,y1;</span><br><span class="line">gongdi/1..6/:a,b,d;</span><br><span class="line">zuobiao(gongdi,liaochang):x;</span><br><span class="line">endsets</span><br><span class="line"> </span><br><span class="line">!输入数据;</span><br><span class="line">data:</span><br><span class="line">a=1.25,8.75,0.5,5.75,3,7.25;</span><br><span class="line">b=1.25,0.75,4.75,5,6.5,7.25;</span><br><span class="line">d=3,5,4,7,6,11;</span><br><span class="line">enddata</span><br><span class="line"> </span><br><span class="line">!列出目标函数及表达式;</span><br><span class="line">min = @sum(zuobiao(i,j):x(i,j)*@sqrt((a(i)-x1(j))^2+(b(i)-y1(j))^2));</span><br><span class="line">@for(gongdi(i):@sum(liaochang(j):x(i,j))=d(i));</span><br><span class="line">@for(liaochang(j):@sum(gongdi(i):x(i,j))&lt;=20);</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure></div>
+<h2 id="轰炸任务"><a href="#轰炸任务" class="headerlink" title="轰炸任务"></a>轰炸任务</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/answer3.png"
+                      alt="answer3"
+                ></p>
+]]></content>
       <categories>
         <category>Tips</category>
       </categories>
@@ -134,7 +143,7 @@
     <url>/2023/03/20/matlab%E6%8B%BC%E6%8E%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<a class="button  large center" href='https://blog.csdn.net/qq_45059457/article/details/106438378' title='找到的题目来源'><i class='fa-solid fa-arrow-right'></i> 找到的题目来源</a>
 
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>将下面这样的多个图片拼接到一起 </summary>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>将下面这样的多个图片拼接到一起 </summary>
               <div class='content'>
               <p><img  
                      lazyload
@@ -145,9 +154,9 @@
               </div>
             </details>
 
-<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><details class="black"><summary><i class="fa-solid fa-chevron-right"></i>函数 </summary>
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><details class="black" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>函数 </summary>
               <div class='content'>
-              <p><a class="button  large center" href='https://ww2.mathworks.cn/help/matlab/referencelist.html?type=function&s_tid=CRUX_topnav' title='官方文档'><i class='fa-solid fa-arrow-right'></i> 官方文档</a><br><a class="button  regular" href='https://blog.csdn.net/iii66yy/article/details/124579403' title='Zeros'><i class='fa-solid fa-arrow-right'></i> Zeros</a> <a class="button  regular" href='https://blog.csdn.net/zxyhhjs2017/article/details/78680595' title='Max'><i class='fa-solid fa-arrow-right'></i> Max</a><br>实际上看这些不如你先去看上面官方文档，看不懂再找别人写的</p><h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><details class="black"><summary><i class="fa-solid fa-chevron-right"></i>读取图片 </summary>              <div class='content'>              <p>imread函数：MATLAB中读取图片的常用函数<br>用法：</p><ul><li>A &#x3D; imread(filename)</li><li>A &#x3D; imread(filename,fmt)</li><li>A &#x3D; imread(___,idx)</li><li>A &#x3D; imread(___,Name,Value)</li><li>[A,map] &#x3D; imread(___)</li><li>[A,map,transparency] &#x3D; imread(___)<br>其中，A为返回的<em>数组</em>，用于存放图像中的<em>像素矩阵</em>。</li></ul><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">a1=imread(<span class="string">&#x27;000.bmp&#x27;</span>);</span><br><span class="line">[m,n]=<span class="built_in">size</span>(a1);</span><br><span class="line">imshow(a1);<span class="comment">%显示图像</span></span><br><span class="line"><span class="comment">%image(a1);</span></span><br></pre></td></tr></table></figure></div><p>注意几个显示图片函数的区别：imshow是显示灰度图像的；image和imagesc 显示出来是彩色的（索引图像），索引图像是矩阵和colormap配合起来显示的。<br>批量读取图片</p><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">dirname = <span class="string">&#x27;ImageChips&#x27;</span>;</span><br><span class="line">files = dir(fullfile(dirname, <span class="string">&#x27;*.bmp&#x27;</span>));</span><br><span class="line">a=<span class="built_in">zeros</span>(m,n,<span class="number">19</span>);</span><br><span class="line">pic=[];</span><br><span class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="built_in">length</span>(files)</span><br><span class="line">  filename = fullfile(dirname, files(ii).name);</span><br><span class="line">  a(:,:,ii)=imread(filename);</span><br><span class="line">  pic=[pic,a(:,:,ii)];</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%double(pic);</span></span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">imshow(pic,[])</span><br></pre></td></tr></table></figure></div>              </div>            </details><details class="black"><summary><i class="fa-solid fa-chevron-right"></i>怎样识别拼接 </summary>              <div class='content'>              <p>这一题的重难点就是在于</p><ul><li>应该谁跟谁拼接？</li><li>第i片的右边缘应该跟左边缘具有相似性；相似性如何度量？（标准不唯一！）<br><img  
+              <p><a class="button  large center" href='https://ww2.mathworks.cn/help/matlab/referencelist.html?type=function&s_tid=CRUX_topnav' title='官方文档'><i class='fa-solid fa-arrow-right'></i> 官方文档</a><br><a class="button  regular" href='https://blog.csdn.net/iii66yy/article/details/124579403' title='Zeros'><i class='fa-solid fa-arrow-right'></i> Zeros</a> <a class="button  regular" href='https://blog.csdn.net/zxyhhjs2017/article/details/78680595' title='Max'><i class='fa-solid fa-arrow-right'></i> Max</a><br>实际上看这些不如你先去看上面官方文档，看不懂再找别人写的</p><p class='h3' id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><details class="black" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>读取图片 </summary>              <div class='content'>              <p>imread函数：MATLAB中读取图片的常用函数<br>用法：</p><ul><li>A &#x3D; imread(filename)</li><li>A &#x3D; imread(filename,fmt)</li><li>A &#x3D; imread(___,idx)</li><li>A &#x3D; imread(___,Name,Value)</li><li>[A,map] &#x3D; imread(___)</li><li>[A,map,transparency] &#x3D; imread(___)<br>其中，A为返回的<em>数组</em>，用于存放图像中的<em>像素矩阵</em>。</li></ul><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">a1=imread(<span class="string">&#x27;000.bmp&#x27;</span>);</span><br><span class="line">[m,n]=<span class="built_in">size</span>(a1);</span><br><span class="line">imshow(a1);<span class="comment">%显示图像</span></span><br><span class="line"><span class="comment">%image(a1);</span></span><br></pre></td></tr></table></figure></div><p>注意几个显示图片函数的区别：imshow是显示灰度图像的；image和imagesc 显示出来是彩色的（索引图像），索引图像是矩阵和colormap配合起来显示的。<br>批量读取图片</p><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">dirname = <span class="string">&#x27;ImageChips&#x27;</span>;</span><br><span class="line">files = dir(fullfile(dirname, <span class="string">&#x27;*.bmp&#x27;</span>));</span><br><span class="line">a=<span class="built_in">zeros</span>(m,n,<span class="number">19</span>);</span><br><span class="line">pic=[];</span><br><span class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="built_in">length</span>(files)</span><br><span class="line">  filename = fullfile(dirname, files(ii).name);</span><br><span class="line">  a(:,:,ii)=imread(filename);</span><br><span class="line">  pic=[pic,a(:,:,ii)];</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%double(pic);</span></span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">imshow(pic,[])</span><br></pre></td></tr></table></figure></div>              </div>            </details><details class="black" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>怎样识别拼接 </summary>              <div class='content'>              <p>这一题的重难点就是在于</p><ul><li>应该谁跟谁拼接？</li><li>第i片的右边缘应该跟左边缘具有相似性；相似性如何度量？（标准不唯一！）<br><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/%E6%95%B0%E6%A8%A1-%E6%8B%BC%E6%8E%A5%E5%9B%BE%E7%89%87/%E6%80%BB%E4%BD%93%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0.png"
@@ -157,7 +166,7 @@
                      src="/images/loading.svg"
                      data-src="/images/%E6%95%B0%E6%A8%A1-%E6%8B%BC%E6%8E%A5%E5%9B%BE%E7%89%87/%E6%A0%B7%E6%9C%AC%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0.png"
                       alt="样本相关系数"
-                ></li></ul><details class="black"><summary><i class="fa-solid fa-chevron-right"></i>计算第4片的右边缘与第7片左边缘的相关系数 </summary>              <div class='content'>              <div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">a=double(a);</span><br><span class="line">b=a/<span class="number">255</span>;</span><br><span class="line">x=b(:,<span class="number">72</span>,<span class="number">4</span>);</span><br><span class="line">y=b(:,<span class="number">1</span>,<span class="number">7</span>);</span><br><span class="line">r1=sum((x-<span class="built_in">mean</span>(x)).*(y-<span class="built_in">mean</span>(y)));</span><br><span class="line">r2=<span class="built_in">sqrt</span>(sum((x-<span class="built_in">mean</span>(x)).^<span class="number">2</span>))*<span class="built_in">sqrt</span>(sum((y-<span class="built_in">mean</span>(y)).^<span class="number">2</span>));</span><br><span class="line">r=r1/r2</span><br><span class="line"><span class="comment">%或利用库函数来求样本相关系数</span></span><br><span class="line">rr=corrcoef(x,y)</span><br></pre></td></tr></table></figure></div>              </div>            </details>              </div>            </details>
+                ></li></ul><details class="black" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>计算第4片的右边缘与第7片左边缘的相关系数 </summary>              <div class='content'>              <div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">a=double(a);</span><br><span class="line">b=a/<span class="number">255</span>;</span><br><span class="line">x=b(:,<span class="number">72</span>,<span class="number">4</span>);</span><br><span class="line">y=b(:,<span class="number">1</span>,<span class="number">7</span>);</span><br><span class="line">r1=sum((x-<span class="built_in">mean</span>(x)).*(y-<span class="built_in">mean</span>(y)));</span><br><span class="line">r2=<span class="built_in">sqrt</span>(sum((x-<span class="built_in">mean</span>(x)).^<span class="number">2</span>))*<span class="built_in">sqrt</span>(sum((y-<span class="built_in">mean</span>(y)).^<span class="number">2</span>));</span><br><span class="line">r=r1/r2</span><br><span class="line"><span class="comment">%或利用库函数来求样本相关系数</span></span><br><span class="line">rr=corrcoef(x,y)</span><br></pre></td></tr></table></figure></div>              </div>            </details>              </div>            </details>
               </div>
             </details>
 
@@ -185,7 +194,7 @@
                       alt="结果"
                 ></p>
 <p>更新：最后一个for i&#x3D;1:19应该改成1:18,多拼了一次，结果图能看出来</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><details class="black"><summary><i class="fa-solid fa-chevron-right"></i>做完题目的一点想法 </summary>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><details class="black" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>做完题目的一点想法 </summary>
               <div class='content'>
               <p>这里实际上也有点歪打正着，如果给的图片左右两侧并不是相同的情况呢？<br>那就不会出现<strong>NaN</strong>这样的<strong>特征值</strong>，最左侧和最右侧对比的相似度也会是一个看起来很正常的值<br><em><strong>这时候又要怎么做才能将整个图片拼接完成呢？</strong></em>   </p><p>我觉得可以<em><strong>队列式</strong></em>拼接，思路就是按照相关性的大小进行次序拼接，这样拼接到最后就是一个图片。  </p><p>如果你在想：”<strong>最左侧的最左列与最右侧最右列有可能相关性大于其他组的相关性</strong>“的话，那么这个依靠相关性判断相邻的方法从一开始就错了。这个问题是不需要考虑的。<br>而且，左右两侧不相同的情况下大概率不是黑白的二值图了，届时判断相关性的xy就不再是简单的0与1，最起码应该是0-225了，这样的可能性就几乎变成了抛硬币立起来的概率。</p>
               </div>
@@ -238,9 +247,30 @@
       </tags>
   </entry>
   <entry>
+    <title>spring学习(一)</title>
+    <url>/2023/03/25/spring%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</url>
+    <content><![CDATA[<h1 id="spring的概述"><a href="#spring的概述" class="headerlink" title="spring的概述"></a>spring的概述</h1><a class="button  regular" href='https://zhuanlan.zhihu.com/p/392443841' title='spring的概述'><i class='fa-solid fa-arrow-right'></i> spring的概述</a>
+
+<p>简单点说就是框架</p>
+<h2 id="spring是什么"><a href="#spring是什么" class="headerlink" title="spring是什么"></a>spring是什么</h2><h2 id="spring的两大核心"><a href="#spring的两大核心" class="headerlink" title="spring的两大核心"></a>spring的两大核心</h2><ul>
+<li>面向方面编程(AOP)</li>
+<li>控制反转(IOC)容器</li>
+</ul>
+<h2 id="spring的发展历程和优势"><a href="#spring的发展历程和优势" class="headerlink" title="spring的发展历程和优势"></a>spring的发展历程和优势</h2><h2 id="spring体系结构"><a href="#spring体系结构" class="headerlink" title="spring体系结构"></a>spring体系结构</h2><h1 id="程序的耦合及解耦"><a href="#程序的耦合及解耦" class="headerlink" title="程序的耦合及解耦"></a>程序的耦合及解耦</h1><h2 id="曾经案例中问题"><a href="#曾经案例中问题" class="headerlink" title="曾经案例中问题"></a>曾经案例中问题</h2><h2 id="工厂模式解耦"><a href="#工厂模式解耦" class="headerlink" title="工厂模式解耦"></a>工厂模式解耦</h2><h1 id="IOC概念和spring中的IOC"><a href="#IOC概念和spring中的IOC" class="headerlink" title="IOC概念和spring中的IOC"></a>IOC概念和spring中的IOC</h1><h2 id="spring中基于XML的IOC环境搭建"><a href="#spring中基于XML的IOC环境搭建" class="headerlink" title="spring中基于XML的IOC环境搭建"></a>spring中基于XML的IOC环境搭建</h2><h1 id="依赖注入-DI——Dependency-Injection"><a href="#依赖注入-DI——Dependency-Injection" class="headerlink" title="依赖注入(DI——Dependency Injection)"></a>依赖注入(DI——Dependency Injection)</h1><p>由容器动态的将某个依赖关系注入到组件之中。</p>
+<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1>]]></content>
+      <categories>
+        <category>java</category>
+        <category>spring</category>
+      </categories>
+      <tags>
+        <tag>learn</tag>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ArcGIS打开mxd文件无法显示的问题</title>
     <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
-    <content><![CDATA[<details class="yellow"><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
+    <content><![CDATA[<details class="yellow" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
               <div class='content'>
               <p>如图，将mxd文件托进来之后工作空间仍无图像<br><img  
                      lazyload
@@ -266,7 +296,7 @@
               </div>
             </details>
 
-<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>原因 </summary>
+<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>原因 </summary>
               <div class='content'>
               <p><strong>数据路径有问题。</strong><br>ArcGIS中的.mxd地图文档文件虽然含有各类图层，但其实际上仅仅包含了对这些图层的引用，而非图层数据本身；图层数据还是存储在其各自的.shp文件或地理数据库中。<br>因此，一旦我们导入一个新的.mxd地图文档文件（例如从其他电脑中拷贝过来的一个.mxd地图文档文件），就可能导致ArcMap软件虽然知道这个.mxd地图文档文件应该包含有哪些图层（即可以显示图层数量与图层名称），但是这些图层的具体数据ArcMap软件没有办法找到（即在图层名称左侧出现红色感叹号）。</p>
               </div>
@@ -286,24 +316,25 @@
       </tags>
   </entry>
   <entry>
-    <title>spring学习(一)</title>
-    <url>/2023/03/25/spring%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</url>
-    <content><![CDATA[<h1 id="spring的概述"><a href="#spring的概述" class="headerlink" title="spring的概述"></a>spring的概述</h1><a class="button  regular" href='https://zhuanlan.zhihu.com/p/392443841' title='spring的概述'><i class='fa-solid fa-arrow-right'></i> spring的概述</a>
+    <title>关闭windows自动更新</title>
+    <url>/2023/03/26/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/</url>
+    <content><![CDATA[<a class="button  large center" href='https://www.abackup.com/easybackup-tutorials/how-to-stop-windows-10-update-automatically-666.html' title='关闭Windows自动更新的6个方法'><i class='fa-solid fa-arrow-right'></i> 关闭Windows自动更新的6个方法</a>
 
-<p>简单点说就是框架</p>
-<h2 id="spring是什么"><a href="#spring是什么" class="headerlink" title="spring是什么"></a>spring是什么</h2><h2 id="spring的两大核心"><a href="#spring的两大核心" class="headerlink" title="spring的两大核心"></a>spring的两大核心</h2><ul>
-<li>面向方面编程(AOP)</li>
-<li>控制反转(IOC)容器</li>
-</ul>
-<h2 id="spring的发展历程和优势"><a href="#spring的发展历程和优势" class="headerlink" title="spring的发展历程和优势"></a>spring的发展历程和优势</h2><h2 id="spring体系结构"><a href="#spring体系结构" class="headerlink" title="spring体系结构"></a>spring体系结构</h2><h1 id="程序的耦合及解耦"><a href="#程序的耦合及解耦" class="headerlink" title="程序的耦合及解耦"></a>程序的耦合及解耦</h1><h2 id="曾经案例中问题"><a href="#曾经案例中问题" class="headerlink" title="曾经案例中问题"></a>曾经案例中问题</h2><h2 id="工厂模式解耦"><a href="#工厂模式解耦" class="headerlink" title="工厂模式解耦"></a>工厂模式解耦</h2><h1 id="IOC概念和spring中的IOC"><a href="#IOC概念和spring中的IOC" class="headerlink" title="IOC概念和spring中的IOC"></a>IOC概念和spring中的IOC</h1><h2 id="spring中基于XML的IOC环境搭建"><a href="#spring中基于XML的IOC环境搭建" class="headerlink" title="spring中基于XML的IOC环境搭建"></a>spring中基于XML的IOC环境搭建</h2><h1 id="依赖注入-DI——Dependency-Injection"><a href="#依赖注入-DI——Dependency-Injection" class="headerlink" title="依赖注入(DI——Dependency Injection)"></a>依赖注入(DI——Dependency Injection)</h1><p>由容器动态的将某个依赖关系注入到组件之中。</p>
-<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1>]]></content>
+
+
+<p>我这里使用第二种方法，结果发现报错<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/error.png"
+                      alt="Error"
+                ></p>
+<p>网上查询发现是因为Windows系统版本是家庭版，不具备这个功能</p>
+<a class="button  large center" href='https://zhuanlan.zhihu.com/p/403961135' title='找不到 gpedit.msc 的最优解决办法'><i class='fa-solid fa-arrow-right'></i> 找不到 gpedit.msc 的最优解决办法</a>]]></content>
       <categories>
-        <category>java</category>
-        <category>spring</category>
+        <category>Tips</category>
       </categories>
       <tags>
-        <tag>learn</tag>
-        <tag>spring</tag>
+        <tag>Tips</tag>
       </tags>
   </entry>
   <entry>
@@ -371,7 +402,7 @@
 <li>掌握ARCGIS地图投影定义、投影转换、投影参数设置的基本操作方法；</li>
 <li>理解常用地图投影的数学原理，熟悉常用地图投影计算方法的编程实现过程。</li>
 </ul>
-<h2 id="地图投影判读实验"><a href="#地图投影判读实验" class="headerlink" title="地图投影判读实验"></a>地图投影判读实验</h2><h3 id=""><a href="#" class="headerlink" title=""></a><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>实验目的 </summary>
+<h2 id="地图投影判读实验"><a href="#地图投影判读实验" class="headerlink" title="地图投影判读实验"></a>地图投影判读实验</h2><h3 id=""><a href="#" class="headerlink" title=""></a><details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>实验目的 </summary>
               <div class='content'>
               <ul><li>掌握地图投影判读的基本方法</li><li>加深对地图投影的概念、投影变形性质等内容的理解</li><li>加强对常用地图投影经纬网形状变化特点的了解</li><li>能够快速判别出地图投影的类别和变形性质</li></ul>
               </div>
@@ -409,20 +440,20 @@
 <a class="button  regular" href='https://malagis.com/map-projection-shape-characteristics-latitude-longitude.html' title='常见一些地图投影的经纬线形状特征'><i class='fa-solid fa-arrow-right'></i> 常见一些地图投影的经纬线形状特征</a>
 
 <p>比如这个：</p>
-<details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>彭纳投影 </summary>
+<details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>彭纳投影 </summary>
               <div class='content'>
               <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-2-5.png"
                       alt="彭纳投影"
-                ></p><div class="note note-default icon-padding"><i class="note-icon fa-solid fa-info-circle"></i><p>它是一个伪圆锥投影</p></div><details class="green"><summary><i class="fa-solid fa-chevron-right"></i>特点 </summary>              <div class='content'>              <ul><li>中央经线为直线，其他经线为对称于中央经线的曲线</li><li>纬线与经线交叉的同心圆弧</li><li>中央经线上纬线间隔相等</li><li>常用于亚洲图、欧洲图</li></ul>              </div>            </details>
+                ></p><div class="note note-default icon-padding"><i class="note-icon fa-solid fa-info-circle"></i><p>它是一个伪圆锥投影</p></div><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>特点 </summary>              <div class='content'>              <ul><li>中央经线为直线，其他经线为对称于中央经线的曲线</li><li>纬线与经线交叉的同心圆弧</li><li>中央经线上纬线间隔相等</li><li>常用于亚洲图、欧洲图</li></ul>              </div>            </details>
               </div>
             </details>
 
 
 <p>只要纬线是同心圆弧，你就可以说他是一个圆锥投影，<em><strong>哪怕她长得像个桃心</strong></em></p>
-<h3 id="地图投影判读作业"><a href="#地图投影判读作业" class="headerlink" title="地图投影判读作业"></a>地图投影判读作业</h3><details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>题目 </summary>
+<h3 id="地图投影判读作业"><a href="#地图投影判读作业" class="headerlink" title="地图投影判读作业"></a>地图投影判读作业</h3><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>题目 </summary>
               <div class='content'>
               <p>（1）属正轴等积方位投影的是其中的哪一幅地图？沿其经纬线方向的变形特点如何？<br>（2）属正轴等距方位投影的是其中哪一幅地图？沿其经纬线方向的变形特点如何？<br>（3）属正轴等积圆锥投影的是其中哪一幅地图？沿其经纬线方向的变形特点如何？<br>（4）属正轴等角方位投影的是其中哪一幅地图？沿其经纬线方向的变形特点如何？<br>（5）属正轴等积圆柱投影的是其中哪一幅地图？沿其经纬线方向的变形特点如何？<br>（6）属墨卡托投影的是其中哪一幅地图？如果要在该投影上绘制澳大利亚的堪培拉（Canberra）到秘鲁的利马（Lima）的等角航线，应该如何绘制？沿着等角航线它们之间的距离是多少？</p><p><img  
                      lazyload
@@ -433,19 +464,19 @@
               </div>
             </details>
 
-<details class="blue"><summary><i class="fa-solid fa-chevron-right"></i>答案 </summary>
+<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>答案 </summary>
               <div class='content'>
-              <details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>（1）c </summary>              <div class='content'>              <p>经线：放射状直线，纬线：同心圆，中央经线上纬线间隔的变化：从两极向赤道逐渐减小</p>              </div>            </details><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>（2）e </summary>              <div class='content'>              <p>经线：放射状直线，纬线：同心圆，中央经线上纬线间隔的变化：相等</p><p>Azimuthal Equidistant 等距方位投影<br><img  
+              <details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>（1）c </summary>              <div class='content'>              <p>经线：放射状直线，纬线：同心圆，中央经线上纬线间隔的变化：从两极向赤道逐渐减小</p>              </div>            </details><details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>（2）e </summary>              <div class='content'>              <p>经线：放射状直线，纬线：同心圆，中央经线上纬线间隔的变化：相等</p><p>Azimuthal Equidistant 等距方位投影<br><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-2-8.jpg"
                       alt="答案"
-                ><br>等距方位投影可以保留距中心点的距离和方向。将地球上的所有点投影到一个平面上。虽然所有投影方法（赤道投影、极方位投影和斜轴投影）均可用，但使用频率最高的是极方位投影，这种投影会将所有经线和纬线划分为相等的部分，以保持等距离属性。<br>据说这种投影最初是埃及人绘制星图时使用的。</p>              </div>            </details><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>（3）d </summary>              <div class='content'>              <p>经线：放射状直线，纬线：同心圆弧，中央经线上纬线间隔的变化：由地图中心向南北方向逐渐缩小</p>              </div>            </details><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>（4）f </summary>              <div class='content'>              <p>经线：放射状直线，纬线：同心圆，中央经线上纬线间隔的变化：从两极向赤道逐渐增大</p>              </div>            </details><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>（5）b </summary>              <div class='content'>              <p>经线：间隔相等的平行直线，纬线：与经线垂直的平行直线，中央经线上纬线间隔的变化：从赤道向两级逐渐增大</p><p>圆柱等积投影可将世界呈现为一个矩形，同时保持地图上的相对面积。瑞士数学家 Johann H.Lambert 于 1772 年首次描述了这种投影。自那以后许多年，出现了多种变体。该投影适合绘制赤道附近地区的大比例地图，且一般不建议用于绘制小比例（世界）地图。<br><img  
+                ><br>等距方位投影可以保留距中心点的距离和方向。将地球上的所有点投影到一个平面上。虽然所有投影方法（赤道投影、极方位投影和斜轴投影）均可用，但使用频率最高的是极方位投影，这种投影会将所有经线和纬线划分为相等的部分，以保持等距离属性。<br>据说这种投影最初是埃及人绘制星图时使用的。</p>              </div>            </details><details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>（3）d </summary>              <div class='content'>              <p>经线：放射状直线，纬线：同心圆弧，中央经线上纬线间隔的变化：由地图中心向南北方向逐渐缩小</p>              </div>            </details><details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>（4）f </summary>              <div class='content'>              <p>经线：放射状直线，纬线：同心圆，中央经线上纬线间隔的变化：从两极向赤道逐渐增大</p>              </div>            </details><details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>（5）b </summary>              <div class='content'>              <p>经线：间隔相等的平行直线，纬线：与经线垂直的平行直线，中央经线上纬线间隔的变化：从赤道向两级逐渐增大</p><p>圆柱等积投影可将世界呈现为一个矩形，同时保持地图上的相对面积。瑞士数学家 Johann H.Lambert 于 1772 年首次描述了这种投影。自那以后许多年，出现了多种变体。该投影适合绘制赤道附近地区的大比例地图，且一般不建议用于绘制小比例（世界）地图。<br><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/1-2-7.jpg"
                       alt="答案"
-                ></p><details class="green"><summary><i class="fa-solid fa-chevron-right"></i>贝尔曼投影 </summary>              <div class='content'>              <p>Behrmann 贝尔曼投影<br>贝尔曼投影是圆柱等积地图投影的一种，其标准纬线设置为南北纬 30°。<br>由于其等积的属性,它可以高度压缩极地地区。</p>              </div>            </details>              </div>            </details><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>（6）a </summary>              <div class='content'>              <p>经线：间隔相等的平行直线，纬线：与经线垂直的平行直线，中央经线上纬线间隔的变化：从赤道向两级逐渐增大</p><p>右键打开属性表<br><img  
+                ></p><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>贝尔曼投影 </summary>              <div class='content'>              <p>Behrmann 贝尔曼投影<br>贝尔曼投影是圆柱等积地图投影的一种，其标准纬线设置为南北纬 30°。<br>由于其等积的属性,它可以高度压缩极地地区。</p>              </div>            </details>              </div>            </details><details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>（6）a </summary>              <div class='content'>              <p>经线：间隔相等的平行直线，纬线：与经线垂直的平行直线，中央经线上纬线间隔的变化：从赤道向两级逐渐增大</p><p>右键打开属性表<br><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/2-1-1.jpg"
@@ -468,7 +499,7 @@
 <p><a class="button  regular" href='https://pro.arcgis.com/zh-cn/pro-app/latest/help/mapping/properties/list-of-supported-map-projections.htm' title='ArcGISPro支持的地图投影'><i class='fa-solid fa-arrow-right'></i> ArcGISPro支持的地图投影</a></p>
 </div>
 
-<h2 id="ArcGIS中地图投影实验"><a href="#ArcGIS中地图投影实验" class="headerlink" title="ArcGIS中地图投影实验"></a>ArcGIS中地图投影实验</h2><h3 id="-1"><a href="#-1" class="headerlink" title=""></a><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>实验目的 </summary>
+<h2 id="ArcGIS中地图投影实验"><a href="#ArcGIS中地图投影实验" class="headerlink" title="ArcGIS中地图投影实验"></a>ArcGIS中地图投影实验</h2><h3 id="-1"><a href="#-1" class="headerlink" title=""></a><details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>实验目的 </summary>
               <div class='content'>
               <ul><li>了解ArcGIS中的地图数据组织和SHP数据格式</li><li>了解ArcGIS软件中对于空间参考的定义以及PRJ文件</li><li>理解ArcGIS中的动态投影</li><li>实践ArcGIS软件中的投影设置工具</li><li>实践ArcGIS软件中的投影变换工具</li></ul>
               </div>
@@ -551,7 +582,7 @@
                       alt="批量投影"
                 ></p>
 <h3 id="地理坐标系及其转换"><a href="#地理坐标系及其转换" class="headerlink" title="地理坐标系及其转换"></a>地理坐标系及其转换</h3><p>前面在讲<a href="#%E5%A4%A7%E5%9C%B0%E5%9F%BA%E5%87%86%E9%9D%A2">大地基准</a>的时候我们说是<strong>不定</strong>的</p>
-<details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>我们国家常用地理坐标系 </summary>
+<details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>我们国家常用地理坐标系 </summary>
               <div class='content'>
               <ul><li>北京54</li><li>西安80</li><li>WGS84</li><li>CGCS2000坐标系</li><li>高德火星坐标系GCJ02</li><li>百度加密坐标系BD09</li></ul>
               </div>
@@ -569,7 +600,7 @@
 <li>CGCS2000转Beijing1954</li>
 <li>Bejing1954转Xian1980</li>
 </ul>
-<details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>当你做到第二个北京54转西安80你可能就会发现有问题 </summary>
+<details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>当你做到第二个北京54转西安80你可能就会发现有问题 </summary>
               <div class='content'>
               <p>这里会显示“未定义的地理（坐标）变换”<br><img  
                      lazyload
@@ -581,7 +612,7 @@
                      src="/images/loading.svg"
                      data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-7-5.png"
                       alt="更改坐标系"
-                ><br>方法我们就选择COORDINATE_Frame&#x2F;Position Vector（也就是七参数变换）</p><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>七参数坐标转换原理（COORDINATE_FRAME） </summary>              <div class='content'>              <ul><li>如果原点相同，通过三次旋转，就可以两个坐标系重合；</li><li>如果原点不同，通过沿三个坐标轴的平移和旋转可以取得一致；</li><li>如果两个坐标系的尺度也不尽一致，就需要再增加一个尺度变化参数。</li></ul>              </div>            </details><p><img  
+                ><br>方法我们就选择COORDINATE_Frame&#x2F;Position Vector（也就是七参数变换）</p><details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>七参数坐标转换原理（COORDINATE_FRAME） </summary>              <div class='content'>              <ul><li>如果原点相同，通过三次旋转，就可以两个坐标系重合；</li><li>如果原点不同，通过沿三个坐标轴的平移和旋转可以取得一致；</li><li>如果两个坐标系的尺度也不尽一致，就需要再增加一个尺度变化参数。</li></ul>              </div>            </details><p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-7-6.png"
@@ -590,7 +621,7 @@
               </div>
             </details>
 
-<details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>ArcGIS中提供地理变换方法主要有这几种 </summary>
+<details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>ArcGIS中提供地理变换方法主要有这几种 </summary>
               <div class='content'>
               <ul><li>Geocentric_Translation</li><li>Molodensky</li><li>Molodensky_Abridged</li><li>Position_Vector</li><li>Coordinate_Frame</li><li>Molodensky_Badekas</li><li>NADCON</li><li>HARN</li><li>NTV2</li><li>Longitude_Rotation</li><li>Unit_Change</li><li>Geographic_2D_Offset<br>可使用“创建自定义地理变换（Creat Custom Geographic Transformation）”工具来创建转换方法</li></ul>
               </div>
@@ -621,17 +652,17 @@
                      data-src="/images/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1/3-8-02.png"
                       alt="三七参转换"
                 ></p>
-<details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>变换形式 </summary>
+<details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>变换形式 </summary>
               <div class='content'>
               <ul><li>地理坐标之间变换</li><li>平面坐标之间变换</li><li>投影</li><li>逆投影</li></ul>
               </div>
             </details>
-<details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>变换方法 </summary>
+<details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>变换方法 </summary>
               <div class='content'>
               <ul><li>解析变换</li><li>数值变换</li><li>数值-解析变换法</li><li>七参数变换</li></ul>
               </div>
             </details>
-<h3 id="ArcGIS中自定义坐标系"><a href="#ArcGIS中自定义坐标系" class="headerlink" title="ArcGIS中自定义坐标系"></a>ArcGIS中自定义坐标系</h3><h2 id="地图投影计算方法实验"><a href="#地图投影计算方法实验" class="headerlink" title="地图投影计算方法实验"></a>地图投影计算方法实验</h2><h3 id="-2"><a href="#-2" class="headerlink" title=""></a><details class="gray"><summary><i class="fa-solid fa-chevron-right"></i>实验目的 </summary>
+<h3 id="ArcGIS中自定义坐标系"><a href="#ArcGIS中自定义坐标系" class="headerlink" title="ArcGIS中自定义坐标系"></a>ArcGIS中自定义坐标系</h3><h2 id="地图投影计算方法实验"><a href="#地图投影计算方法实验" class="headerlink" title="地图投影计算方法实验"></a>地图投影计算方法实验</h2><h3 id="-2"><a href="#-2" class="headerlink" title=""></a><details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>实验目的 </summary>
               <div class='content'>
               <ul><li>理解常见投影的数学原理</li><li>掌握投影计算方法各种各待定参数的确定方法</li><li>了解高斯-克吕格投影的计算机程序实现方法</li><li>了解Lambert投影的计算机程序实现方法</li><li>了解地图投影的数值变换的计算机程序实现方法</li></ul>
               </div>
@@ -649,28 +680,6 @@
       </categories>
       <tags>
         <tag>ArcGIS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关闭windows自动更新</title>
-    <url>/2023/03/26/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/</url>
-    <content><![CDATA[<a class="button  large center" href='https://www.abackup.com/easybackup-tutorials/how-to-stop-windows-10-update-automatically-666.html' title='关闭Windows自动更新的6个方法'><i class='fa-solid fa-arrow-right'></i> 关闭Windows自动更新的6个方法</a>
-
-
-
-<p>我这里使用第二种方法，结果发现报错<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/error.png"
-                      alt="Error"
-                ></p>
-<p>网上查询发现是因为Windows系统版本是家庭版，不具备这个功能</p>
-<a class="button  large center" href='https://zhuanlan.zhihu.com/p/403961135' title='找不到 gpedit.msc 的最优解决办法'><i class='fa-solid fa-arrow-right'></i> 找不到 gpedit.msc 的最优解决办法</a>]]></content>
-      <categories>
-        <category>Tips</category>
-      </categories>
-      <tags>
-        <tag>Tips</tag>
       </tags>
   </entry>
   <entry>
