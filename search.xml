@@ -35,23 +35,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Project各个版本安装包</title>
-    <url>/2023/04/03/Project%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85%E5%8C%85/</url>
-    <content><![CDATA[<p>Project 2019(32&#x2F;64)<br>下载地址：<a class="link"   href="https://pan.baidu.com/s/1Di30sLzygoaWR-4DYGQiDw" >https://pan.baidu.com/s/1Di30sLzygoaWR-4DYGQiDw <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>提取码: q511  </p>
-<p>Project2016(32&#x2F;64位)<br>下载地址: <a class="link"   href="https://pan.baidu.com/s/1JsuLCruSlypzM36_b2vQpw" >https://pan.baidu.com/s/1JsuLCruSlypzM36_b2vQpw <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>密码：yhe8</p>
-<p>Project 2013(32&#x2F;64)位<br>下载地址：<a class="link"   href="https://pan.baidu.com/s/1rYSuzeQnfWNobaT6jUoDoA" >https://pan.baidu.com/s/1rYSuzeQnfWNobaT6jUoDoA <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>提取码: ua8a</p>
-<p>Project2010(32&#x2F;64位)<br>下载地址：<a class="link"   href="https://pan.baidu.com/s/1LR7-FDd_4hestfZ0BWkorA" >https://pan.baidu.com/s/1LR7-FDd_4hestfZ0BWkorA <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>密码：xk6m</p>
-<p>Project2007(32&#x2F;64位)<br>链接：<a class="link"   href="https://pan.baidu.com/s/1KWbFCaNW0XkS58nOXJxzsQ" >https://pan.baidu.com/s/1KWbFCaNW0XkS58nOXJxzsQ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>密码：7k6r</p>
-<p>Project2003<br>下载地址:<a class="link"   href="https://pan.baidu.com/s/1JF_WzJ3rjRpqQJcfO3o9UQ" >https://pan.baidu.com/s/1JF_WzJ3rjRpqQJcfO3o9UQ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>提取码: 92qc</p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LINGO软件的初步使用及解读</title>
     <url>/2023/03/26/LINGO%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%A7%A3%E8%AF%BB/</url>
     <content><![CDATA[<p>早上八点上到中午十一点半，休息了5分钟，我要死了。——2023&#x2F;3&#x2F;26疲惫不堪的我</p>
@@ -132,33 +115,20 @@
       </tags>
   </entry>
   <entry>
-    <title>博客的部署</title>
-    <url>/2023/03/10/first-Blog/</url>
-    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>我基本一直跟着这个教程走的，非常的详细非常的优质！</p>
-<a class="button  center large" href='https://www.bilibili.com/read/cv12633102' title='保姆级教程'><i class='fa-brands fa-bilibili'></i> 保姆级教程</a>
-<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><div class="note-large notel-blue"><div class="notel-title"><p>提示</p>
-</div><div class="notel-content"><p>4.2第二步中</p>
-<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:master</span></span><br></pre></td></tr></table></figure></div>
-<p>由于github将master分支改名为main，所以最后要进行更改</p>
-<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:main</span></span><br></pre></td></tr></table></figure></div> </div></div>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>今天加了aplayer插件（是这个主题里面自带的直接配置就行），但是应该是因为这个主题创建者没有放太多功能进来，只有一部分可以设置<br>这是网上由找到的几个文章，可以添加网易云歌单的，近期事情太多，先放这里，以后有时间再慢慢弄吧</p>
-<a class="button  center regular" href='https://developer.aliyun.com/article/894787' title='给自己的网站添加网易云音乐歌单'><i class='fa-solid fa-arrow-right'></i> 给自己的网站添加网易云音乐歌单</a>  
-<a class="button  regular" href='https://cloud.tencent.com/developer/article/1833968' title='引入Aplayer播放音乐(踩坑向)'><i class='fa-solid fa-arrow-right'></i> 引入Aplayer播放音乐(踩坑向)</a>
-
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><h4 id=""><a href="#" class="headerlink" title=""></a><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>几个控制台命令 </summary>
-              <div class='content'>
-              <div class="note-large notel-default"><div class="notel-title"><p>d:</p></div><div class="notel-content"><p>到d盘</p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>cd xxx</p></div><div class="notel-content"><p>到当前目录下的xxx中</p> </div></div>
-              </div>
-            </details></h4><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>几个hexo 命令 </summary>
-              <div class='content'>
-              <div class="note-large notel-default"><div class="notel-title"><p>hexo clean</p></div><div class="notel-content"><p>清除缓存文件 db.json 和已生成的静态文件 public。  </p><ul><li>网站显示异常时可以执行这条命令试试。</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo g</p></div><div class="notel-content"><p>生成网站静态文件到默认设置的 public 文件夹。</p><ul><li>便于查看网站生成的静态文件或者手动部署网站；</li><li>如果使用自动部署，不需要先执行该命令；</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo s</p></div><div class="notel-content"><p>启动本地服务器，用于预览主题。<br>默认地址 <a class="link"   href="http://localhost:4000/" >http://localhost:4000/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo d</p></div><div class="notel-content"><p>自动生成网站静态文件，并部署到设定的仓库。</p> </div></div>
-              </div>
-            </details></h4><h3 id="找资源"><a href="#找资源" class="headerlink" title="找资源"></a>找资源</h3><h4 id="壁纸"><a href="#壁纸" class="headerlink" title="壁纸"></a>壁纸</h4><p>英文网站 <a class="link"   href="https://wallhaven.cc/" >wallhaven <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h4 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h4><p> <a class="link"   href="https://fontawesome.com/" >Fontawesome <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 也就是本模板中使用的</p>
+    <title>Project各个版本安装包</title>
+    <url>/2023/04/03/Project%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85%E5%8C%85/</url>
+    <content><![CDATA[<p>Project 2019(32&#x2F;64)<br>下载地址：<a class="link"   href="https://pan.baidu.com/s/1Di30sLzygoaWR-4DYGQiDw" >https://pan.baidu.com/s/1Di30sLzygoaWR-4DYGQiDw <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>提取码: q511  </p>
+<p>Project2016(32&#x2F;64位)<br>下载地址: <a class="link"   href="https://pan.baidu.com/s/1JsuLCruSlypzM36_b2vQpw" >https://pan.baidu.com/s/1JsuLCruSlypzM36_b2vQpw <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>密码：yhe8</p>
+<p>Project 2013(32&#x2F;64)位<br>下载地址：<a class="link"   href="https://pan.baidu.com/s/1rYSuzeQnfWNobaT6jUoDoA" >https://pan.baidu.com/s/1rYSuzeQnfWNobaT6jUoDoA <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>提取码: ua8a</p>
+<p>Project2010(32&#x2F;64位)<br>下载地址：<a class="link"   href="https://pan.baidu.com/s/1LR7-FDd_4hestfZ0BWkorA" >https://pan.baidu.com/s/1LR7-FDd_4hestfZ0BWkorA <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>密码：xk6m</p>
+<p>Project2007(32&#x2F;64位)<br>链接：<a class="link"   href="https://pan.baidu.com/s/1KWbFCaNW0XkS58nOXJxzsQ" >https://pan.baidu.com/s/1KWbFCaNW0XkS58nOXJxzsQ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>密码：7k6r</p>
+<p>Project2003<br>下载地址:<a class="link"   href="https://pan.baidu.com/s/1JF_WzJ3rjRpqQJcfO3o9UQ" >https://pan.baidu.com/s/1JF_WzJ3rjRpqQJcfO3o9UQ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>提取码: 92qc</p>
 ]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>Blog</tag>
+        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
@@ -225,6 +195,7 @@
 <a class="button  regular" href='https://pan.baidu.com/s/1IKVsxIEYaJzsVSs4Q4Zu7Q?pwd=sfty' title='百度网盘下载链接'><i class='fa-solid fa-cloud-arrow-down'></i> 百度网盘下载链接</a>
 
 <p>我本来也准备用Ryujinx的，可以正常玩游戏</p>
+<p><a class="link"   href="https://www.bilibili.com/read/cv20541633/" >Switch模拟器Ryujinx联网版官方中文入门教程（含最新KEY和固件） - 哔哩哔哩 (bilibili.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
  <details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>一些游戏截图 </summary>
               <div class='content'>
               <p><img  
@@ -268,6 +239,7 @@
 
 <h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="格式转换工具"><a href="#格式转换工具" class="headerlink" title="格式转换工具"></a>格式转换工具</h2><a class="button  regular" href='https://pan.baidu.com/s/17iflddIXQbax5j8HAx9F6g?pwd=gszh' title='百度网盘下载链接'><i class='fa-solid fa-cloud-arrow-down'></i> 百度网盘下载链接</a>
 
+<p><a class="link"   href="https://github.com/dezem/SAK" >dezem&#x2F;SAK: Switch Army Knife (SAK) (github.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
       <categories>
         <category>Game</category>
@@ -293,6 +265,36 @@
 
 <p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>博客的部署</title>
+    <url>/2023/03/10/first-Blog/</url>
+    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>我基本一直跟着这个教程走的，非常的详细非常的优质！</p>
+<a class="button  center large" href='https://www.bilibili.com/read/cv12633102' title='保姆级教程'><i class='fa-brands fa-bilibili'></i> 保姆级教程</a>
+<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><div class="note-large notel-blue"><div class="notel-title"><p>提示</p>
+</div><div class="notel-content"><p>4.2第二步中</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:master</span></span><br></pre></td></tr></table></figure></div>
+<p>由于github将master分支改名为main，所以最后要进行更改</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:rygdsddssd/rygdsddssd.github.io.git</span></span><br><span class="line">  <span class="string">branch:main</span></span><br></pre></td></tr></table></figure></div> </div></div>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>今天加了aplayer插件（是这个主题里面自带的直接配置就行），但是应该是因为这个主题创建者没有放太多功能进来，只有一部分可以设置<br>这是网上由找到的几个文章，可以添加网易云歌单的，近期事情太多，先放这里，以后有时间再慢慢弄吧</p>
+<a class="button  center regular" href='https://developer.aliyun.com/article/894787' title='给自己的网站添加网易云音乐歌单'><i class='fa-solid fa-arrow-right'></i> 给自己的网站添加网易云音乐歌单</a>  
+<a class="button  regular" href='https://cloud.tencent.com/developer/article/1833968' title='引入Aplayer播放音乐(踩坑向)'><i class='fa-solid fa-arrow-right'></i> 引入Aplayer播放音乐(踩坑向)</a>
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><h4 id=""><a href="#" class="headerlink" title=""></a><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>几个控制台命令 </summary>
+              <div class='content'>
+              <div class="note-large notel-default"><div class="notel-title"><p>d:</p></div><div class="notel-content"><p>到d盘</p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>cd xxx</p></div><div class="notel-content"><p>到当前目录下的xxx中</p> </div></div>
+              </div>
+            </details></h4><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>几个hexo 命令 </summary>
+              <div class='content'>
+              <div class="note-large notel-default"><div class="notel-title"><p>hexo clean</p></div><div class="notel-content"><p>清除缓存文件 db.json 和已生成的静态文件 public。  </p><ul><li>网站显示异常时可以执行这条命令试试。</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo g</p></div><div class="notel-content"><p>生成网站静态文件到默认设置的 public 文件夹。</p><ul><li>便于查看网站生成的静态文件或者手动部署网站；</li><li>如果使用自动部署，不需要先执行该命令；</li></ul> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo s</p></div><div class="notel-content"><p>启动本地服务器，用于预览主题。<br>默认地址 <a class="link"   href="http://localhost:4000/" >http://localhost:4000/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p> </div></div><div class="note-large notel-default"><div class="notel-title"><p>hexo d</p></div><div class="notel-content"><p>自动生成网站静态文件，并部署到设定的仓库。</p> </div></div>
+              </div>
+            </details></h4><h3 id="找资源"><a href="#找资源" class="headerlink" title="找资源"></a>找资源</h3><h4 id="壁纸"><a href="#壁纸" class="headerlink" title="壁纸"></a>壁纸</h4><p>英文网站 <a class="link"   href="https://wallhaven.cc/" >wallhaven <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h4><p> <a class="link"   href="https://fontawesome.com/" >Fontawesome <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 也就是本模板中使用的</p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Blog</tag>
+      </tags>
   </entry>
   <entry>
     <title>MATLAB拼接图片</title>
@@ -401,29 +403,6 @@
       </tags>
   </entry>
   <entry>
-    <title>spring学习(一)</title>
-    <url>/2023/03/25/spring%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</url>
-    <content><![CDATA[<a class="button  regular" href='https://www.docs4dev.com/docs/zh/spring-framework/5.1.3.RELEASE/reference' title='spring中文文档'><i class='fa-solid fa-arrow-right'></i> spring中文文档</a>
-
-<h1 id="spring的概述"><a href="#spring的概述" class="headerlink" title="spring的概述"></a>spring的概述</h1><a class="button  regular" href='https://zhuanlan.zhihu.com/p/392443841' title='spring的概述'><i class='fa-solid fa-arrow-right'></i> spring的概述</a>
-
-<h2 id="spring是什么"><a href="#spring是什么" class="headerlink" title="spring是什么"></a>spring是什么</h2><p>简单点概括就是框架，之前学java时有讲到工厂模式，这个就是结合工厂模式，把不必要的重复性的东西放到框架里，你要使用就只用把框架对好，往里填充东西就🆗。<br>Spring是一个免费开源的轻量级的，IOC，AOP为特点的轻量级框架！</p>
-<h2 id="spring的两大核心"><a href="#spring的两大核心" class="headerlink" title="spring的两大核心"></a>spring的两大核心</h2><ul>
-<li>面向方面编程(AOP)</li>
-<li>控制反转(IOC)容器</li>
-</ul>
-<h2 id="spring的发展历程和优势"><a href="#spring的发展历程和优势" class="headerlink" title="spring的发展历程和优势"></a>spring的发展历程和优势</h2><h2 id="spring体系结构"><a href="#spring体系结构" class="headerlink" title="spring体系结构"></a>spring体系结构</h2><h1 id="程序的耦合及解耦"><a href="#程序的耦合及解耦" class="headerlink" title="程序的耦合及解耦"></a>程序的耦合及解耦</h1><h2 id="曾经案例中问题"><a href="#曾经案例中问题" class="headerlink" title="曾经案例中问题"></a>曾经案例中问题</h2><h2 id="工厂模式解耦"><a href="#工厂模式解耦" class="headerlink" title="工厂模式解耦"></a>工厂模式解耦</h2><h1 id="IOC概念和spring中的IOC"><a href="#IOC概念和spring中的IOC" class="headerlink" title="IOC概念和spring中的IOC"></a>IOC概念和spring中的IOC</h1><h2 id="spring中基于XML的IOC环境搭建"><a href="#spring中基于XML的IOC环境搭建" class="headerlink" title="spring中基于XML的IOC环境搭建"></a>spring中基于XML的IOC环境搭建</h2><h1 id="依赖注入-DI——Dependency-Injection"><a href="#依赖注入-DI——Dependency-Injection" class="headerlink" title="依赖注入(DI——Dependency Injection)"></a>依赖注入(DI——Dependency Injection)</h1><p>由容器动态的将某个依赖关系注入到组件之中。</p>
-<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>spring</category>
-      </categories>
-      <tags>
-        <tag>learn</tag>
-        <tag>spring</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArcGIS打开mxd文件无法显示的问题</title>
     <url>/2023/03/14/mxd%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
     <content><![CDATA[<details class="yellow" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>解决办法 </summary>
@@ -463,12 +442,109 @@
 ]]></content>
       <categories>
         <category>GIS</category>
-        <category>ArcGIS</category>
         <category>Problems</category>
+        <category>ArcGIS</category>
       </categories>
       <tags>
         <tag>ArcGIS</tag>
         <tag>Problems</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ryujinx在线版(LDN版)</title>
+    <url>/2023/04/12/ryujinx%E5%9C%A8%E7%BA%BF%E7%89%88/</url>
+    <content><![CDATA[<h1 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h1><a class="button  large center" href='https://www.bilibili.com/read/cv20541633/' title='Switch模拟器Ryujinx联网版官方中文入门教程（含最新KEY和固件）'><i class='fa-brands fa-bilibili'></i> Switch模拟器Ryujinx联网版官方中文入门教程（含最新KEY和固件）</a>
+
+<a class="button  regular" href='https://ryujinx.org/download' title='官方下载地址'><i class='fa-solid fa-cloud-arrow-down'></i> 官方下载地址</a>
+
+<p>密钥:<a class="link"   href="https://prodkeys.net/ryujinx-prod-keys/" >Ryujinx Prod Keys v15.0.1 Latest File Download <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>固件:<a class="link"   href="https://prodkeys.net/switch-firmwares/" >Latest Switch Firmwares Download V16.0.0 (prodkeys.net) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h1><p>记得</p>
+<h1 id="游戏资源"><a href="#游戏资源" class="headerlink" title="游戏资源"></a>游戏资源</h1><p>微信公众号：NS头号玩家</p>
+<p>这里的资源非常离谱之多，足有7000+ ！！！</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/ryujinx%E5%9C%A8%E7%BA%BF%E7%89%88/gamelist.png"
+                      alt="gamelist"
+                ></p>
+<p>而且每个月还在更新！</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/ryujinx%E5%9C%A8%E7%BA%BF%E7%89%88/gamelist_update.png"
+                      alt="gamelist_update"
+                ></p>
+<p>只能说是非常nb啊</p>
+<p>这个公众号还有蛮多其他工具，不过我暂时还没用过。</p>
+<p><strong>来自</strong> ：【龙神ryujinx模拟器联机一起打游戏，属于我们自己的开黑屋】 <a class="link"   href="https://www.bilibili.com/video/BV1cg411i7k1/?share_source=copy_web&vd_source=e7a3b9bafd0572f40c66626ff7445e15" >https://www.bilibili.com/video/BV1cg411i7k1/?share_source=copy_web&amp;vd_source=e7a3b9bafd0572f40c66626ff7445e15 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>github上的大佬做的文件转换工具，这个工具很完备了，配合之前的WiiU_WUP转Loadiine工具，几个模拟器基本都可以畅行了hhhh</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/ryujinx%E5%9C%A8%E7%BA%BF%E7%89%88/SAK_munu.png"
+                     
+                ></p>
+<p><a class="link"   href="https://github.com/dezem/SAK" >dezem&#x2F;SAK: Switch Army Knife (SAK) (github.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><strong>注意！</strong></p>
+<p>SAK下在好之后要把前面一步下载的密钥文件”prod.keys”放到bin目录下</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/ryujinx%E5%9C%A8%E7%BA%BF%E7%89%88/SAK_keyloc.png"
+                     
+                ></p>
+]]></content>
+      <categories>
+        <category>Game</category>
+      </categories>
+      <tags>
+        <tag>Switch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>spring学习(一)</title>
+    <url>/2023/03/25/spring%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</url>
+    <content><![CDATA[<a class="button  regular" href='https://www.docs4dev.com/docs/zh/spring-framework/5.1.3.RELEASE/reference' title='spring中文文档'><i class='fa-solid fa-arrow-right'></i> spring中文文档</a>
+
+<h1 id="spring的概述"><a href="#spring的概述" class="headerlink" title="spring的概述"></a>spring的概述</h1><a class="button  regular" href='https://zhuanlan.zhihu.com/p/392443841' title='spring的概述'><i class='fa-solid fa-arrow-right'></i> spring的概述</a>
+
+<h2 id="spring是什么"><a href="#spring是什么" class="headerlink" title="spring是什么"></a>spring是什么</h2><p>简单点概括就是框架，之前学java时有讲到工厂模式，这个就是结合工厂模式，把不必要的重复性的东西放到框架里，你要使用就只用把框架对好，往里填充东西就🆗。<br>Spring是一个免费开源的轻量级的，IOC，AOP为特点的轻量级框架！</p>
+<h2 id="spring的两大核心"><a href="#spring的两大核心" class="headerlink" title="spring的两大核心"></a>spring的两大核心</h2><ul>
+<li>面向方面编程(AOP)</li>
+<li>控制反转(IOC)容器</li>
+</ul>
+<h2 id="spring的发展历程和优势"><a href="#spring的发展历程和优势" class="headerlink" title="spring的发展历程和优势"></a>spring的发展历程和优势</h2><h2 id="spring体系结构"><a href="#spring体系结构" class="headerlink" title="spring体系结构"></a>spring体系结构</h2><h1 id="程序的耦合及解耦"><a href="#程序的耦合及解耦" class="headerlink" title="程序的耦合及解耦"></a>程序的耦合及解耦</h1><h2 id="曾经案例中问题"><a href="#曾经案例中问题" class="headerlink" title="曾经案例中问题"></a>曾经案例中问题</h2><h2 id="工厂模式解耦"><a href="#工厂模式解耦" class="headerlink" title="工厂模式解耦"></a>工厂模式解耦</h2><h1 id="IOC概念和spring中的IOC"><a href="#IOC概念和spring中的IOC" class="headerlink" title="IOC概念和spring中的IOC"></a>IOC概念和spring中的IOC</h1><h2 id="spring中基于XML的IOC环境搭建"><a href="#spring中基于XML的IOC环境搭建" class="headerlink" title="spring中基于XML的IOC环境搭建"></a>spring中基于XML的IOC环境搭建</h2><h1 id="依赖注入-DI——Dependency-Injection"><a href="#依赖注入-DI——Dependency-Injection" class="headerlink" title="依赖注入(DI——Dependency Injection)"></a>依赖注入(DI——Dependency Injection)</h1><p>由容器动态的将某个依赖关系注入到组件之中。</p>
+<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>spring</category>
+      </categories>
+      <tags>
+        <tag>learn</tag>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关闭windows自动更新</title>
+    <url>/2023/03/26/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/</url>
+    <content><![CDATA[<a class="button  large center" href='https://www.abackup.com/easybackup-tutorials/how-to-stop-windows-10-update-automatically-666.html' title='关闭Windows自动更新的6个方法'><i class='fa-solid fa-arrow-right'></i> 关闭Windows自动更新的6个方法</a>
+
+
+
+<p>我这里使用第二种方法，结果发现报错<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/error.png"
+                      alt="Error"
+                ></p>
+<p>网上查询发现是因为Windows系统版本是家庭版，不具备这个功能</p>
+<a class="button  large center" href='https://zhuanlan.zhihu.com/p/403961135' title='找不到 gpedit.msc 的最优解决办法'><i class='fa-solid fa-arrow-right'></i> 找不到 gpedit.msc 的最优解决办法</a>]]></content>
+      <categories>
+        <category>Tips</category>
+      </categories>
+      <tags>
+        <tag>Tips</tag>
       </tags>
   </entry>
   <entry>
@@ -512,28 +588,6 @@
       </categories>
       <tags>
         <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关闭windows自动更新</title>
-    <url>/2023/03/26/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/</url>
-    <content><![CDATA[<a class="button  large center" href='https://www.abackup.com/easybackup-tutorials/how-to-stop-windows-10-update-automatically-666.html' title='关闭Windows自动更新的6个方法'><i class='fa-solid fa-arrow-right'></i> 关闭Windows自动更新的6个方法</a>
-
-
-
-<p>我这里使用第二种方法，结果发现报错<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/error.png"
-                      alt="Error"
-                ></p>
-<p>网上查询发现是因为Windows系统版本是家庭版，不具备这个功能</p>
-<a class="button  large center" href='https://zhuanlan.zhihu.com/p/403961135' title='找不到 gpedit.msc 的最优解决办法'><i class='fa-solid fa-arrow-right'></i> 找不到 gpedit.msc 的最优解决办法</a>]]></content>
-      <categories>
-        <category>Tips</category>
-      </categories>
-      <tags>
-        <tag>Tips</tag>
       </tags>
   </entry>
   <entry>
