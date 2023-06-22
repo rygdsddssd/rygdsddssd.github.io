@@ -1409,4 +1409,25 @@
         <tag>随想</tag>
       </tags>
   </entry>
+  <entry>
+    <title>SPA主成分分析</title>
+    <url>/2023/05/26/SPA%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<h1 id="SPA主成分分析"><a href="#SPA主成分分析" class="headerlink" title="SPA主成分分析"></a>SPA主成分分析</h1><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>各种实现 </summary>
+              <div class='content'>
+              <p><a class="button  regular" href='https://blog.csdn.net/qq_36108664/article/details/104972122' title='【CSDN】MATLAB主成分分析（PCA）代码及结果分析实例'><i class='fa-solid fa-c'></i> 【CSDN】MATLAB主成分分析（PCA）代码及结果分析实例</a></p><p><a class="button  regular" href='https://blog.csdn.net/qq_25990967/article/details/121324265' title='【CSDN】主成分分析（PCA）及其可视化——matlab_pca可视化'><i class='fa-solid fa-c'></i> 【CSDN】主成分分析（PCA）及其可视化——matlab_pca可视化</a></p><p><a class="button  regular" href='https://blog.csdn.net/qq_36108664/article/details/107850006' title='【CSDN】Python实现主成分分析（PCA）降维'><i class='fa-solid fa-c'></i> 【CSDN】Python实现主成分分析（PCA）降维</a></p><p><a class="button  regular" href='https://blog.csdn.net/luohualiushui1/article/details/88342768' title='【CSDN】用java实现主成分分析(PCA)降维'><i class='fa-solid fa-c'></i> 【CSDN】用java实现主成分分析(PCA)降维</a></p><p>感谢这些作者</p>
+              </div>
+            </details>
+
+<p>SPSS软件中的实操：<a class="button  regular" href='https://blog.csdn.net/weixin_39759155/article/details/110160459' title='【CSDN】pca主成分分析结果解释_主成分分析(PCA)原理及SPSS实操_'><i class='fa-solid fa-c'></i> 【CSDN】pca主成分分析结果解释_主成分分析(PCA)原理及SPSS实操_</a></p>
+]]></content>
+      <categories>
+        <category>Activity</category>
+        <category>数模</category>
+      </categories>
+      <tags>
+        <tag>MATLAB</tag>
+        <tag>多元统计分析</tag>
+        <tag>SPSS</tag>
+      </tags>
+  </entry>
 </search>
