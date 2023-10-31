@@ -9,10 +9,12 @@
     <!-- preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     
         
-            <link rel="preconnect" href="https://npm.elemecdn.com" crossorigin>
+        
+        
+            <link rel="preconnect" href="https://cdn.staticfile.org" crossorigin>
         
     
     <!--- Seo Part-->
@@ -47,7 +49,14 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <link rel="stylesheet" href="//npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/assets/fonts.css">
+
+    
+        <link rel="stylesheet" href="//cdn.staticfile.org/hexo-theme-redefine/2.5.0/assets/build/styles.css">
+    
+
+    <link rel="stylesheet" href="//cdn.staticfile.org/hexo-theme-redefine/2.5.0/fonts/fonts.css">
+    <link rel="stylesheet" href="//cdn.staticfile.org/hexo-theme-redefine/2.5.0/fonts/Satoshi/satoshi.css">
+    <link rel="stylesheet" href="//cdn.staticfile.org/hexo-theme-redefine/2.5.0/fonts/Chillax/chillax.css">
     <!--- Font Part-->
     
     
@@ -61,18 +70,17 @@
     <!--- Inject Part-->
     
     <script id="hexo-configurations">
-    let Global = window.Global || {};
-    Global.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.xml"};
-    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["Spirit","Matter","God","Overman"]},"code_block":{"copy":true,"style":"simple","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"placeholder":"/images/background_light.jpg","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"english":{"enable":true,"family":null,"url":"https://fonts.googleapis.com/css2?family=Farsan&display=swap"}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"image":{"light":"/images/background_light.jpg","dark":"/images/background_dark.jpg"},"title":"虹狐 HomeHu","subtitle":{"text":["这里是熔岩怪的HOME","我会在这里分享我的学习心得、杂谈...","期待你与我联系交流"],"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"social_links":{"enable":false,"links":{"github":"https://github.com/rygdsddssd","twitter":"https://twitter.com/rygdsddssd?t=H0Cstf5te7dJTVy7_3dqng&s=09","email":"rygdsddssd@gmail.com"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"audios":[{"name":"现在那边是几点","artist":"黄小琥","url":"/musics/黄小琥 - 现在那边是几点.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000001mjKcj2pICkz_1.jpg?max_age=2592000"},{"name":"Wayfaring Stranger","artist":"Johnny Cash","url":"/musics/Johnny Cash - Wayfaring Stranger.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000004Dz48k0TLBSH_1.jpg?max_age=2592000"},{"name":"Broken Bones","artist":"KALEO","url":"/musics/KALEO - Broken Bones.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000CCbWY0MUJ1j_1.jpg?max_age=2592000"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.1.5","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"icon":"fa-regular fa-house","path":"/"},"Archives":{"icon":"fa-regular fa-archive","submenus":{"Time":"/Archives","Tags":"/tags","Categories":"/categories"}},"Links":{"path":"/links","icon":"fa-regular fa-link"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}}};
-    Global.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
-    Global.data_config = {"masonry":false};
+    window.config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["Spirit","Matter","God","Overman"]},"code_block":{"copy":true,"style":"simple","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/background_light.jpg","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"english":{"enable":true,"family":null,"url":"https://fonts.googleapis.com/css2?family=Farsan&display=swap"}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/background_light.jpg","dark":"/images/background_dark.jpg"},"title":"虹狐 HomeHu","subtitle":{"text":["这里是熔岩怪的HOME","我会在这里分享我的学习心得、日常、杂谈...","期待你与我联系交流"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"social_links":{"enable":true,"links":{"github":"https://github.com/rygdsddssd","twitter":"https://twitter.com/rygdsddssd?t=H0Cstf5te7dJTVy7_3dqng&s=09","email":"rygdsddssd@gmail.com"},"qrs":{"weixin":"/images/weixin.png"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":"现在那边是几点","artist":"黄小琥","url":"/musics/黄小琥 - 现在那边是几点.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000001mjKcj2pICkz_1.jpg?max_age=2592000"},{"name":"Wayfaring Stranger","artist":"Johnny Cash","url":"/musics/Johnny Cash - Wayfaring Stranger.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000004Dz48k0TLBSH_1.jpg?max_age=2592000"},{"name":"Broken Bones","artist":"KALEO","url":"/musics/KALEO - Broken Bones.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000CCbWY0MUJ1j_1.jpg?max_age=2592000"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"icon":"fa-regular fa-archive","submenus":{"Time":"/Archives","Tags":"/tags","Categories":"/categories"}},"Links":{"path":"/links","icon":"fa-regular fa-link"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"nice to meet you","links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/3/10 14:00:00"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
   </script>
     
     <!--- Fontawesome Part-->
-    <link rel="stylesheet" href="//npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/fontawesome/fontawesome.min.css">
-    <link rel="stylesheet" href="//npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/fontawesome/brands.min.css">
-    <link rel="stylesheet" href="//npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/fontawesome/solid.min.css">
-    <link rel="stylesheet" href="//npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/fontawesome/regular.min.css">
+    <link rel="stylesheet" href="//cdn.staticfile.org/hexo-theme-redefine/2.5.0/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.staticfile.org/hexo-theme-redefine/2.5.0/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="//cdn.staticfile.org/hexo-theme-redefine/2.5.0/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="//cdn.staticfile.org/hexo-theme-redefine/2.5.0/fontawesome/regular.min.css">
     
     
     
@@ -86,18 +94,19 @@
 
     
         <span class="pjax-progress-bar"></span>
-        <span class="pjax-progress-icon">
+        <span class="swup-progress-icon">
             <i class="fa-solid fa-circle-notch fa-spin"></i>
         </span>
     
 </div>
 
 
-<main class="page-container">
+<main class="page-container" id="swup">
 
     
 
     <div class="main-content-container">
+
 
         <div class="main-content-header">
             <header class="navbar-container">
@@ -204,12 +213,12 @@
     </div>
 
     <!-- Mobile drawer -->
-    <div class="navbar-drawer">
-        <ul class="drawer-navbar-list">
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
             
                 
-                    <li class="drawer-navbar-item flex-center">
-                        <a class="" 
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
                         href="/"  >
                              
                                 
@@ -223,37 +232,37 @@
                     
             
                 
-                    <li class="drawer-navbar-item flex-center">
-                        <a class="has-dropdown" 
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group has-dropdown" 
                         href="#" onClick="return false;">
                             
                                 
                                     <i class="fa-regular fa-archive"></i>
                                 
-                                归档&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                                归档&nbsp;<i class="group-hover:rotate-180 transition-transform fa-solid fa-chevron-down"></i>
                             
                         </a>
                     </li>
                     <!-- Submenu -->
                               
                         
-                            <li class="dropdown-item flex-center">
-                                <a class="dropdown-item" href="/Archives">TIME</a>
+                            <li class="drawer-navbar-item text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                <a class="py-0.5" href="/Archives">TIME</a>
                             </li>
                         
-                            <li class="dropdown-item flex-center">
-                                <a class="dropdown-item" href="/tags">标签</a>
+                            <li class="drawer-navbar-item text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                <a class="py-0.5" href="/tags">标签</a>
                             </li>
                         
-                            <li class="dropdown-item flex-center">
-                                <a class="dropdown-item" href="/categories">分类</a>
+                            <li class="drawer-navbar-item text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                <a class="py-0.5" href="/categories">分类</a>
                             </li>
                         
                     
             
                 
-                    <li class="drawer-navbar-item flex-center">
-                        <a class="" 
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
                         href="/links"  >
                              
                                 
@@ -284,12 +293,13 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="tag-container">
-        <div class="tag-name"><i class="fa-solid fa-tag"></i>&nbsp;learn
-        </div>
-        <div class="tag-post-list">
-            
+                    <div class="tag-container">
+	<div class="tag-name">
+		<i class="fa-solid fa-tag"></i>&nbsp;learn
+	</div>
+	<div class="tag-post-list">
+		
+
 <div class="archive-list-container">
     
         <section class="archive-item">
@@ -299,47 +309,55 @@
             </div>
             <ul class="article-list">
               
-              <li class="article-item" date-is='03-25'>
-                <a href="/2023/03/25/spring%E5%AD%A6%E4%B9%A0(%E4%B8%80)/">
-                  <span class="article-title">spring学习(一)</span>
-                </a>
-              </li>
+                
+                    
+                    <li class="article-item" date-is='03-25'>
+                
+                
+                    <a href="/2023/03/25/spring%E5%AD%A6%E4%B9%A0(%E4%B8%80)/">
+                        <span class="article-title">spring学习(一)</span>
+                    </a>
+                
               
-              <li class="article-item" date-is='03-10'>
-                <a href="/2023/03/10/FutureStudyStep/">
-                  <span class="article-title">学习计划</span>
-                </a>
-              </li>
+                
+                    
+                    <li class="article-item" date-is='03-10'>
+                
+                
+                    <a href="/2023/03/10/FutureStudyStep/">
+                        <span class="article-title">学习计划</span>
+                    </a>
+                
               
             </ul>
         </section>
     
 </div>
 
-        </div>
-    </div>
+	</div>
+</div>
 
-    <div class="tag-paginator">
-        <div class="paginator">
+<div class="tag-paginator">
+	<div class="paginator">
     <span class="page-number current">1</span>
 </div>
 
-    </div>
 </div>
 
 
                 
 
             </div>
-            
+
             
 
         </div>
 
         <div class="main-content-footer">
-            <footer class="footer">
-    <div class="info-container">
-        <div class="copyright-info">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
             &copy;
             
               <span>2023</span>
@@ -348,38 +366,34 @@
             2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">rygdsddssd</a>
         </div>
         
-            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <div class="website-count info-item">
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
                 
-                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
                     </span>
                 
                 
-                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
-        <div class="theme-info info-item">
-            <span class="powered-by-container">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a> 驱动</span>
-                <br>
-            <span class="theme-version-container">主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.1.5</a>
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.0</a></span>
         </div>
         
         
-        
-            <div id="start_div" style="display:none">
-                2023/3/10 14:00:00
-            </div>
             <div>
                 博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
             </div>
         
         
-        
-            <script async data-pjax>
+            <script data-swup-reload-script>
                 try {
                     function odometer_init() {
                     const elements = document.querySelectorAll('.odometer');
@@ -407,19 +421,15 @@
     <div class="right-side-tools-container">
         <div class="side-tools-container">
     <ul class="hidden-tools-list">
-        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
             <i class="fa-regular fa-magnifying-glass-plus"></i>
         </li>
 
-        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
             <i class="fa-regular fa-magnifying-glass-minus"></i>
         </li>
 
-        <li class="right-bottom-tools tool-expand-width flex-center">
-            <i class="fa-regular fa-expand"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
             <i class="fa-regular fa-moon"></i>
         </li>
 
@@ -428,17 +438,17 @@
 
         
 
-        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
             <i class="fa-regular fa-arrow-down"></i>
         </li>
     </ul>
 
     <ul class="visible-tools-list">
-        <li class="right-bottom-tools toggle-tools-list flex-center">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
             <i class="fa-regular fa-cog fa-spin"></i>
         </li>
         
-            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
                 <i class="arrow-up fas fa-arrow-up"></i>
                 <span class="percent"></span>
             </li>
@@ -485,82 +495,70 @@
 
     
 
-
 </main>
 
 
-
-<script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/utils.js"></script><script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/main.js"></script><script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/layouts/navbarShrink.js"></script><script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/tools/scrollTopBottom.js"></script><script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/tools/lightDarkSwitch.js"></script>
-
-
-    <script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/tools/localSearch.js"></script>
-
-
-
-    <script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/tools/codeBlock.js"></script>
-
-
-
-    <script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/layouts/lazyload.js"></script>
-
-
-
-    <script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/tools/runtime.js"></script>
-    <script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/libs/odometer.min.js"></script>
-    <link rel="stylesheet" href="//npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/assets/odometer-theme-minimal.css">
-
-
-
-  <script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/libs/Typed.min.js"></script>
-  <script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/plugins/typed.js"></script>
-
-
-
-
-
-
-<div class="post-scripts pjax">
-    
-</div>
-
-
-    <script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/libs/pjax.min.js"></script>
+    <script src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/libs/Swup.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/libs/SwupSlideTheme.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/libs/SwupScriptsPlugin.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/libs/SwupProgressPlugin.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/libs/SwupScrollPlugin.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/libs/SwupPreloadPlugin.min.js"></script>
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
-        window.pjax = new Pjax({
-            selectors: [
-                'head title',
-                '.page-container',
-                '.pjax',
-            ],
-            history: true,
-            debug: false,
-            cacheBust: false,
-            timeout: 0,
-            analytics: false,
-            currentUrlFullReload: false,
-            scrollRestoration: false,
-            // scrollTo: true,
-        });
-
-        document.addEventListener('pjax:send', () => {
-            Global.utils.pjaxProgressBarStart();
-        });
-
-        document.addEventListener('pjax:complete', () => {
-            Global.utils.pjaxProgressBarEnd();
-            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
-            Global.refresh();
-        });
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
     });
 </script>
 
 
 
 
-    <div id="aplayer"></div>
-<script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/libs/APlayer.min.js"></script>
-<script src="https://npm.elemecdn.com/hexo-theme-redefine@2.1.5/source/js/plugins/aplayer.js"></script>
+
+
+<script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/tools/imageViewer.js"></script><script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/utils.js"></script><script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/main.js"></script><script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/layouts/navbarShrink.js"></script><script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/tools/scrollTopBottom.js"></script><script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/tools/lightDarkSwitch.js"></script><script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/layouts/categoryList.js"></script>
+
+
+    <script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/tools/localSearch.js"></script>
+
+
+
+    <script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/tools/codeBlock.js"></script>
+
+
+
+    <script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/layouts/lazyload.js"></script>
+
+
+
+    <script src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/tools/runtime.js"></script>
+    <script src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/libs/odometer.min.js"></script>
+    <link rel="stylesheet" href="//cdn.staticfile.org/hexo-theme-redefine/2.5.0/assets/odometer-theme-minimal.css">
+
+
+
+  <script src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/libs/Typed.min.js"></script>
+  <script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/plugins/typed.js"></script>
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        <script src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/libs/anime.min.js"></script>
+        <script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/tools/tocToggle.js"></script><script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/layouts/toc.js"></script><script type="module" src="https://cdn.staticfile.org/hexo-theme-redefine/2.5.0/js/plugins/tabs.js"></script>
+    
+</div>
+
 
 </body>
 </html>

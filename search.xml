@@ -40,6 +40,123 @@
       </tags>
   </entry>
   <entry>
+    <title>Apriori算法</title>
+    <url>/2023/05/06/Apriori%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="Apriori算法"><a href="#Apriori算法" class="headerlink" title="Apriori算法"></a>Apriori算法</h1><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>不同语言的实现 </summary>
+              <div class='content'>
+              <p><a class="button  regular" href='https://blog.csdn.net/weixin_45685353/article/details/106906416' title='【CSDN】Java实现Apriori算法'><i class='fa-solid fa-c'></i> 【CSDN】Java实现Apriori算法</a></p><p><a class="button  regular" href='https://blog.csdn.net/reshuibing/article/details/88648215' title='【CSDN】Python实现Apriori算法'><i class='fa-solid fa-c'></i> 【CSDN】Python实现Apriori算法</a></p><p><a class="button  regular" href='https://blog.csdn.net/weixin_44471080/article/details/102646913' title='【CSDN】C实现Apriori算法'><i class='fa-solid fa-c'></i> 【CSDN】C实现Apriori算法</a></p><p>感谢这些作者</p>
+              </div>
+            </details>
+
+
+
+
+
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a class="link"   href="https://so.csdn.net/so/search?q=Apriori%E7%AE%97%E6%B3%95&spm=1001.2101.3001.7020" >Apriori算法 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>是第一个关联规则挖掘算法，也是最经典的算法。它利用逐层搜索的迭代方法找出数据库中项集的关系，以形成规则，其过程由连接（类矩阵运算）与剪枝（去掉那些没必要的中间结果）组成。该算法中项集的概念即为项的集合。包含K个项的集合为k项集。项集出现的频率是包含项集的事务数，称为项集的频率。如果某项集满足最小支持度，则称它为频繁项集。</p>
+<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p>首先扫描数据库中所需要进行分析的数据，在设置完支持度以及置信度以后，在最小支持度的支持下产生频繁项，即统计所有项目集中包含一个或一个以上的元素频数，找出大于或者等于设置的支持度的项目集。其次就是频繁项的自连接。再者是如果对频繁项自连接以后的项的子集如果不是频繁项的话，则进行剪枝处理。接着对频繁项处理后产生候选项。最后循环<br>调用产生频繁项集。</p>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="支持度"><a href="#支持度" class="headerlink" title="支持度"></a>支持度</h3><p> 支持度就是几个关联的数据在数据集中出现的次数占总数据集的比重。或者说几个数据关联出现的概率。</p>
+<h3 id="置信度"><a href="#置信度" class="headerlink" title="置信度"></a>置信度</h3><p>置信度体现了一个数据出现后，另一个数据出现的概率，或者说数据的条件概率。</p>
+<h3 id="最小支持度"><a href="#最小支持度" class="headerlink" title="最小支持度"></a>最小支持度</h3><p><em>用户或专家</em> 定义的衡量支持度的一个阈值，表示项目集在统计意义上的最低重要性；</p>
+<h3 id="最小置信度"><a href="#最小置信度" class="headerlink" title="最小置信度"></a>最小置信度</h3><p><em>用户或专家</em> 定义的衡量置信度的一个阈值，表示关联规则的最低可靠性。</p>
+<p>同时满足最小支持度阈值和最小置信度阈值的规则称作强规则。</p>
+<h3 id="强规则"><a href="#强规则" class="headerlink" title="强规则"></a>强规则</h3><p>同时满足最小支持度阈值和最小置信度阈值的规则</p>
+<h3 id="项集"><a href="#项集" class="headerlink" title="项集"></a>项集</h3><ul>
+<li><p>项集是项的集合。包含 k 个项的项集称为 k 项集，如集合   {牛奶，麦片，糖}是一个3项集。</p>
+</li>
+<li><p>项集的出现频率是所有包含项集的事务计数，又称作绝对支持度或支持度计数。如果项集 I 的相对支持度满足预定义的最小支持度阈值，则 I 是频繁项集。频繁k项集通常记作Lk。</p>
+</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>感觉以后是有可能再用上的，所以我直接将这个算法写成了工具类(第一次造轮子hhhh)</p>
+<h3 id="Apriori"><a href="#Apriori" class="headerlink" title="Apriori"></a>Apriori</h3><p>我感觉我的注释已经写得很详细了，不做赘述直接看代码吧，有问题可以评论或联系我。</p>
+<p>唯二比较生僻的方法</p>
+<a class="button  regular" href='https://www.runoob.com/java/java-hashmap-getordefault.html' title='【菜鸟教程 (runoob.com)】 HashMap getOrDefault() 方法'><i class='fa-solid fa-code'></i> 【菜鸟教程 (runoob.com)】 HashMap getOrDefault() 方法</a>
+
+<a class="button  regular" href='https://blog.csdn.net/qq_31635851/article/details/120324130' title='【CSDN】Comparator.naturalOrder | 自然排序_猫巳的博客-CSDN博客'><i class='fa-solid fa-c'></i> 【CSDN】Comparator.naturalOrder | 自然排序_猫巳的博客-CSDN博客</a>
+
+
+
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">//author:rygdsddssd</span></span><br><span class="line"><span class="comment">//date:2023.5</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Apriori</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这样做是为了可调阈值，以及让这次作业直接变成我的一个轮子</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">SUPPORT</span> <span class="operator">=</span> <span class="number">2</span>; <span class="comment">// 支持度阈值</span></span><br><span class="line">    <span class="type">double</span> <span class="variable">CONFIDENCE</span> <span class="operator">=</span> <span class="number">0.8</span>; <span class="comment">// 置信度阈值</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">ITEM_SPLIT</span> <span class="operator">=</span> <span class="string">&quot;,&quot;</span>; <span class="comment">// 项的分隔符</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">RULE_SPLIT</span> <span class="operator">=</span> <span class="string">&quot;-&gt;&quot;</span>; <span class="comment">// 项的分隔符</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//频繁集：frequentCollectionMap ---&gt; list(k项集)-int(出现次数)</span></span><br><span class="line">    <span class="comment">//注意这里List是key,Integer是value哦</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 所有的频繁集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;List&lt;String&gt;,Integer&gt; frequentCollectionMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 存放处理完的原始数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;String[]&gt; Data;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 1项集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;List&lt;String&gt;,Integer&gt; F1C;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 候选集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;List&lt;String&gt;,Integer&gt; candidateCollection= <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 关联规则</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;String,Double&gt; relationRules;</span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Apriori</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Apriori</span><span class="params">(<span class="type">int</span> SUPPORT, <span class="type">double</span> CONFIDENCE, String ITEM_SPLIT,String RULE_SPLIT)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.SUPPORT = SUPPORT;</span><br><span class="line">        <span class="built_in">this</span>.CONFIDENCE = CONFIDENCE;</span><br><span class="line">        <span class="built_in">this</span>.ITEM_SPLIT = ITEM_SPLIT;</span><br><span class="line">        <span class="built_in">this</span>.RULE_SPLIT = RULE_SPLIT;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Apriori&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;SUPPORT=&quot;</span> + SUPPORT +</span><br><span class="line">                <span class="string">&quot;, CONFIDENCE=&quot;</span> + CONFIDENCE +</span><br><span class="line">                <span class="string">&quot;, ITEM_SPLIT=&quot;</span> + ITEM_SPLIT +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 读取数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> fileName</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 剔除无效数据的Data</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span>  List&lt;String[]&gt; Read(String fileName,<span class="type">int</span> index)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;===========================================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;读取数据&quot;</span>);</span><br><span class="line">        Data = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//在类里加了一个private的Data，只要读取一次就到Data里了</span></span><br><span class="line"><span class="comment">//        //读取文件放入cells中</span></span><br><span class="line"><span class="comment">//        List&lt;String[]&gt; cells = new ArrayList&lt;&gt;();</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建 reader</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">            <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(fileName);</span><br><span class="line">            <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">            fis = <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(file);</span><br><span class="line">            <span class="type">InputStreamReader</span> <span class="variable">isr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(fis,<span class="string">&quot;GBK&quot;</span>);</span><br><span class="line">            <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(isr);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 按行读取</span></span><br><span class="line">            String line;</span><br><span class="line">            line = br.readLine();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(line!=<span class="literal">null</span>)&#123;</span><br><span class="line">                System.out.println(line);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//数据处理</span></span><br><span class="line">            <span class="comment">//把读取的不规范数据处理成模范数据modData</span></span><br><span class="line">            <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="comment">// 分割                // CSV文件的分隔符: ITEM_SPLIT</span></span><br><span class="line"></span><br><span class="line">                String[] columns = line.split(ITEM_SPLIT);<span class="comment">// CSV文件的分隔符: ITEM_SPLIT</span></span><br><span class="line">                String[] modData;</span><br><span class="line">                <span class="keyword">if</span>(index!=<span class="number">0</span>)&#123;</span><br><span class="line">                    modData = <span class="keyword">new</span> <span class="title class_">String</span>[columns.length-index];</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; modData.length; i++) &#123;</span><br><span class="line">                        modData[i]=columns[i+<span class="number">1</span>];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    modData = columns;</span><br><span class="line">                &#125;</span><br><span class="line">                    <span class="comment">/*</span></span><br><span class="line"><span class="comment">                    //这里不能直接判断 columns[2] == &quot;yes&quot; 哦</span></span><br><span class="line"><span class="comment">                    if(modData[1].equals(&quot;yes&quot;))&#123;</span></span><br><span class="line"><span class="comment">                        modData[1] = &quot;true&quot;;</span></span><br><span class="line"><span class="comment">                    &#125;else&#123;</span></span><br><span class="line"><span class="comment">                        modData[1] = &quot;false&quot;;</span></span><br><span class="line"><span class="comment">                    &#125;</span></span><br><span class="line"><span class="comment">                    */</span></span><br><span class="line"></span><br><span class="line">                Data.add(modData);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">&quot;读取完毕&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;===========================================&quot;</span>);</span><br><span class="line">            br.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException ex) &#123;</span><br><span class="line">            ex.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *获取频繁集</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 所有1-k项频繁集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;List&lt;String&gt;,Integer&gt; <span class="title function_">getFrequentCollectionMap</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;生成频繁集ing...&quot;</span>);</span><br><span class="line">        <span class="comment">//frequentCollectionMap需要合并F1C以及各个FkC</span></span><br><span class="line">        Map&lt;List&lt;String&gt;,Integer&gt; F1C = getFrequent1ItemCollections();</span><br><span class="line">        frequentCollectionMap.putAll(F1C);</span><br><span class="line"></span><br><span class="line">        Map&lt;List&lt;String&gt;,Integer&gt; FkC = F1C;</span><br><span class="line">        <span class="comment">//已经获取过1项,-1</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; Data.get(<span class="number">0</span>).length - <span class="number">1</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//获取k+1项候选频繁集</span></span><br><span class="line">            getFrequentMoreOneItemCandidateCollections(FkC);</span><br><span class="line">            FkC.clear();</span><br><span class="line">            <span class="comment">//处理候选集</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//计数</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//对于每一个候选项,都要查找一遍Data计数</span></span><br><span class="line">            <span class="keyword">for</span> (List&lt;String&gt; cC : candidateCollection.keySet()) &#123;</span><br><span class="line">                <span class="comment">//对于每条data，必须包含所有候选项的元素才能计数+1</span></span><br><span class="line">                <span class="keyword">for</span> (String[] dataItem : Data) &#123;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">//每个候选项中的元素都要被包含于dataItem</span></span><br><span class="line">                    <span class="type">boolean</span> <span class="variable">flag1</span> <span class="operator">=</span> <span class="literal">true</span>;<span class="comment">//true-&gt;候选项是dataItem的子集</span></span><br><span class="line"></span><br><span class="line">                    <span class="keyword">for</span> (String s1 : cC) &#123;</span><br><span class="line">                        <span class="type">boolean</span> <span class="variable">flag2</span> <span class="operator">=</span> <span class="literal">false</span>;<span class="comment">//true-&gt;候选项元素是dataItem的子集</span></span><br><span class="line">                        <span class="comment">//只要有一个相等，说明当前候选项元素是dataItem的子集</span></span><br><span class="line">                        <span class="keyword">for</span> (String s2 : dataItem) &#123;</span><br><span class="line">                            <span class="keyword">if</span>(s2.equals(s1))&#123;</span><br><span class="line">                                flag2 = <span class="literal">true</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="comment">//只要有一个候选项元素不是子集，那这个候选项不是子集</span></span><br><span class="line">                        <span class="keyword">if</span>(flag2 == <span class="literal">false</span>)&#123;</span><br><span class="line">                            flag1 = <span class="literal">false</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span>(flag1)&#123;</span><br><span class="line">                        candidateCollection.put(cC,candidateCollection.get(cC)+<span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//筛选</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (List&lt;String&gt; stringList : candidateCollection.keySet()) &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">fc</span> <span class="operator">=</span> candidateCollection.get(stringList);</span><br><span class="line">                <span class="keyword">if</span>(fc&gt;=SUPPORT)&#123;</span><br><span class="line">                    FkC.put(stringList,fc);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            frequentCollectionMap.putAll(FkC);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//最后return所有的频繁集</span></span><br><span class="line">        <span class="keyword">return</span> frequentCollectionMap;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取频繁1项集</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> F1C</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;List&lt;String&gt;,Integer&gt; <span class="title function_">getFrequent1ItemCollections</span><span class="params">()</span>&#123;</span><br><span class="line">        Map&lt;List&lt;String&gt;,Integer&gt; tempF1C = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        F1C = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//获取1项集</span></span><br><span class="line">        <span class="comment">//遍历Data</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; Data.size(); i++) &#123;</span><br><span class="line">        String[] row = Data.get(i);</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; row.length; j++) &#123;</span><br><span class="line">                    List&lt;String&gt; tempL = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">                    tempL.add(row[j]);</span><br><span class="line">                    <span class="comment">//如果row[j]不存在，默认设0，然后这里统计+1</span></span><br><span class="line">                <span class="comment">//自行搜索getOrDefault方法</span></span><br><span class="line">                    tempF1C.put(tempL, tempF1C.getOrDefault(tempL,<span class="number">0</span>)+<span class="number">1</span>);</span><br><span class="line"><span class="comment">//                    F1C.put(tempL, F1C.get(row[j] + 1));</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//此时全部的1项集已经全部完成，接下来要按支持度阈值筛选</span></span><br><span class="line">        <span class="keyword">for</span> (List&lt;String&gt; stringList : tempF1C.keySet()) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">fc</span> <span class="operator">=</span> tempF1C.get(stringList);</span><br><span class="line">            <span class="keyword">if</span>(fc&gt;=SUPPORT)&#123;</span><br><span class="line">                F1C.put(stringList,fc);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> F1C;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这里重构了一下，刚才在犹豫要不要把获取频繁1项和k项写成private</span></span><br><span class="line">    <span class="comment">//想了想觉得毕竟这个类的命名是Apriori算法，那么这个即使是其他问题，也可能使用这个算法来获取频繁1项k项</span></span><br><span class="line">    <span class="comment">//所以逻辑上来说这个方法是应该开放的</span></span><br><span class="line">    <span class="comment">//然后就顺利成章的在类里添加了private F1C</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 传入Data获取频繁1项集</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> Data 不能有多余数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 频繁1项集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;List&lt;String&gt;,Integer&gt; <span class="title function_">getFrequent1ItemCollections</span><span class="params">(List&lt;String[]&gt; Data)</span>&#123;</span><br><span class="line">        Map&lt;List&lt;String&gt;,Integer&gt; tempF1C = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        Map&lt;List&lt;String&gt;,Integer&gt; F1C = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//获取1项集</span></span><br><span class="line">        <span class="comment">//遍历Data</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; Data.size(); i++) &#123;</span><br><span class="line">            String[] row = Data.get(i);</span><br><span class="line">            <span class="comment">//这里修改了哦，从0开始，也就意味着如果是外部数据要调用这个方法，Data里不能有多余数据</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; row.length; j++) &#123;</span><br><span class="line">                List&lt;String&gt; tempL = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">                tempL.add(row[j]);</span><br><span class="line">                <span class="comment">//如果row[j]不存在，默认设0，然后这里统计+1</span></span><br><span class="line">                <span class="comment">//自行搜索getOrDefault方法</span></span><br><span class="line">                tempF1C.put(tempL, tempF1C.getOrDefault(tempL,<span class="number">0</span>)+<span class="number">1</span>);</span><br><span class="line"><span class="comment">//                    F1C.put(tempL, F1C.get(row[j] + 1));</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//此时全部的1项集已经全部完成，接下来要按支持度阈值筛选</span></span><br><span class="line">        <span class="keyword">for</span> (List&lt;String&gt; stringList : tempF1C.keySet()) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">fc</span> <span class="operator">=</span> tempF1C.get(stringList);</span><br><span class="line">            <span class="keyword">if</span>(fc&gt;=SUPPORT)&#123;</span><br><span class="line">                F1C.put(stringList,fc);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> F1C;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//为了安全，应该是private</span></span><br><span class="line">    <span class="comment">//又想了一下，如果私有，没有必要return</span></span><br><span class="line">    <span class="comment">//感觉不行，这个候选集实际上类似于一个缓存数据，没有必要创建私有成员变量，既然写了return，那么这个方法实际上就相当于把获取候选集的步骤封装了起来方便外部调用，那么他按理来说应该是一个public的</span></span><br><span class="line">    <span class="comment">//烦,就这样吧</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *有频繁k项集，获取频繁k+1项候选集</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> FkC 频繁k项集</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> k+1项候选集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;List&lt;String&gt;,Integer&gt; <span class="title function_">getFrequentMoreOneItemCandidateCollections</span><span class="params">(Map&lt;List&lt;String&gt;,Integer&gt; FkC)</span>&#123;</span><br><span class="line">        candidateCollection.clear();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//st1与st2都是k项，两个循环，链接成k+1项放入候选集</span></span><br><span class="line">        <span class="comment">//因为是直接从k项集中找的元素链接，所以也不需要再进行”剪枝“步了</span></span><br><span class="line">        Set&lt;List&lt;String&gt;&gt; st1 = FkC.keySet();</span><br><span class="line">        Set&lt;List&lt;String&gt;&gt; st2 = FkC.keySet();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//切k项集</span></span><br><span class="line">        <span class="keyword">for</span> (List&lt;String&gt; s1 : st1) &#123;</span><br><span class="line">            <span class="keyword">for</span> (List&lt;String&gt; s2 : st2) &#123;</span><br><span class="line">                <span class="comment">//切k项</span></span><br><span class="line">                <span class="keyword">for</span> (String s : s2) &#123;</span><br><span class="line">                    <span class="comment">//k项中查项</span></span><br><span class="line">                    <span class="keyword">if</span>(!s1.contains(s))&#123;</span><br><span class="line">                        List&lt;String&gt; tempL = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(s1);</span><br><span class="line">                        tempL.add(s);</span><br><span class="line">                        <span class="comment">//排序</span></span><br><span class="line">                        tempL.sort(Comparator.naturalOrder());</span><br><span class="line">                        candidateCollection.put(tempL,<span class="number">0</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> candidateCollection;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    public Map&lt;List&lt;String&gt;,Double&gt; getRelationRules(Map&lt;List&lt;String&gt;,Integer&gt; frequentCollectionMap)&#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        Map&lt;List&lt;String&gt;,Double&gt; relationRule = new HashMap&lt;&gt;();</span></span><br><span class="line"><span class="comment">//        Map&lt;List&lt;String&gt;,Integer&gt; maxItemsFC = new HashMap&lt;&gt;();</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        //最大k项频繁集</span></span><br><span class="line"><span class="comment">//        for (List&lt;String&gt; fc : frequentCollectionMap.keySet()) &#123;</span></span><br><span class="line"><span class="comment">//            if(fc.size()==Data.size())&#123;</span></span><br><span class="line"><span class="comment">//                maxItemsFC.put(fc,frequentCollectionMap.get(fc));</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        return relationRule;</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据传入频繁集获得规则</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> frequentCollectionMap 全部频繁项</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 关联规则</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;String,Double&gt; <span class="title function_">getRelationRules</span><span class="params">(Map&lt;List&lt;String&gt;,Integer&gt; frequentCollectionMap)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;生成规则ing...&quot;</span>);</span><br><span class="line">        <span class="comment">//将频繁项的子集相互链接，计算置信度，筛选</span></span><br><span class="line">        relationRules=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (List&lt;String&gt; itmes : frequentCollectionMap.keySet())&#123;</span><br><span class="line">            <span class="keyword">if</span> (itmes.size()&gt;<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="type">double</span> <span class="variable">countAll</span> <span class="operator">=</span> frequentCollectionMap.get(itmes);</span><br><span class="line">                List&lt;List&lt;String&gt;&gt; result = getSubsets(itmes);<span class="comment">//获得itmes的所有非空子集</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span> (List&lt;String&gt; itemList : result)&#123;</span><br><span class="line">                    <span class="keyword">if</span> (itemList.size() &lt; itmes.size())&#123;<span class="comment">//只处理真子集</span></span><br><span class="line"></span><br><span class="line">                        <span class="type">StringBuilder</span> <span class="variable">reasonStr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();<span class="comment">//前置</span></span><br><span class="line">                        <span class="type">StringBuilder</span> <span class="variable">resultStr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();<span class="comment">//结果</span></span><br><span class="line">                        <span class="keyword">for</span> (String item : itemList)&#123;</span><br><span class="line">                            reasonStr.append(ITEM_SPLIT).append(item);</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        <span class="keyword">for</span> (String item : itmes) &#123;</span><br><span class="line">                            <span class="keyword">if</span> (!itemList.contains(item))&#123;</span><br><span class="line">                                resultStr.append(ITEM_SPLIT).append(item);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        <span class="type">double</span> <span class="variable">countReason</span> <span class="operator">=</span> frequentCollectionMap.get(itemList);</span><br><span class="line">                        <span class="type">double</span> <span class="variable">itemConfidence</span> <span class="operator">=</span> countAll / countReason;<span class="comment">//计算置信度</span></span><br><span class="line"></span><br><span class="line">                        <span class="keyword">if</span> (itemConfidence &gt;= CONFIDENCE)&#123;</span><br><span class="line">                            <span class="type">String</span> <span class="variable">rule</span> <span class="operator">=</span> reasonStr.append(RULE_SPLIT).append(resultStr.substring(<span class="number">1</span>)).substring(<span class="number">1</span>);</span><br><span class="line">                            relationRules.put(rule,itemConfidence);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> relationRules;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 打印所有频繁项</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showFC</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;===========================================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;所有频繁项&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(frequentCollectionMap == <span class="literal">null</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;未创建！！！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(frequentCollectionMap.isEmpty())&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;当前为空集！！！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (List&lt;String&gt; strings : frequentCollectionMap.keySet()) &#123;</span><br><span class="line">            System.out.println(strings +<span class="string">&quot;:&quot;</span>+ frequentCollectionMap.get(strings));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 打印规则</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showRule</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;===========================================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;关联规则&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(relationRules == <span class="literal">null</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;未创建！！！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(relationRules.isEmpty())&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;当前为空集！！！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (String strings : relationRules.keySet()) &#123;</span><br><span class="line">            System.out.println(strings +<span class="string">&quot;:&quot;</span>+ relationRules.get(strings));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 打印1项集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showF1C</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;===========================================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;单项集&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(relationRules == <span class="literal">null</span> || relationRules.isEmpty())&#123;</span><br><span class="line">            getFrequent1ItemCollections();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (List&lt;String&gt; strings : F1C.keySet()) &#123;</span><br><span class="line">            System.out.println(strings +<span class="string">&quot;:&quot;</span>+ F1C.get(strings));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 打印数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showData</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;===========================================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;Data&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(Data == <span class="literal">null</span> || Data.isEmpty())&#123;</span><br><span class="line">            getFrequent1ItemCollections();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (String[] strings : Data) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Row:&quot;</span> + Arrays.toString(strings));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 构造子集</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> sourceSet</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> sourceSet的所有非空子集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;List&lt;String&gt;&gt; <span class="title function_">getSubsets</span><span class="params">(List&lt;String&gt; sourceSet)</span>&#123;</span><br><span class="line">        List&lt;List&lt;String&gt;&gt; result = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        result.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;());</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i&lt;sourceSet.size();i++)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> result.size();</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;j&lt;size;j++)&#123;</span><br><span class="line">                List&lt;String&gt; temp = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(result.get(j));</span><br><span class="line">                temp.add(sourceSet.get(i));</span><br><span class="line">                result.add(temp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result.subList(<span class="number">1</span>,result.size());<span class="comment">//去掉空集</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><p>我的这个例子文件就直接是中医证型关联规则.java</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 中医证型关联规则 &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Apriori</span> <span class="variable">apriori</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Apriori</span>(<span class="number">2</span>,<span class="number">0.8</span>,<span class="string">&quot;,&quot;</span>,<span class="string">&quot;-&gt;&quot;</span>);</span><br><span class="line">        apriori.Read(<span class="string">&quot;src/中医证型关联规则.csv&quot;</span>,<span class="number">0</span>);</span><br><span class="line">        apriori.getRelationRules(apriori.getFrequentCollectionMap());</span><br><span class="line">        apriori.showRule();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><p>原始数据图 931*7</p>
+<p>(第一行是表头，格式不同则请自行重写Read方法)</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Apriori%E7%AE%97%E6%B3%95/Data.png"
+                     
+                ></p>
+<p>所有元素也必须是各异的，否则请自行替换。</p>
+<p>作业数据中出现了这样的情况</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Apriori%E7%AE%97%E6%B3%95/sameString.png"
+                     
+                ></p>
+<p>可以看到周末和促销列都是(yes&#x2F;no),不进行处理显然会出现问题，我的处理方式就是直接在重写方法里读取数据时将某一列替换成不同字符了(见Apriori类103-110行)</p>
+<p>理想的处理应该自动将每一列的数据读取种类自行分配特征值，不过我懒得写了。</p>
+<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p>数据量有点大，需要等一会儿的</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Apriori%E7%AE%97%E6%B3%95/result.png"
+                     
+                ></p>
+]]></content>
+      <categories>
+        <category>Activity</category>
+        <category>数模</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>数据挖掘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++MFC库</title>
+    <url>/2023/09/03/C++MFC%E5%BA%93/</url>
+    <content><![CDATA[<h2 id="Knowledge"><a href="#Knowledge" class="headerlink" title="Knowledge"></a>Knowledge</h2><p>略</p>
+<h2 id="BugFix"><a href="#BugFix" class="headerlink" title="BugFix"></a>BugFix</h2><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><div class="note danger"><p>LNK2019: 无法解析的外部符号 _main，该符号在函数 ___tmainCRTStartup 中被引用 MSVCRTD.lib test。</p>
+</div>
+
+
+<h4 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h4><a class="button  regular" href='https://www.cnblogs.com/rainbow70626/p/11823720.html' title='【CSDN】Comparator.naturalOrder | 自然排序_猫巳的博客-CSDN博客'><i class='fa-solid fa-arrow-right'></i> 【CSDN】Comparator.naturalOrder | 自然排序_猫巳的博客-CSDN博客</a>
+<p>这个问题表明你新建的是一个main类型函数(控制台程序)…</p>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><div class="note success"><p>更改 项目-属性-链接器-系统-子系统 把控制台改为窗口(WINDOWS)</p>
+</div>
+
+<h3 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h3><h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h4><p>直接使用</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> lpszClassName[] = <span class="string">&quot;窗口&quot;</span></span><br></pre></td></tr></table></figure></div>
+<p>与</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line">wc.lpszClassName = lpszClassName</span><br></pre></td></tr></table></figure></div>
+<div class="note danger"><p>报错 不能将”const char *”类型的值分配到”LPCWSTR”类型的实体</p>
+</div>
+
+<h4 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h4><h5 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h5><p>添加</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;tchar.h&gt;</span></span></span><br></pre></td></tr></table></figure></div>
+<p>并使用</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line">wc.lpszClassName = _T(<span class="string">&quot;窗口&quot;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h5><p>更改 <strong>项目-配置属性-高级属性-字符集</strong> 为 <strong>多字节</strong>或<strong>无</strong></p>
+<h3 id="MessBeep"><a href="#MessBeep" class="headerlink" title="MessBeep()"></a>MessBeep()</h3><h4 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h4><p>直接使用时，无论如何修改，或使用-1(扬声器发声，排除主板无蜂鸣器原因)，实例中始终为报错声</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">LRESULT CALLBACK <span class="title">WndProc</span><span class="params">(HWND hwnd,</span></span></span><br><span class="line"><span class="params"><span class="function">	UINT message,</span></span></span><br><span class="line"><span class="params"><span class="function">	WPARAM wParam,</span></span></span><br><span class="line"><span class="params"><span class="function">	LPARAM lParam)</span></span>&#123;</span><br><span class="line">	<span class="keyword">switch</span> (message)&#123;</span><br><span class="line">		<span class="keyword">case</span> WM_LBUTTONDOWN:&#123;</span><br><span class="line">			<span class="built_in">MessageBeep</span>(<span class="number">0</span>);</span><br><span class="line">			<span class="built_in">MessageBeep</span>(MB_OK);</span><br><span class="line">		&#125;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> WM_DESTROY:</span><br><span class="line">			<span class="built_in">PostQuitMessage</span>(<span class="number">0</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">DefWindowProc</span>(hwnd, message, wParam, lParam);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="解决方法-2"><a href="#解决方法-2" class="headerlink" title="解决方法"></a>解决方法</h4><p>微软开发文档中：<br><code>注意：在 Windows Server 2022 上，已禁用任务计划程序中的 Microsoft\Windows\Multimedia\SystemSoundsService 任务。 需要启用此任务才能使MessageBeep 正常运行。</code></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+        <category>C++</category>
+        <category>MFC</category>
+      </categories>
+      <tags>
+        <tag>BUG</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ArcGIS水文分析</title>
     <url>/2023/04/26/ArcGIS%E6%B0%B4%E6%96%87%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<h1 id="ArcGIS操作"><a href="#ArcGIS操作" class="headerlink" title="ArcGIS操作"></a>ArcGIS操作</h1><p>老师给的教程与下文类似</p>
@@ -125,101 +242,18 @@
       </tags>
   </entry>
   <entry>
-    <title>Apriori算法</title>
-    <url>/2023/05/06/Apriori%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="Apriori算法"><a href="#Apriori算法" class="headerlink" title="Apriori算法"></a>Apriori算法</h1><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>不同语言的实现 </summary>
-              <div class='content'>
-              <p><a class="button  regular" href='https://blog.csdn.net/weixin_45685353/article/details/106906416' title='【CSDN】Java实现Apriori算法'><i class='fa-solid fa-c'></i> 【CSDN】Java实现Apriori算法</a></p><p><a class="button  regular" href='https://blog.csdn.net/reshuibing/article/details/88648215' title='【CSDN】Python实现Apriori算法'><i class='fa-solid fa-c'></i> 【CSDN】Python实现Apriori算法</a></p><p><a class="button  regular" href='https://blog.csdn.net/weixin_44471080/article/details/102646913' title='【CSDN】C实现Apriori算法'><i class='fa-solid fa-c'></i> 【CSDN】C实现Apriori算法</a></p><p>感谢这些作者</p>
-              </div>
-            </details>
-
-
-
-
-
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a class="link"   href="https://so.csdn.net/so/search?q=Apriori%E7%AE%97%E6%B3%95&spm=1001.2101.3001.7020" >Apriori算法 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>是第一个关联规则挖掘算法，也是最经典的算法。它利用逐层搜索的迭代方法找出数据库中项集的关系，以形成规则，其过程由连接（类矩阵运算）与剪枝（去掉那些没必要的中间结果）组成。该算法中项集的概念即为项的集合。包含K个项的集合为k项集。项集出现的频率是包含项集的事务数，称为项集的频率。如果某项集满足最小支持度，则称它为频繁项集。</p>
-<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p>首先扫描数据库中所需要进行分析的数据，在设置完支持度以及置信度以后，在最小支持度的支持下产生频繁项，即统计所有项目集中包含一个或一个以上的元素频数，找出大于或者等于设置的支持度的项目集。其次就是频繁项的自连接。再者是如果对频繁项自连接以后的项的子集如果不是频繁项的话，则进行剪枝处理。接着对频繁项处理后产生候选项。最后循环<br>调用产生频繁项集。</p>
-<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="支持度"><a href="#支持度" class="headerlink" title="支持度"></a>支持度</h3><p> 支持度就是几个关联的数据在数据集中出现的次数占总数据集的比重。或者说几个数据关联出现的概率。</p>
-<h3 id="置信度"><a href="#置信度" class="headerlink" title="置信度"></a>置信度</h3><p>置信度体现了一个数据出现后，另一个数据出现的概率，或者说数据的条件概率。</p>
-<h3 id="最小支持度"><a href="#最小支持度" class="headerlink" title="最小支持度"></a>最小支持度</h3><p><em>用户或专家</em> 定义的衡量支持度的一个阈值，表示项目集在统计意义上的最低重要性；</p>
-<h3 id="最小置信度"><a href="#最小置信度" class="headerlink" title="最小置信度"></a>最小置信度</h3><p><em>用户或专家</em> 定义的衡量置信度的一个阈值，表示关联规则的最低可靠性。</p>
-<p>同时满足最小支持度阈值和最小置信度阈值的规则称作强规则。</p>
-<h3 id="强规则"><a href="#强规则" class="headerlink" title="强规则"></a>强规则</h3><p>同时满足最小支持度阈值和最小置信度阈值的规则</p>
-<h3 id="项集"><a href="#项集" class="headerlink" title="项集"></a>项集</h3><ul>
-<li><p>项集是项的集合。包含 k 个项的项集称为 k 项集，如集合   {牛奶，麦片，糖}是一个3项集。</p>
-</li>
-<li><p>项集的出现频率是所有包含项集的事务计数，又称作绝对支持度或支持度计数。如果项集 I 的相对支持度满足预定义的最小支持度阈值，则 I 是频繁项集。频繁k项集通常记作Lk。</p>
-</li>
-</ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>感觉以后是有可能再用上的，所以我直接将这个算法写成了工具类(第一次造轮子hhhh)</p>
-<h3 id="Apriori"><a href="#Apriori" class="headerlink" title="Apriori"></a>Apriori</h3><p>我感觉我的注释已经写得很详细了，不做赘述直接看代码吧，有问题可以评论或联系我。</p>
-<p>唯二比较生僻的方法</p>
-<a class="button  regular" href='https://www.runoob.com/java/java-hashmap-getordefault.html' title='【菜鸟教程 (runoob.com)】 HashMap getOrDefault() 方法'><i class='fa-solid fa-code'></i> 【菜鸟教程 (runoob.com)】 HashMap getOrDefault() 方法</a>
-
-<a class="button  regular" href='https://blog.csdn.net/qq_31635851/article/details/120324130' title='【CSDN】Comparator.naturalOrder | 自然排序_猫巳的博客-CSDN博客'><i class='fa-solid fa-c'></i> 【CSDN】Comparator.naturalOrder | 自然排序_猫巳的博客-CSDN博客</a>
-
-
-
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">//author:rygdsddssd</span></span><br><span class="line"><span class="comment">//date:2023.5</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Apriori</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这样做是为了可调阈值，以及让这次作业直接变成我的一个轮子</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">SUPPORT</span> <span class="operator">=</span> <span class="number">2</span>; <span class="comment">// 支持度阈值</span></span><br><span class="line">    <span class="type">double</span> <span class="variable">CONFIDENCE</span> <span class="operator">=</span> <span class="number">0.8</span>; <span class="comment">// 置信度阈值</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">ITEM_SPLIT</span> <span class="operator">=</span> <span class="string">&quot;,&quot;</span>; <span class="comment">// 项的分隔符</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">RULE_SPLIT</span> <span class="operator">=</span> <span class="string">&quot;-&gt;&quot;</span>; <span class="comment">// 项的分隔符</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//频繁集：frequentCollectionMap ---&gt; list(k项集)-int(出现次数)</span></span><br><span class="line">    <span class="comment">//注意这里List是key,Integer是value哦</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 所有的频繁集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;List&lt;String&gt;,Integer&gt; frequentCollectionMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 存放处理完的原始数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;String[]&gt; Data;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 1项集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;List&lt;String&gt;,Integer&gt; F1C;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 候选集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;List&lt;String&gt;,Integer&gt; candidateCollection= <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 关联规则</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;String,Double&gt; relationRules;</span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Apriori</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Apriori</span><span class="params">(<span class="type">int</span> SUPPORT, <span class="type">double</span> CONFIDENCE, String ITEM_SPLIT,String RULE_SPLIT)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.SUPPORT = SUPPORT;</span><br><span class="line">        <span class="built_in">this</span>.CONFIDENCE = CONFIDENCE;</span><br><span class="line">        <span class="built_in">this</span>.ITEM_SPLIT = ITEM_SPLIT;</span><br><span class="line">        <span class="built_in">this</span>.RULE_SPLIT = RULE_SPLIT;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Apriori&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;SUPPORT=&quot;</span> + SUPPORT +</span><br><span class="line">                <span class="string">&quot;, CONFIDENCE=&quot;</span> + CONFIDENCE +</span><br><span class="line">                <span class="string">&quot;, ITEM_SPLIT=&quot;</span> + ITEM_SPLIT +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 读取数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> fileName</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 剔除无效数据的Data</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span>  List&lt;String[]&gt; Read(String fileName,<span class="type">int</span> index)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;===========================================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;读取数据&quot;</span>);</span><br><span class="line">        Data = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//在类里加了一个private的Data，只要读取一次就到Data里了</span></span><br><span class="line"><span class="comment">//        //读取文件放入cells中</span></span><br><span class="line"><span class="comment">//        List&lt;String[]&gt; cells = new ArrayList&lt;&gt;();</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建 reader</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">            <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(fileName);</span><br><span class="line">            <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">            fis = <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(file);</span><br><span class="line">            <span class="type">InputStreamReader</span> <span class="variable">isr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(fis,<span class="string">&quot;GBK&quot;</span>);</span><br><span class="line">            <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(isr);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 按行读取</span></span><br><span class="line">            String line;</span><br><span class="line">            line = br.readLine();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(line!=<span class="literal">null</span>)&#123;</span><br><span class="line">                System.out.println(line);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//数据处理</span></span><br><span class="line">            <span class="comment">//把读取的不规范数据处理成模范数据modData</span></span><br><span class="line">            <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="comment">// 分割                // CSV文件的分隔符: ITEM_SPLIT</span></span><br><span class="line"></span><br><span class="line">                String[] columns = line.split(ITEM_SPLIT);<span class="comment">// CSV文件的分隔符: ITEM_SPLIT</span></span><br><span class="line">                String[] modData;</span><br><span class="line">                <span class="keyword">if</span>(index!=<span class="number">0</span>)&#123;</span><br><span class="line">                    modData = <span class="keyword">new</span> <span class="title class_">String</span>[columns.length-index];</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; modData.length; i++) &#123;</span><br><span class="line">                        modData[i]=columns[i+<span class="number">1</span>];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    modData = columns;</span><br><span class="line">                &#125;</span><br><span class="line">                    <span class="comment">/*</span></span><br><span class="line"><span class="comment">                    //这里不能直接判断 columns[2] == &quot;yes&quot; 哦</span></span><br><span class="line"><span class="comment">                    if(modData[1].equals(&quot;yes&quot;))&#123;</span></span><br><span class="line"><span class="comment">                        modData[1] = &quot;true&quot;;</span></span><br><span class="line"><span class="comment">                    &#125;else&#123;</span></span><br><span class="line"><span class="comment">                        modData[1] = &quot;false&quot;;</span></span><br><span class="line"><span class="comment">                    &#125;</span></span><br><span class="line"><span class="comment">                    */</span></span><br><span class="line"></span><br><span class="line">                Data.add(modData);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">&quot;读取完毕&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;===========================================&quot;</span>);</span><br><span class="line">            br.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException ex) &#123;</span><br><span class="line">            ex.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *获取频繁集</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 所有1-k项频繁集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;List&lt;String&gt;,Integer&gt; <span class="title function_">getFrequentCollectionMap</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;生成频繁集ing...&quot;</span>);</span><br><span class="line">        <span class="comment">//frequentCollectionMap需要合并F1C以及各个FkC</span></span><br><span class="line">        Map&lt;List&lt;String&gt;,Integer&gt; F1C = getFrequent1ItemCollections();</span><br><span class="line">        frequentCollectionMap.putAll(F1C);</span><br><span class="line"></span><br><span class="line">        Map&lt;List&lt;String&gt;,Integer&gt; FkC = F1C;</span><br><span class="line">        <span class="comment">//已经获取过1项,-1</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; Data.get(<span class="number">0</span>).length - <span class="number">1</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//获取k+1项候选频繁集</span></span><br><span class="line">            getFrequentMoreOneItemCandidateCollections(FkC);</span><br><span class="line">            FkC.clear();</span><br><span class="line">            <span class="comment">//处理候选集</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//计数</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//对于每一个候选项,都要查找一遍Data计数</span></span><br><span class="line">            <span class="keyword">for</span> (List&lt;String&gt; cC : candidateCollection.keySet()) &#123;</span><br><span class="line">                <span class="comment">//对于每条data，必须包含所有候选项的元素才能计数+1</span></span><br><span class="line">                <span class="keyword">for</span> (String[] dataItem : Data) &#123;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">//每个候选项中的元素都要被包含于dataItem</span></span><br><span class="line">                    <span class="type">boolean</span> <span class="variable">flag1</span> <span class="operator">=</span> <span class="literal">true</span>;<span class="comment">//true-&gt;候选项是dataItem的子集</span></span><br><span class="line"></span><br><span class="line">                    <span class="keyword">for</span> (String s1 : cC) &#123;</span><br><span class="line">                        <span class="type">boolean</span> <span class="variable">flag2</span> <span class="operator">=</span> <span class="literal">false</span>;<span class="comment">//true-&gt;候选项元素是dataItem的子集</span></span><br><span class="line">                        <span class="comment">//只要有一个相等，说明当前候选项元素是dataItem的子集</span></span><br><span class="line">                        <span class="keyword">for</span> (String s2 : dataItem) &#123;</span><br><span class="line">                            <span class="keyword">if</span>(s2.equals(s1))&#123;</span><br><span class="line">                                flag2 = <span class="literal">true</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="comment">//只要有一个候选项元素不是子集，那这个候选项不是子集</span></span><br><span class="line">                        <span class="keyword">if</span>(flag2 == <span class="literal">false</span>)&#123;</span><br><span class="line">                            flag1 = <span class="literal">false</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span>(flag1)&#123;</span><br><span class="line">                        candidateCollection.put(cC,candidateCollection.get(cC)+<span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//筛选</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (List&lt;String&gt; stringList : candidateCollection.keySet()) &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">fc</span> <span class="operator">=</span> candidateCollection.get(stringList);</span><br><span class="line">                <span class="keyword">if</span>(fc&gt;=SUPPORT)&#123;</span><br><span class="line">                    FkC.put(stringList,fc);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            frequentCollectionMap.putAll(FkC);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//最后return所有的频繁集</span></span><br><span class="line">        <span class="keyword">return</span> frequentCollectionMap;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取频繁1项集</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> F1C</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;List&lt;String&gt;,Integer&gt; <span class="title function_">getFrequent1ItemCollections</span><span class="params">()</span>&#123;</span><br><span class="line">        Map&lt;List&lt;String&gt;,Integer&gt; tempF1C = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        F1C = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//获取1项集</span></span><br><span class="line">        <span class="comment">//遍历Data</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; Data.size(); i++) &#123;</span><br><span class="line">        String[] row = Data.get(i);</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; row.length; j++) &#123;</span><br><span class="line">                    List&lt;String&gt; tempL = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">                    tempL.add(row[j]);</span><br><span class="line">                    <span class="comment">//如果row[j]不存在，默认设0，然后这里统计+1</span></span><br><span class="line">                <span class="comment">//自行搜索getOrDefault方法</span></span><br><span class="line">                    tempF1C.put(tempL, tempF1C.getOrDefault(tempL,<span class="number">0</span>)+<span class="number">1</span>);</span><br><span class="line"><span class="comment">//                    F1C.put(tempL, F1C.get(row[j] + 1));</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//此时全部的1项集已经全部完成，接下来要按支持度阈值筛选</span></span><br><span class="line">        <span class="keyword">for</span> (List&lt;String&gt; stringList : tempF1C.keySet()) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">fc</span> <span class="operator">=</span> tempF1C.get(stringList);</span><br><span class="line">            <span class="keyword">if</span>(fc&gt;=SUPPORT)&#123;</span><br><span class="line">                F1C.put(stringList,fc);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> F1C;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这里重构了一下，刚才在犹豫要不要把获取频繁1项和k项写成private</span></span><br><span class="line">    <span class="comment">//想了想觉得毕竟这个类的命名是Apriori算法，那么这个即使是其他问题，也可能使用这个算法来获取频繁1项k项</span></span><br><span class="line">    <span class="comment">//所以逻辑上来说这个方法是应该开放的</span></span><br><span class="line">    <span class="comment">//然后就顺利成章的在类里添加了private F1C</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 传入Data获取频繁1项集</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> Data 不能有多余数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 频繁1项集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;List&lt;String&gt;,Integer&gt; <span class="title function_">getFrequent1ItemCollections</span><span class="params">(List&lt;String[]&gt; Data)</span>&#123;</span><br><span class="line">        Map&lt;List&lt;String&gt;,Integer&gt; tempF1C = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        Map&lt;List&lt;String&gt;,Integer&gt; F1C = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//获取1项集</span></span><br><span class="line">        <span class="comment">//遍历Data</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; Data.size(); i++) &#123;</span><br><span class="line">            String[] row = Data.get(i);</span><br><span class="line">            <span class="comment">//这里修改了哦，从0开始，也就意味着如果是外部数据要调用这个方法，Data里不能有多余数据</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; row.length; j++) &#123;</span><br><span class="line">                List&lt;String&gt; tempL = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">                tempL.add(row[j]);</span><br><span class="line">                <span class="comment">//如果row[j]不存在，默认设0，然后这里统计+1</span></span><br><span class="line">                <span class="comment">//自行搜索getOrDefault方法</span></span><br><span class="line">                tempF1C.put(tempL, tempF1C.getOrDefault(tempL,<span class="number">0</span>)+<span class="number">1</span>);</span><br><span class="line"><span class="comment">//                    F1C.put(tempL, F1C.get(row[j] + 1));</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//此时全部的1项集已经全部完成，接下来要按支持度阈值筛选</span></span><br><span class="line">        <span class="keyword">for</span> (List&lt;String&gt; stringList : tempF1C.keySet()) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">fc</span> <span class="operator">=</span> tempF1C.get(stringList);</span><br><span class="line">            <span class="keyword">if</span>(fc&gt;=SUPPORT)&#123;</span><br><span class="line">                F1C.put(stringList,fc);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> F1C;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//为了安全，应该是private</span></span><br><span class="line">    <span class="comment">//又想了一下，如果私有，没有必要return</span></span><br><span class="line">    <span class="comment">//感觉不行，这个候选集实际上类似于一个缓存数据，没有必要创建私有成员变量，既然写了return，那么这个方法实际上就相当于把获取候选集的步骤封装了起来方便外部调用，那么他按理来说应该是一个public的</span></span><br><span class="line">    <span class="comment">//烦,就这样吧</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *有频繁k项集，获取频繁k+1项候选集</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> FkC 频繁k项集</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> k+1项候选集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;List&lt;String&gt;,Integer&gt; <span class="title function_">getFrequentMoreOneItemCandidateCollections</span><span class="params">(Map&lt;List&lt;String&gt;,Integer&gt; FkC)</span>&#123;</span><br><span class="line">        candidateCollection.clear();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//st1与st2都是k项，两个循环，链接成k+1项放入候选集</span></span><br><span class="line">        <span class="comment">//因为是直接从k项集中找的元素链接，所以也不需要再进行”剪枝“步了</span></span><br><span class="line">        Set&lt;List&lt;String&gt;&gt; st1 = FkC.keySet();</span><br><span class="line">        Set&lt;List&lt;String&gt;&gt; st2 = FkC.keySet();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//切k项集</span></span><br><span class="line">        <span class="keyword">for</span> (List&lt;String&gt; s1 : st1) &#123;</span><br><span class="line">            <span class="keyword">for</span> (List&lt;String&gt; s2 : st2) &#123;</span><br><span class="line">                <span class="comment">//切k项</span></span><br><span class="line">                <span class="keyword">for</span> (String s : s2) &#123;</span><br><span class="line">                    <span class="comment">//k项中查项</span></span><br><span class="line">                    <span class="keyword">if</span>(!s1.contains(s))&#123;</span><br><span class="line">                        List&lt;String&gt; tempL = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(s1);</span><br><span class="line">                        tempL.add(s);</span><br><span class="line">                        <span class="comment">//排序</span></span><br><span class="line">                        tempL.sort(Comparator.naturalOrder());</span><br><span class="line">                        candidateCollection.put(tempL,<span class="number">0</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> candidateCollection;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    public Map&lt;List&lt;String&gt;,Double&gt; getRelationRules(Map&lt;List&lt;String&gt;,Integer&gt; frequentCollectionMap)&#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        Map&lt;List&lt;String&gt;,Double&gt; relationRule = new HashMap&lt;&gt;();</span></span><br><span class="line"><span class="comment">//        Map&lt;List&lt;String&gt;,Integer&gt; maxItemsFC = new HashMap&lt;&gt;();</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        //最大k项频繁集</span></span><br><span class="line"><span class="comment">//        for (List&lt;String&gt; fc : frequentCollectionMap.keySet()) &#123;</span></span><br><span class="line"><span class="comment">//            if(fc.size()==Data.size())&#123;</span></span><br><span class="line"><span class="comment">//                maxItemsFC.put(fc,frequentCollectionMap.get(fc));</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        return relationRule;</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据传入频繁集获得规则</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> frequentCollectionMap 全部频繁项</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 关联规则</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;String,Double&gt; <span class="title function_">getRelationRules</span><span class="params">(Map&lt;List&lt;String&gt;,Integer&gt; frequentCollectionMap)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;生成规则ing...&quot;</span>);</span><br><span class="line">        <span class="comment">//将频繁项的子集相互链接，计算置信度，筛选</span></span><br><span class="line">        relationRules=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (List&lt;String&gt; itmes : frequentCollectionMap.keySet())&#123;</span><br><span class="line">            <span class="keyword">if</span> (itmes.size()&gt;<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="type">double</span> <span class="variable">countAll</span> <span class="operator">=</span> frequentCollectionMap.get(itmes);</span><br><span class="line">                List&lt;List&lt;String&gt;&gt; result = getSubsets(itmes);<span class="comment">//获得itmes的所有非空子集</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span> (List&lt;String&gt; itemList : result)&#123;</span><br><span class="line">                    <span class="keyword">if</span> (itemList.size() &lt; itmes.size())&#123;<span class="comment">//只处理真子集</span></span><br><span class="line"></span><br><span class="line">                        <span class="type">StringBuilder</span> <span class="variable">reasonStr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();<span class="comment">//前置</span></span><br><span class="line">                        <span class="type">StringBuilder</span> <span class="variable">resultStr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();<span class="comment">//结果</span></span><br><span class="line">                        <span class="keyword">for</span> (String item : itemList)&#123;</span><br><span class="line">                            reasonStr.append(ITEM_SPLIT).append(item);</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        <span class="keyword">for</span> (String item : itmes) &#123;</span><br><span class="line">                            <span class="keyword">if</span> (!itemList.contains(item))&#123;</span><br><span class="line">                                resultStr.append(ITEM_SPLIT).append(item);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        <span class="type">double</span> <span class="variable">countReason</span> <span class="operator">=</span> frequentCollectionMap.get(itemList);</span><br><span class="line">                        <span class="type">double</span> <span class="variable">itemConfidence</span> <span class="operator">=</span> countAll / countReason;<span class="comment">//计算置信度</span></span><br><span class="line"></span><br><span class="line">                        <span class="keyword">if</span> (itemConfidence &gt;= CONFIDENCE)&#123;</span><br><span class="line">                            <span class="type">String</span> <span class="variable">rule</span> <span class="operator">=</span> reasonStr.append(RULE_SPLIT).append(resultStr.substring(<span class="number">1</span>)).substring(<span class="number">1</span>);</span><br><span class="line">                            relationRules.put(rule,itemConfidence);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> relationRules;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 打印所有频繁项</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showFC</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;===========================================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;所有频繁项&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(frequentCollectionMap == <span class="literal">null</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;未创建！！！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(frequentCollectionMap.isEmpty())&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;当前为空集！！！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (List&lt;String&gt; strings : frequentCollectionMap.keySet()) &#123;</span><br><span class="line">            System.out.println(strings +<span class="string">&quot;:&quot;</span>+ frequentCollectionMap.get(strings));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 打印规则</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showRule</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;===========================================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;关联规则&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(relationRules == <span class="literal">null</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;未创建！！！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(relationRules.isEmpty())&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;当前为空集！！！&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (String strings : relationRules.keySet()) &#123;</span><br><span class="line">            System.out.println(strings +<span class="string">&quot;:&quot;</span>+ relationRules.get(strings));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 打印1项集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showF1C</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;===========================================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;单项集&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(relationRules == <span class="literal">null</span> || relationRules.isEmpty())&#123;</span><br><span class="line">            getFrequent1ItemCollections();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (List&lt;String&gt; strings : F1C.keySet()) &#123;</span><br><span class="line">            System.out.println(strings +<span class="string">&quot;:&quot;</span>+ F1C.get(strings));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 打印数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showData</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;===========================================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;Data&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(Data == <span class="literal">null</span> || Data.isEmpty())&#123;</span><br><span class="line">            getFrequent1ItemCollections();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (String[] strings : Data) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Row:&quot;</span> + Arrays.toString(strings));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 构造子集</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> sourceSet</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> sourceSet的所有非空子集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;List&lt;String&gt;&gt; <span class="title function_">getSubsets</span><span class="params">(List&lt;String&gt; sourceSet)</span>&#123;</span><br><span class="line">        List&lt;List&lt;String&gt;&gt; result = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        result.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;());</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i&lt;sourceSet.size();i++)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> result.size();</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;j&lt;size;j++)&#123;</span><br><span class="line">                List&lt;String&gt; temp = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(result.get(j));</span><br><span class="line">                temp.add(sourceSet.get(i));</span><br><span class="line">                result.add(temp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result.subList(<span class="number">1</span>,result.size());<span class="comment">//去掉空集</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><p>我的这个例子文件就直接是中医证型关联规则.java</p>
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 中医证型关联规则 &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Apriori</span> <span class="variable">apriori</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Apriori</span>(<span class="number">2</span>,<span class="number">0.8</span>,<span class="string">&quot;,&quot;</span>,<span class="string">&quot;-&gt;&quot;</span>);</span><br><span class="line">        apriori.Read(<span class="string">&quot;src/中医证型关联规则.csv&quot;</span>,<span class="number">0</span>);</span><br><span class="line">        apriori.getRelationRules(apriori.getFrequentCollectionMap());</span><br><span class="line">        apriori.showRule();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><p>原始数据图 931*7</p>
-<p>(第一行是表头，格式不同则请自行重写Read方法)</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/Apriori%E7%AE%97%E6%B3%95/Data.png"
-                     
-                ></p>
-<p>所有元素也必须是各异的，否则请自行替换。</p>
-<p>作业数据中出现了这样的情况</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/Apriori%E7%AE%97%E6%B3%95/sameString.png"
-                     
-                ></p>
-<p>可以看到周末和促销列都是(yes&#x2F;no),不进行处理显然会出现问题，我的处理方式就是直接在重写方法里读取数据时将某一列替换成不同字符了(见Apriori类103-110行)</p>
-<p>理想的处理应该自动将每一列的数据读取种类自行分配特征值，不过我懒得写了。</p>
-<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p>数据量有点大，需要等一会儿的</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/Apriori%E7%AE%97%E6%B3%95/result.png"
-                     
-                ></p>
-]]></content>
-      <categories>
-        <category>Activity</category>
-        <category>数模</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>数据挖掘</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>学习计划</title>
     <url>/2023/03/10/FutureStudyStep/</url>
     <content><![CDATA[<div class="tabs" id="tab-plan"><ul class="nav-tabs"><li class="tab active"><a class="#plan-1">任务</a></li><li class="tab"><a class="#plan-2">目标</a></li><li class="tab"><a class="#plan-3">LifeLong</a></li></ul><div class="tab-content"><div class="tab-pane active" id="plan-1"><p><strong>主要是具体的事件</strong></p>
 <ul>
-<li><strong>复习</strong><ul>
-<li>概率论</li>
-<li>毛概</li>
-<li>地图学</li>
-</ul>
-</li>
-<li><del>spring</del>spring boot</li>
+<li><del>spring</del>Springboot</li>
 <li>gis开发<ul>
 <li><strong>ArcGIS操作深入学习</strong></li>
 <li>WebGIS概念初步认识</li>
 </ul>
 </li>
-<li>数模<ul>
-<li>matlab、spss</li>
+<li><del>数模</del><ul>
+<li><del>matlab、spss</del></li>
 </ul>
 </li>
 <li><strong>乐器</strong><ul>
@@ -231,13 +265,17 @@
 <li>放空</li>
 </ul>
 </li>
+<li>箫<ul>
+<li>熟练</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <hr>
 <p>很远的短期</p>
 <ul>
-<li>萧</li>
+<li><del>萧</del></li>
 <li>速写</li>
 <li>mod</li>
 <li><del>android开发</del></li>
@@ -264,43 +302,47 @@
       </tags>
   </entry>
   <entry>
-    <title>C++MFC库</title>
-    <url>/2023/09/03/C++MFC%E5%BA%93/</url>
-    <content><![CDATA[<h2 id="Knowledge"><a href="#Knowledge" class="headerlink" title="Knowledge"></a>Knowledge</h2><p>略</p>
-<h2 id="BugFix"><a href="#BugFix" class="headerlink" title="BugFix"></a>BugFix</h2><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><div class="note danger"><p>LNK2019: 无法解析的外部符号 _main，该符号在函数 ___tmainCRTStartup 中被引用 MSVCRTD.lib test。</p>
-</div>
+    <title>Lagrange插值法</title>
+    <url>/2023/04/19/Lagrange%E6%8F%92%E5%80%BC%E6%B3%95/</url>
+    <content><![CDATA[<a class="button  center large" href='https://blog.csdn.net/qq_43025814/article/details/119896698' title='C#实现Lagrange插值'><i class='fa-brands fa-c'></i> C#实现Lagrange插值</a>
 
 
-<h4 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h4><a class="button  regular" href='https://www.cnblogs.com/rainbow70626/p/11823720.html' title='【CSDN】Comparator.naturalOrder | 自然排序_猫巳的博客-CSDN博客'><i class='fa-solid fa-arrow-right'></i> 【CSDN】Comparator.naturalOrder | 自然排序_猫巳的博客-CSDN博客</a>
-<p>这个问题表明你新建的是一个main类型函数(控制台程序)…</p>
-<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><div class="note success"><p>更改 项目-属性-链接器-系统-子系统 把控制台改为窗口(WINDOWS)</p>
-</div>
 
-<h3 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h3><h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h4><p>直接使用</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> lpszClassName[] = <span class="string">&quot;窗口&quot;</span></span><br></pre></td></tr></table></figure></div>
-<p>与</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line">wc.lpszClassName = lpszClassName</span><br></pre></td></tr></table></figure></div>
-<div class="note danger"><p>报错 不能将”const char *”类型的值分配到”LPCWSTR”类型的实体</p>
-</div>
-
-<h4 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h4><h5 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h5><p>添加</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;tchar.h&gt;</span></span></span><br></pre></td></tr></table></figure></div>
-<p>并使用</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line">wc.lpszClassName = _T(<span class="string">&quot;窗口&quot;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<h5 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h5><p>更改 <strong>项目-配置属性-高级属性-字符集</strong> 为 <strong>多字节</strong>或<strong>无</strong></p>
-<h3 id="MessBeep"><a href="#MessBeep" class="headerlink" title="MessBeep()"></a>MessBeep()</h3><h4 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h4><p>直接使用时，无论如何修改，或使用-1(扬声器发声，排除主板无蜂鸣器原因)，实例中始终为报错声</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">LRESULT CALLBACK <span class="title">WndProc</span><span class="params">(HWND hwnd,</span></span></span><br><span class="line"><span class="params"><span class="function">	UINT message,</span></span></span><br><span class="line"><span class="params"><span class="function">	WPARAM wParam,</span></span></span><br><span class="line"><span class="params"><span class="function">	LPARAM lParam)</span></span>&#123;</span><br><span class="line">	<span class="keyword">switch</span> (message)&#123;</span><br><span class="line">		<span class="keyword">case</span> WM_LBUTTONDOWN:&#123;</span><br><span class="line">			<span class="built_in">MessageBeep</span>(<span class="number">0</span>);</span><br><span class="line">			<span class="built_in">MessageBeep</span>(MB_OK);</span><br><span class="line">		&#125;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> WM_DESTROY:</span><br><span class="line">			<span class="built_in">PostQuitMessage</span>(<span class="number">0</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">DefWindowProc</span>(hwnd, message, wParam, lParam);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="解决方法-2"><a href="#解决方法-2" class="headerlink" title="解决方法"></a>解决方法</h4><p>微软开发文档中：<br><code>注意：在 Windows Server 2022 上，已禁用任务计划程序中的 Microsoft\Windows\Multimedia\SystemSoundsService 任务。 需要启用此任务才能使MessageBeep 正常运行。</code></p>
+<p>专为小白制作的copy步骤：</p>
+<p>找到From1.cs</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Lagrange%E6%8F%92%E5%80%BC%E6%B3%95/%E6%89%93%E5%BC%80%E5%B1%9E%E6%80%A7%E7%AA%97%E5%8F%A3.png"
+                      alt="打开属性窗口"
+                ></p>
+<p>把上面链接里的代码对应放入From1.cs和program.cs</p>
+<p>先打开From1的属性窗口，添加MouseDown事件</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Lagrange%E6%8F%92%E5%80%BC%E6%B3%95/%E6%B7%BB%E5%8A%A0MouseDown%E4%BA%8B%E4%BB%B6.png"
+                      alt="添加MouseDown事件"
+                ></p>
+<p>运行时左键单击添加点，右键单击出结果</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Lagrange%E6%8F%92%E5%80%BC%E6%B3%95/%E5%B7%A6%E9%94%AE%E5%8D%95%E5%87%BB.png"
+                      alt="左键单击"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Lagrange%E6%8F%92%E5%80%BC%E6%B3%95/cover.png"
+                      alt="右键单击"
+                ></p>
 ]]></content>
       <categories>
-        <category>Windows</category>
-        <category>C++</category>
-        <category>MFC</category>
+        <category>C#</category>
       </categories>
       <tags>
-        <tag>BUG</tag>
+        <tag>计算方法</tag>
       </tags>
   </entry>
   <entry>
@@ -384,47 +426,24 @@
       </tags>
   </entry>
   <entry>
-    <title>Lagrange插值法</title>
-    <url>/2023/04/19/Lagrange%E6%8F%92%E5%80%BC%E6%B3%95/</url>
-    <content><![CDATA[<a class="button  center large" href='https://blog.csdn.net/qq_43025814/article/details/119896698' title='C#实现Lagrange插值'><i class='fa-brands fa-c'></i> C#实现Lagrange插值</a>
-
-
-
-<p>专为小白制作的copy步骤：</p>
-<p>找到From1.cs</p>
-<p><img  
+    <title>VC++MFC画图程序</title>
+    <url>/2023/10/28/VC++MFC%E7%94%BB%E5%9B%BE%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[<h2 id="Shape类"><a href="#Shape类" class="headerlink" title="Shape类"></a>Shape类</h2><h3 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h3><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><h2 id="BUG"><a href="#BUG" class="headerlink" title="BUG"></a>BUG</h2><h3 id="仅虚拟函数允许说明符“-x3D-0”"><a href="#仅虚拟函数允许说明符“-x3D-0”" class="headerlink" title="仅虚拟函数允许说明符“&#x3D;0”"></a>仅虚拟函数允许说明符“&#x3D;0”</h3><p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/images/Lagrange%E6%8F%92%E5%80%BC%E6%B3%95/%E6%89%93%E5%BC%80%E5%B1%9E%E6%80%A7%E7%AA%97%E5%8F%A3.png"
-                      alt="打开属性窗口"
-                ></p>
-<p>把上面链接里的代码对应放入From1.cs和program.cs</p>
-<p>先打开From1的属性窗口，添加MouseDown事件</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/Lagrange%E6%8F%92%E5%80%BC%E6%B3%95/%E6%B7%BB%E5%8A%A0MouseDown%E4%BA%8B%E4%BB%B6.png"
-                      alt="添加MouseDown事件"
-                ></p>
-<p>运行时左键单击添加点，右键单击出结果</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/Lagrange%E6%8F%92%E5%80%BC%E6%B3%95/%E5%B7%A6%E9%94%AE%E5%8D%95%E5%87%BB.png"
-                      alt="左键单击"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/Lagrange%E6%8F%92%E5%80%BC%E6%B3%95/cover.png"
-                      alt="右键单击"
-                ></p>
-]]></content>
+                     data-src="/images/VC++MFC%E7%94%BB%E5%9B%BE%E7%A8%8B%E5%BA%8F/1.png"
+                      alt="BUG1"
+                ><br>这里我的想法是设计两个纯虚函数Draw和isSelected<br>上面的纯虚函数没有报错但是这里报错了，<br>最后发现是因为上面已经有了一个bool类型的isSelected变量，改了名就好了</p>
+<h2 id="程序逻辑"><a href="#程序逻辑" class="headerlink" title="程序逻辑"></a>程序逻辑</h2>]]></content>
       <categories>
-        <category>C#</category>
+        <category>Windows</category>
+        <category>C++</category>
+        <category>MFC</category>
       </categories>
       <tags>
-        <tag>计算方法</tag>
+        <tag>BUG</tag>
+        <tag>课设</tag>
+        <tag>项目</tag>
       </tags>
   </entry>
   <entry>
@@ -822,28 +841,6 @@
       </tags>
   </entry>
   <entry>
-    <title>spring学习(一)</title>
-    <url>/2023/03/25/spring%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</url>
-    <content><![CDATA[<a class="button  regular" href='https://www.docs4dev.com/docs/zh/spring-framework/5.1.3.RELEASE/reference' title='spring中文文档'><i class='fa-solid fa-arrow-right'></i> spring中文文档</a>
-
-<h1 id="spring的概述"><a href="#spring的概述" class="headerlink" title="spring的概述"></a>spring的概述</h1><a class="button  regular" href='https://zhuanlan.zhihu.com/p/392443841' title='spring的概述'><i class='fa-solid fa-arrow-right'></i> spring的概述</a>
-
-<h2 id="spring是什么"><a href="#spring是什么" class="headerlink" title="spring是什么"></a>spring是什么</h2><p>简单点概括就是框架，之前学java时有讲到工厂模式，这个就是结合工厂模式，把不必要的重复性的东西放到框架里，你要使用就只用把框架对好，往里填充东西就🆗。<br>Spring是一个免费开源的轻量级的，IOC，AOP为特点的轻量级框架！</p>
-<h2 id="spring的两大核心"><a href="#spring的两大核心" class="headerlink" title="spring的两大核心"></a>spring的两大核心</h2><ul>
-<li>面向方面编程(AOP)</li>
-<li>控制反转(IOC)容器</li>
-</ul>
-<h2 id="spring的发展历程和优势"><a href="#spring的发展历程和优势" class="headerlink" title="spring的发展历程和优势"></a>spring的发展历程和优势</h2><h2 id="spring体系结构"><a href="#spring体系结构" class="headerlink" title="spring体系结构"></a>spring体系结构</h2><h1 id="程序的耦合及解耦"><a href="#程序的耦合及解耦" class="headerlink" title="程序的耦合及解耦"></a>程序的耦合及解耦</h1><h2 id="曾经案例中问题"><a href="#曾经案例中问题" class="headerlink" title="曾经案例中问题"></a>曾经案例中问题</h2><h2 id="工厂模式解耦"><a href="#工厂模式解耦" class="headerlink" title="工厂模式解耦"></a>工厂模式解耦</h2><h1 id="IOC概念和spring中的IOC"><a href="#IOC概念和spring中的IOC" class="headerlink" title="IOC概念和spring中的IOC"></a>IOC概念和spring中的IOC</h1><h2 id="spring中基于XML的IOC环境搭建"><a href="#spring中基于XML的IOC环境搭建" class="headerlink" title="spring中基于XML的IOC环境搭建"></a>spring中基于XML的IOC环境搭建</h2><h1 id="依赖注入-DI——Dependency-Injection"><a href="#依赖注入-DI——Dependency-Injection" class="headerlink" title="依赖注入(DI——Dependency Injection)"></a>依赖注入(DI——Dependency Injection)</h1><p>由容器动态的将某个依赖关系注入到组件之中。</p>
-<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>spring</category>
-      </categories>
-      <tags>
-        <tag>learn</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ryujinx在线版(LDN版)</title>
     <url>/2023/04/12/ryujinx%E5%9C%A8%E7%BA%BF%E7%89%88/</url>
     <content><![CDATA[<h1 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h1><a class="button  large center" href='https://www.bilibili.com/read/cv20541633/' title='Switch模拟器Ryujinx联网版官方中文入门教程（含最新KEY和固件）'><i class='fa-brands fa-bilibili'></i> Switch模拟器Ryujinx联网版官方中文入门教程（含最新KEY和固件）</a>
@@ -930,6 +927,28 @@
       </tags>
   </entry>
   <entry>
+    <title>spring学习(一)</title>
+    <url>/2023/03/25/spring%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</url>
+    <content><![CDATA[<a class="button  regular" href='https://www.docs4dev.com/docs/zh/spring-framework/5.1.3.RELEASE/reference' title='spring中文文档'><i class='fa-solid fa-arrow-right'></i> spring中文文档</a>
+
+<h1 id="spring的概述"><a href="#spring的概述" class="headerlink" title="spring的概述"></a>spring的概述</h1><a class="button  regular" href='https://zhuanlan.zhihu.com/p/392443841' title='spring的概述'><i class='fa-solid fa-arrow-right'></i> spring的概述</a>
+
+<h2 id="spring是什么"><a href="#spring是什么" class="headerlink" title="spring是什么"></a>spring是什么</h2><p>简单点概括就是框架，之前学java时有讲到工厂模式，这个就是结合工厂模式，把不必要的重复性的东西放到框架里，你要使用就只用把框架对好，往里填充东西就🆗。<br>Spring是一个免费开源的轻量级的，IOC，AOP为特点的轻量级框架！</p>
+<h2 id="spring的两大核心"><a href="#spring的两大核心" class="headerlink" title="spring的两大核心"></a>spring的两大核心</h2><ul>
+<li>面向方面编程(AOP)</li>
+<li>控制反转(IOC)容器</li>
+</ul>
+<h2 id="spring的发展历程和优势"><a href="#spring的发展历程和优势" class="headerlink" title="spring的发展历程和优势"></a>spring的发展历程和优势</h2><h2 id="spring体系结构"><a href="#spring体系结构" class="headerlink" title="spring体系结构"></a>spring体系结构</h2><h1 id="程序的耦合及解耦"><a href="#程序的耦合及解耦" class="headerlink" title="程序的耦合及解耦"></a>程序的耦合及解耦</h1><h2 id="曾经案例中问题"><a href="#曾经案例中问题" class="headerlink" title="曾经案例中问题"></a>曾经案例中问题</h2><h2 id="工厂模式解耦"><a href="#工厂模式解耦" class="headerlink" title="工厂模式解耦"></a>工厂模式解耦</h2><h1 id="IOC概念和spring中的IOC"><a href="#IOC概念和spring中的IOC" class="headerlink" title="IOC概念和spring中的IOC"></a>IOC概念和spring中的IOC</h1><h2 id="spring中基于XML的IOC环境搭建"><a href="#spring中基于XML的IOC环境搭建" class="headerlink" title="spring中基于XML的IOC环境搭建"></a>spring中基于XML的IOC环境搭建</h2><h1 id="依赖注入-DI——Dependency-Injection"><a href="#依赖注入-DI——Dependency-Injection" class="headerlink" title="依赖注入(DI——Dependency Injection)"></a>依赖注入(DI——Dependency Injection)</h1><p>由容器动态的将某个依赖关系注入到组件之中。</p>
+<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>spring</category>
+      </categories>
+      <tags>
+        <tag>learn</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>假期总结</title>
     <url>/2023/09/03/%E5%81%87%E6%9C%9F%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h2 id="简单概括"><a href="#简单概括" class="headerlink" title="简单概括"></a>简单概括</h2><ul>
@@ -968,6 +987,28 @@
       </categories>
       <tags>
         <tag>总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关闭windows自动更新</title>
+    <url>/2023/03/26/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/</url>
+    <content><![CDATA[<a class="button  large center" href='https://www.abackup.com/easybackup-tutorials/how-to-stop-windows-10-update-automatically-666.html' title='关闭Windows自动更新的6个方法'><i class='fa-solid fa-arrow-right'></i> 关闭Windows自动更新的6个方法</a>
+
+
+
+<p>我这里使用第二种方法，结果发现报错<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/error.png"
+                      alt="Error"
+                ></p>
+<p>网上查询发现是因为Windows系统版本是家庭版，不具备这个功能</p>
+<a class="button  large center" href='https://zhuanlan.zhihu.com/p/403961135' title='找不到 gpedit.msc 的最优解决办法'><i class='fa-solid fa-arrow-right'></i> 找不到 gpedit.msc 的最优解决办法</a>]]></content>
+      <categories>
+        <category>Tips</category>
+      </categories>
+      <tags>
+        <tag>Tips</tag>
       </tags>
   </entry>
   <entry>
@@ -1014,28 +1055,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关闭windows自动更新</title>
-    <url>/2023/03/26/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/</url>
-    <content><![CDATA[<a class="button  large center" href='https://www.abackup.com/easybackup-tutorials/how-to-stop-windows-10-update-automatically-666.html' title='关闭Windows自动更新的6个方法'><i class='fa-solid fa-arrow-right'></i> 关闭Windows自动更新的6个方法</a>
-
-
-
-<p>我这里使用第二种方法，结果发现报错<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/%E5%85%B3%E9%97%ADwindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/error.png"
-                      alt="Error"
-                ></p>
-<p>网上查询发现是因为Windows系统版本是家庭版，不具备这个功能</p>
-<a class="button  large center" href='https://zhuanlan.zhihu.com/p/403961135' title='找不到 gpedit.msc 的最优解决办法'><i class='fa-solid fa-arrow-right'></i> 找不到 gpedit.msc 的最优解决办法</a>]]></content>
-      <categories>
-        <category>Tips</category>
-      </categories>
-      <tags>
-        <tag>Tips</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>升级Hexo</title>
     <url>/2023/03/30/%E5%8D%87%E7%BA%A7Hexo/</url>
     <content><![CDATA[<p>主要是Hexo更新的问题和Hexo本地预览时的端口占用</p>
@@ -1050,293 +1069,6 @@
         <tag>Hexo</tag>
         <tag>Blog</tag>
         <tag>Problems</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>找亲和数</title>
-    <url>/2023/03/21/%E6%89%BE%E4%BA%B2%E5%92%8C%E6%95%B0/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>如果整数A的全部因子（包括1，不包括A本身）之和等于B；且整数B的全部因子（包括1，不包括B本身）之和等于A，则A和B称为亲密数。求10000以内的亲密数。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>直接遍历到10000，每个数a找一次因子，计算因子和为b,再找b的因子，计算因子和是否等于a<br>跑肯定是能跑，但是这样未免也太过无聊，于是我在网上想找一下有没有什么好的算法研究一下</p>
-<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">N=<span class="number">1e05</span>;                 <span class="comment">% 所取数范围</span></span><br><span class="line">fac_sum=<span class="built_in">zeros</span>();    </span><br><span class="line"><span class="keyword">for</span> A=<span class="number">1</span>:N               <span class="comment">% 被除数</span></span><br><span class="line">    fac_sum(A)=<span class="number">0</span>;       <span class="comment">% 所有因式和</span></span><br><span class="line">    <span class="keyword">for</span> x=<span class="number">1</span>:(A<span class="number">-1</span>)       <span class="comment">% 除数</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">mod</span>(A,x)==<span class="number">0</span>) </span><br><span class="line">            fac_sum(A)=fac_sum(A)+x;    <span class="comment">% 每个数所有真因式之和</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">fprintf(<span class="string">&#x27;%g范围内的亲和数:\n&#x27;</span>,N);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N</span><br><span class="line">    B=fac_sum(<span class="built_in">i</span>);   </span><br><span class="line">    <span class="keyword">if</span> B&gt;<span class="number">0</span> &amp;&amp; B&lt;= N                     <span class="comment">% 使得数字B在数组的索引范围内</span></span><br><span class="line">        <span class="keyword">if</span> fac_sum(B) == <span class="built_in">i</span> &amp;&amp; (B~=<span class="built_in">i</span>)    <span class="comment">% 亲和数的条件，同时剔除本身相等情况</span></span><br><span class="line">            fprintf(<span class="string">&#x27;%g,%g\n&#x27;</span>,B,<span class="built_in">i</span>);</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></div>
-<p>然后看到了c语言的代码实现，细细观察了一下，感觉发现了Matlab的最大特点——矩阵！<br>如此的话，也怪不得数模需要用Matlab了<br>网上查了一下，发现Matlab就是“矩阵实验室”😓汗。。。</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a, b, i, n;</span><br><span class="line">    <span class="keyword">for</span> (a = <span class="number">1</span>; a &lt; <span class="number">10000</span>; a++)</span><br><span class="line">    &#123;</span><br><span class="line">        b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= a / <span class="number">2</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a % i == <span class="number">0</span>)</span><br><span class="line">                b += i;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        n = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= b / <span class="number">2</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (b % i == <span class="number">0</span>)</span><br><span class="line">                n += i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n == a &amp;&amp; a &lt; b)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;(%4d,%4d)\n&quot;</span>, a, b);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<h2 id="头脑风暴"><a href="#头脑风暴" class="headerlink" title="头脑风暴"></a>头脑风暴</h2><p>上面Matlab的思路是直接一个a[]数组，a[i]放的就是第i个数的因数和<br>所以第一次for循环就是在做这个数组，做完之后我只要看a[i]与a[(a[i])]是否相等就能判断是不是亲和数<br>不过很容易想到的一个弊端：</p>
-<ul>
-<li>会出现重复比较的情况—— <strong>一对亲和数出现两次</strong> ，比如：<ul>
-<li>220,284</li>
-<li>284,220</li>
-</ul>
-</li>
-</ul>
-<p>目前解决办法只想到链表代替，找到一个之后立刻删除另外一个对应结点，但是只用链表显然无法做到立刻删除一个index为i的结点，或许加一个 <strong>黑名单</strong> ，每次比较之前判断在不在黑名单内？<br>但是这样有明显画蛇添足，还不如就让他多比较一次，因为本身亲和数就是相对于范围来说很少的(目前已经知道的有1000多对亲和数，而10000以内的只有5对，在100000以内有13对)，为了这少量的几次比较反而用更复杂的链表实在是。。。<br>不过貌似可以使用哈希表，嗯，非常可行，嗯对，可以。<br>突然想到这是Matlab啊，链表哈希表都没有！<br>唉，不考虑编程语言的话哈希表确实是比较完美的解决方案了，不过我貌似又忽略了使用哈希表本身也降低了程序的处理速度啊</p>
-<p>如果你有更完美的方案，欢迎与我交流！</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这次最大的收获是意识到了Matlab的一个重要特点，今后写Matlab一定要着重发挥矩阵的作用。</p>
-<h3 id="解决了什么问题"><a href="#解决了什么问题" class="headerlink" title="解决了什么问题"></a>解决了什么问题</h3><ul>
-<li>怎样寻找最大亲和数<ul>
-<li>最大亲和数的标准</li>
-<li>怎样实现，怎样不暴力地实现</li>
-</ul>
-</li>
-</ul>
-<h3 id="得到了什么结果"><a href="#得到了什么结果" class="headerlink" title="得到了什么结果"></a>得到了什么结果</h3><ul>
-<li>寻找因数时快速减少运算量的标志—— <strong>x&#x2F;2</strong> </li>
-<li>Matlab的重要特性—— <strong>矩阵</strong></li>
-</ul>
-<h3 id="形成了什么结论"><a href="#形成了什么结论" class="headerlink" title="形成了什么结论"></a>形成了什么结论</h3><p>想要最大发挥Matlab的特性，一定要活用矩阵</p>
-]]></content>
-      <categories>
-        <category>Activity</category>
-        <category>数模</category>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>数模</tag>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图与网络模型及方法</title>
-    <url>/2023/07/21/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="图与网络模型及方法"><a href="#图与网络模型及方法" class="headerlink" title="图与网络模型及方法"></a>图与网络模型及方法</h2><h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><h3 id="基本背景"><a href="#基本背景" class="headerlink" title="基本背景"></a>基本背景</h3><p>图论起源于 18 世纪。第一篇图论论文是瑞上数学家欧拉于 1736 年发表的</p>
-<details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>“哥尼斯堡的七座桥” </summary>
-              <div class='content'>
-              <p>哥尼斯堡有七座桥将普莱格尔河中的两个岛及岛与河岸联结起来，问题是要从这四块陆地中的任何一块开始通过每一座桥正好一次，再回到起点。</p><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E4%B8%83%E6%A1%A51.png"
-                     
-                ></p><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E4%B8%83%E6%A1%A52.png"
-                     
-                ></p><p>欧拉：七桥问题无解</p><p>无法“一笔画”，因为都是奇数点</p><p><a class="link"   href="https://zhuanlan.zhihu.com/p/389188296" >秒杀行测图形推理！你不可不知的一笔画小tips - 知乎 (zhihu.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-              </div>
-            </details>
-
-<p>1847年，克希霍夫为了给出电网络方程而引进了“树”的概念。1857 年，凯莱在计数烷 C <del>n</del> H,,的同分异构物时，也发现了“树”。哈密尔顿于 1859 年提出“周游世界”游戏，用图论的术语，就是如何找出一个连通图中的生成圈近几十年来，由于计算机技术和科学的飞速发展，大大<br>地促进了图论研究和应用，图论的理论和方法已经渗透<br>到物理、化学、通讯科学、建筑学、运筹学、生物遗传<br>学、心理学、经济学、社会学等学科中。</p>
-<p>图论中所谓的“图”是指<em>某类具体事物和这些事物之间的联系</em>。如果我们用点表示这些具体事物，用连接两点的线段 (直的或曲的) 表示两个事物的特定的联系，就得到了描述这个“图”的几何形象。图论为任何一个包合了一种二元关系的离散系统提供了一个数学模型，借助于图论的概念、理论和方法，可以对该模型求解。哥尼斯堡七桥问题就是一个典型的例子</p>
-<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="图-项点集-边集"><a href="#图-项点集-边集" class="headerlink" title="图 项点集 边集"></a>图 项点集 边集</h4><p>所谓的图，直观地讲就是在平面上n个点，把其中的些点对用曲线或直线连接起来，不考虑点的位置与连线曲直长短，这样形成一个关系结构就是一个<strong>图</strong>。记成<strong>G&#x3D;(V,E)<strong>，V是以上述点为元素的</strong>顶点集</strong>，E是以上述连线为元素的<strong>边集</strong>。</p>
-<div class="note default"><p>G graph; V vertex; E edge</p>
-</div>
-
-<h4 id="有向图-无向图-混合图"><a href="#有向图-无向图-混合图" class="headerlink" title="有向图 无向图 混合图"></a>有向图 无向图 混合图</h4><p><em>如果各条边都加上方向，则称为 <strong>有向图</strong>  ，否则称为 <strong>无向图</strong> 。如果有的边有方向，有的边无方向，则称为 <strong>混合图</strong> 。</em></p>
-<h4 id="简单图-完全图-非完全图"><a href="#简单图-完全图-非完全图" class="headerlink" title="简单图 完全图 非完全图"></a>简单图 完全图 非完全图</h4><p><em>如果任两顶点间最多有一条边，且每条边的两个端点皆不重合的图，称为 <strong>简单图</strong></em></p>
-<p><em>如果图的两顶点间有边相连，则称此两顶点 <strong>相邻</strong> .每一对顶点都相邻的图称为 <strong>完全图</strong> ，否则称为 <strong>非完全图</strong> ，完全图记为K<sub>|n|</sub>。</em></p>
-<h4 id="二分图-完全二分图"><a href="#二分图-完全二分图" class="headerlink" title="二分图 完全二分图"></a>二分图 完全二分图</h4><p>若V&#x3D;X  $\bigcup$  Y，X $\bigcap$ Y&#x3D;重，|X|·|Y|≠ 0（这里|X|表示顶点集X中元素的个数)，且X中无相邻的顶点对，Y中亦然，则称图G为<strong>二分图</strong>;特别地，若对任意u∈X，u与Y中每个顶点相邻，则称图G为<strong>完全二分图</strong>，记为K<sub>|X|,|Y|</sub>。</p>
-<h4 id="顶点的度-奇顶点-偶顶点"><a href="#顶点的度-奇顶点-偶顶点" class="headerlink" title="顶点的度 奇顶点 偶顶点"></a>顶点的度 奇顶点 偶顶点</h4><p>设v∈V是边e ∈ E的端点，则称y与e相关联，与顶点v关联的边数称为该<strong>顶点的度</strong>，记为d(v)，度为奇数的顶点称为<strong>奇顶点</strong>，度为偶数的顶点称为<strong>偶顶点</strong>。可以证明$\sum_{v∈V(G)}$ d(v)&#x3D;2|E|，即所有顶点的度数之和是边数的两倍且由此可知奇顶点的总数是偶数(d-degree)</p>
-<h4 id="轨道-回路-圈-连通图"><a href="#轨道-回路-圈-连通图" class="headerlink" title="轨道 回路 圈 连通图"></a>轨道 回路 圈 连通图</h4><p>设w&#x3D;v<del>0</del>e<del>1</del>v<del>1</del>e<del>2</del>···e<del>k</del>v<del>k</del>，其中e<del>i</del>∈E,1≤i≤k,v<del>j</del>∈V,0≤j≤k，e<del>i</del>与v-和v<del>i-1</del>关联，称W是图G的一条道路，k为路长，v<del>0</del>为起点，v<del>k</del>为终点; 各边相异的道路称为迹:各顶点相异的道路称为<strong>轨道</strong>。若W是一轨道，可记为P(v<del>0</del>,v<del>k</del>);起点与终点重合的道路称为<strong>回路</strong>;起点与终点重合的轨道称为<strong>圈</strong>，即对轨道P(v<del>0</del>,v<del>k</del>)，当v<del>0</del>&#x3D;v<del>k</del>时成为一圈;图中任两顶点之间都存在道路的图，称为<strong>连通图</strong>。图中含有所有顶点的轨道称为* Hamilton 轨<em>，闭的 Hamilton 轨称为 <em>Hamilton 圈</em>；含有 Hamilton 圈的图称为</em> Hamilton 图*。</p>
-<p>称两顶点u,v分别为起点和终点的最短轨道之长为顶点u，v的距离;在完全二分图K<del>|X|,|Y|</del>中，X中两顶点之间的距离为偶数，X中的顶点与Y中的顶点的距离为奇数。</p>
-<h4 id="赋权图"><a href="#赋权图" class="headerlink" title="赋权图"></a>赋权图</h4><p>赋权图是指每条边都有一个(或多个)实数对应的图这个(些)实数称为这条边的<strong>权</strong>(每条边可以具有多个权）<br>赋权图在实际问题中非常有用。根据不同的实际情况，权数的含义可以各不相同。例如，可用权数代表两地之间的实际距离或行车时间，也可用权数代表某工序所男的加工时间等。</p>
-<h5 id="邻接矩阵表示法"><a href="#邻接矩阵表示法" class="headerlink" title="邻接矩阵表示法"></a>邻接矩阵表示法</h5><p>邻接矩阵是表示顶点之间相邻关系的矩阵</p>
-<p>邻接矩阵记作W&#x3D;(w<del>ij</del>)<del>n*n</del></p>
-<p>当G为赋权图时</p>
-<p>$$ W_{ij}&#x3D;\left{<br>\begin{array}{rcl}<br>权值       &amp;      &amp; {当v_i与v_j之间有边时}\<br>0或∞     &amp;      &amp; {当v_i与v_j之间无边时}<br>\end{array} \right. $$</p>
-<p>当G为非赋权图时</p>
-<p>$$ W_{ij}&#x3D;\left{<br>\begin{array}{rcl}<br>0       &amp;      &amp; {当v_i与v_j之间有边时}\<br>1       &amp;      &amp; {当v_i与v_j之间无边时}<br>\end{array} \right. $$</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5.png"
-                     
-                ></p>
-<h5 id="稀疏矩阵表示法"><a href="#稀疏矩阵表示法" class="headerlink" title="稀疏矩阵表示法"></a>稀疏矩阵表示法</h5><p>稀疏矩阵是指矩陈中零元素很多，非零元素很少的矩阵对于稀疏矩阵，只要存放非零元素的行标、列标、非零元素的值即可，可以按如下方式存儒(非零元素的行地址，非零元素的列地址)，非零元素的值</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="C:\Users\22251\AppData\Roaming\Typora\typora-user-images\image-20230721152102189.png"
-                      alt="image-20230721152102189"
-                ></p>
-<p>(1)令I(u<del>0</del>)&#x3D;0,对v≠u<del>0</del>，令l(v) &#x3D; ∞, S<del>0</del> &#x3D;{u<del>0</del>},i&#x3D;0<br>(2)对每个v属于$\overline{S_i}$ ($\overline{S_i}$ &#x3D;V\S<del>i</del>),用$\mathop{\min}\limits_{u∈S_i}${l(v),l(u)+w(uv)}代替l(v),这里w(uv)表示顶点u和v之间边的权值。计算把达到这个最小值的一个顶点记为u<del>i+1</del>，令 S<del>i+1</del>&#x3D;S <del>i</del> $\cup$ {u<del>i+1</del>}.<br>(3) 若i&#x3D;|V|-1，停止;若i&lt;|V|-1，用i+1代替i，转(2).</p>
-<p>算法结束时，从u<del>0</del>到各顶点v的距离由v的最后一次标号I(v)给出。在v进入S<del>i</del>之前的标号I(v)叫 T 标号，进入S<del>i</del>时的标号I(v)叫P标号。</p>
-<div class="note-large blue"><div class="notel-title"><p>例</p>
-</div><div class="notel-content"><p>某公司在六个城市c<del>1</del>,c<del>2</del>,···,c<del>6</del>,中有分公司,从c<del>i</del>到c<del>j</del>的直接航程票价记在下述矩阵的(i,j)位置上(∞表示无直接航路)，请帮助该公司设计一张城市c<del>1</del>到其他城市间的票价最便宜的路线图<br>$$<br>\begin{bmatrix}<br>   0 &amp; 50 &amp; ∞ &amp; 40 &amp; 25 &amp; 10 \<br>   50 &amp; 0 &amp; 15 &amp; 20 &amp; ∞ &amp; 25 \<br>   ∞ &amp; 15 &amp; 0 &amp; 10 &amp; 20 &amp; ∞ \<br>   40&amp; 20 &amp; 10 &amp; 0 &amp; 10 &amp; 25 \<br>   25 &amp; ∞ &amp; 20 &amp; 10 &amp; 0 &amp; 55 \<br>   10 &amp; 25 &amp; ∞ &amp; 25 &amp; 55 &amp; 0<br>  \end{bmatrix}<br>$$</p>
-</div></div>
-
-<p>用矩阵 a<del>n*n</del> (n为顶点个数)存放各边权的邻接矩阵,行向量<em>pb、index<del>1</del>、index<del>2</del>,、d</em>分别用来存放P标号信息标号顶点顺序、标号顶点索引、最短通路的值。其中分量</p>
-<p>​					$$ pb_{(i)}&#x3D;\left{<br>\begin{array}{rcl}<br>1       &amp;      &amp; {当第i顶点的标号已成为P标号}\<br>0     &amp;      &amp; {当第i顶点的标号未成为P标号}<br>\end{array} \right. $$</p>
-<p>index<del>2</del>(i) 存放始点到第i顶点最短通路中第i顶点前<br>顶点的序号;<br>d(i) 存放由始点到第i项点最短通路的值.<br>求得c<del>1</del>到c<del>2</del>,···,c<del>6</del>的最便宜票价分别为35，45，35，25，10。</p>
-<h4 id="两个指定顶点之间最短路问题的数学规划模型"><a href="#两个指定顶点之间最短路问题的数学规划模型" class="headerlink" title="两个指定顶点之间最短路问题的数学规划模型"></a>两个指定顶点之间最短路问题的数学规划模型</h4><p>假设有向图有n个顶点，现需要求从顶点v<del>1</del>到顶点v<del>n</del>的最短路。设W &#x3D;(w<del>ij</del>)<del>n*n</del>为邻接矩阵，其分量为</p>
-<p>$$ w_{ij}&#x3D;\left{<br>\begin{array}{rcl}<br>边v_iv_j的权值&amp;      &amp; {v_iv_j∈E}\<br>∞  &amp;      &amp; {其他}<br>\end{array} \right. $$</p>
-<p>决策变量为x<del>ij</del>，当x<del>ij</del> &#x3D;1，说明弧v<del>i</del>v<del>j</del>位于顶点至顶点v<del>n</del>的最短路上;否则 x<del>ij</del> &#x3D; 0。</p>
-<p>其数学规划表达式为</p>
-<p>${min}\sum_{v_iv_j∈E}{w_{ij}x_{ij}}$</p>
-<p>$$ {s.t.}\sum^n_{j&#x3D;1，v_iv_j∈E}{x_{ij}}-\sum^n_{j&#x3D;1,v_iv_j∈E}{x_{ij}}&#x3D;\left{<br>\begin{array}{rcl}<br>1       &amp;      &amp; {i &#x3D; 1}\<br>-1     &amp;      &amp; {i &#x3D; n}\<br>0     &amp;      &amp; {i≠1,n}<br>\end{array} \tag{$x_{ij}$&#x3D;0或1} \right. $$</p>
-<h5 id="有向"><a href="#有向" class="headerlink" title="有向"></a>有向</h5><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>有向图的最短路问题 </summary>
-              <div class='content'>
-              <p>在下图中，用点表示城市，现有A,B<del>1</del>,B<del>2</del>,C<del>1</del>,C<del>2</del>,C,<del>3</del>,D共 7 个城市。点与点之间的连线表示城市间有道路相连。连线旁的数字表示道路的长度现计划从城市4到城市D铺设一条天然气管道，请设计出最小长度管道铺设方案。</p><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E4%B8%83%E4%B8%AA%E5%9F%8E%E5%B8%82%E9%97%B4%E7%9A%84%E8%BF%9E%E7%BA%BF%E5%9B%BE.png"
-                      alt="七个城市间的连线图"
-                ></p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">model:</span><br><span class="line">sets:</span><br><span class="line">cities/A,B1,B2,C1,C2,C3,D/;</span><br><span class="line">roads(cities,cities)/A B1,A B2,B1 C1,B1 C2,B1 C3,B2 C1,</span><br><span class="line">B2 C2,B2 C3,C1 D,C2 D,C3 D/:w,x;</span><br><span class="line">endsets</span><br><span class="line">data:</span><br><span class="line">w=2 4 3 3 1 2 3 1 1 3 4;</span><br><span class="line">enddata</span><br><span class="line">n=@size(cities); !城市的个数;</span><br><span class="line">min=@sum(roads:w*x);</span><br><span class="line">@for(cities(i)|i #ne#1 #and# i #ne#n:</span><br><span class="line">@sum(roads(i,j):x(i,j))=@sum(roads(j,i):x(j,i)));</span><br><span class="line">@sum(roads(i,j)|i #eq#1:x(i,j))=1;</span><br><span class="line">@sum(roads(i,j)|j #eq#n:x(i,j))=1;</span><br><span class="line">end</span><br></pre></td></tr></table></figure></div>
-              </div>
-            </details>
-<h5 id="无向"><a href="#无向" class="headerlink" title="无向"></a>无向</h5><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>无向图的最短路问题 </summary>
-              <div class='content'>
-              <p>下图中的最短路。</p><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E8%B5%8B%E6%9D%83%E6%97%A0%E5%90%91%E5%9B%BE.png"
-                      alt="赋权无向图"
-                ></p><p>分析 上一例处理的问题属于有向图的最短路问题，本例是处理无向图的最短路问题，在处理方式上与有向图的最短路问题有一些差别，这里选择赋权邻接矩阵的方法编写LINGO程序。</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">model:</span><br><span class="line">sets:</span><br><span class="line">cities/1..11/;</span><br><span class="line">roads(cities,cities):w,x;</span><br><span class="line">endsets</span><br><span class="line">data:</span><br><span class="line">w=0;</span><br><span class="line">enddata</span><br><span class="line">calc:</span><br><span class="line">w(1,2)=2;w(1,3)=8;w(1,4)=1;</span><br><span class="line">w(2,3)=6;w(2,5)=1;</span><br><span class="line">w(3,4)=7;w(3,5)=5;w(3,6)=1;w(3,7)=2;</span><br><span class="line">w(4,7)=9;</span><br><span class="line">w(5,6)=3;w(5,8)=2;w(5,9)=9;</span><br><span class="line">w(6,7)=4;w(6,9)=6;</span><br><span class="line">w(7,9)=3;w(7,10)=1;</span><br><span class="line">w(8,9)=7;w(8,11)=9;</span><br><span class="line">w(9,10)=1;w(9,11)=2;w(10,11)=4;</span><br><span class="line">@for(roads(i,j):w(i,j)=w(i,j)+w(j,i));</span><br><span class="line">@for(roads(i,j):w(i,j)=@if(w(i,j) #eq# 0, 1000,w(i,j)));</span><br><span class="line">endcalc</span><br><span class="line">n=@size(cities); !城市的个数;</span><br><span class="line">min=@sum(roads:w*x);</span><br><span class="line">@for(cities(i)|i #ne#1 #and# i #ne# </span><br><span class="line">n:@sum(cities(j):x(i,j))=@sum(cities(j):x(j,i)));</span><br><span class="line">@sum(cities(j):x(1,j))=1;</span><br><span class="line">@sum(cities(j):x(j,1))=0; !不能回到顶点1; </span><br><span class="line">@sum(cities(j):x(j,n))=1;</span><br><span class="line">@for(roads:@bin(x));</span><br><span class="line">end</span><br></pre></td></tr></table></figure></div><p>与有向图相比较，在程序中只增加了一个语句@sum(cities(j):x(j,1))&#x3D;0，即<br>从顶点 1 离开后，再不能回到该顶点。<br>求得的最短路径为 1→2→5→6→3→7→10→9→11，最短路径长度为 13。</p>
-              </div>
-            </details>
-
-
-
-<h5 id="Floyd算法"><a href="#Floyd算法" class="headerlink" title="Floyd算法"></a>Floyd算法</h5><h6 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h6><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/Floyd%E6%80%9D%E8%B7%AF.png"
-                      alt="Floyd思路"
-                ></p>
-<p>A<del>k</del>(i,j)&#x3D; min(A<del>k-1</del>(i,j),A<del>k-1</del>(i,k)+A<del>k-1</del>(k,j))</p>
-<h6 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h6><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="C:\Users\22251\AppData\Roaming\Typora\typora-user-images\image-20230721170453764.png"
-                      alt="image-20230721170453764"
-                ></p>
-<p>Floyd 算法的基本思想是递推产生一个矩阵序$A_1,···,A_k,···,A_n$，其中矩阵$A_k$,的第i行第j列元素$A_k(i,j)$表示从顶点v<del>i</del>到顶点v<del>j</del>;的路径上所经过的顶点序号不大于的最短路径长度。</p>
-<p>计算时用迭代公式</p>
-<p>​	$A_k(i,j)&#x3D; min(A_{k-1}(i,j),A_{k-1}(i,k)+A_{k-1}(k,j))$</p>
-<p>k是迭代次数，i,j,k &#x3D;1,2,…,n。</p>
-<p>最后，当 k&#x3D;n 时，A<del>n</del>即是各顶点之间的最短通路值。</p>
-<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><p>某出版社准备在某市两个区建立两个销售代理点向大学生售书，每个区大学生数量如图，每个销售代理点只能向本区和一个相邻区的大学生售书，问两个代理点建立在何处，才能使供应量最大？试建立图论模型求解。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E7%BB%83%E4%B9%A0.png"
-                      alt="Floyd思路"
-                ></p>
-<h3 id="最小生成树问题"><a href="#最小生成树问题" class="headerlink" title="最小生成树问题"></a>最小生成树问题</h3><h4 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h4><p>连通的无圈图叫做<strong>树</strong>，记之为T;其度为 1 的顶点称为<strong>叶子顶点</strong>;显然有边的树至少有两个叶子顶点。</p>
-<p>若图 G&#x3D;(V(G),E(G)) 和树 T&#x3D;(V(T),E(T)) 满足V(G)&#x3D;V(T)，E(T) C E(G)，则称T是G的<strong>生成树</strong>。图G连通的充分必要条件为G有生成树，一个连通图的生成树的个数很多。</p>
-<p>树有下面常用的五个要条件<br>(1) G&#x3D;(V,E)是树当且仅当G中任二顶点之间有且仅有一条轨道<br>(2) G是树当且仅当G无圈，且 |E|&#x3D;|V|-1。<br>(3) G是树当且仅当G连通，且 |E| &#x3D;|V|-1。<br>(4) G是树当且仅当G连通，且 $\forall$ e ∈|E|，G - e 不连通。<br>(5) G是树当且仅当G无圈， $\forall$e $\notin $E，G+e恰有一个圈。</p>
-<p>欲修筑连接n个城市的铁路，已知i城与j城之间的铁路造价为$c_{ij}$，设计一个线路图，使总造价最低</p>
-<h4 id="prim-算法构造最小生成树"><a href="#prim-算法构造最小生成树" class="headerlink" title="prim 算法构造最小生成树"></a>prim 算法构造最小生成树</h4><p>构造连通赋权图G&#x3D;(V,E,W)的最小生成树，设置两个集合P和Q,其中P用于存放G的最小生成树中的顶点集合Q存放G的最小生成树中的边。今集合P的初值为P &#x3D;{$v_1$}(假设构造最小生成树时，从顶点”出发)，集合Q的初值为Q&#x3D;$\phi$(空集)。prim 算法的思想是,从所有p ∈ Pv∈V-P的边中，选取具有最小权值的边 pv，将顶点v加入集合P中，将边pv加入集合Q中，如此不断重复，直到P&#x3D;V时，最小生成树构造完毕，这时集合Q中包合了最小生成树的所有边。</p>
-<p>用 prim 算法求下图的最小生成树。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91.png"
-                     
-                ></p>
-<h4 id="Kruskal-算法构造最小生成树"><a href="#Kruskal-算法构造最小生成树" class="headerlink" title="Kruskal 算法构造最小生成树"></a>Kruskal 算法构造最小生成树</h4><p>科斯克尔(Kruskal) 算法是一个好算法.Kruskal算法如下<br>(1) 选e $\in$ E(G)，使得$e_1$是权值最小的边。(w($e_1$)&#x3D;min)<br>(2)若$e_1;e_2,···,e_i$已选好,则从E(G)-{$e_1,e_2,···,e_i$}中选取$e_{i+1}$，使得</p>
-<ul>
-<li>i) G[{$e_1,e_2,···,e_i,e_{i+1}$}]无圈，且</li>
-<li>ii) w($e_{i+i}$)是E(G)-e,,e}中权值最小的边(w($e_{i+i}$)&#x3D;min)</li>
-</ul>
-<p>(3) 直到选得$e_{v-1}$为止。</p>
-<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Kruskal算法构造上一例的最小生成树 </summary>
-              <div class='content'>
-              <p>用$index_{2*n}$存放各边端点的信息，当选中某一边之后就将此边对应的顶点序号中较大序号u改为此边的另一序号v，同时把后面边中所有序号为u的改为v。<br>此方法的几何意义是:将序号u的这个顶点收缩到v顶点，u顶点不复存在。后面继续寻查时，发现某边的两个预点序号相同时认为已被收缩掉，失去了被选取的资格.<br>求解结果和例4.5相同。</p><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">clc;clear;</span><br><span class="line">a(<span class="number">1</span>,<span class="number">2</span>)=<span class="number">50</span>; a(<span class="number">1</span>,<span class="number">3</span>)=<span class="number">60</span>; a(<span class="number">2</span>,<span class="number">4</span>)=<span class="number">65</span>; a(<span class="number">2</span>,<span class="number">5</span>)=<span class="number">40</span>;</span><br><span class="line">a(<span class="number">3</span>,<span class="number">4</span>)=<span class="number">52</span>;a(<span class="number">3</span>,<span class="number">7</span>)=<span class="number">45</span>; a(<span class="number">4</span>,<span class="number">5</span>)=<span class="number">50</span>; a(<span class="number">4</span>,<span class="number">6</span>)=<span class="number">30</span>;</span><br><span class="line">a(<span class="number">4</span>,<span class="number">7</span>)=<span class="number">42</span>; a(<span class="number">5</span>,<span class="number">6</span>)=<span class="number">70</span>; </span><br><span class="line">[<span class="built_in">i</span>,<span class="built_in">j</span>,b]=<span class="built_in">find</span>(a);</span><br><span class="line">data=[i&#x27;;j&#x27;;b&#x27;];index=data(<span class="number">1</span>:<span class="number">2</span>,:);</span><br><span class="line">loop=<span class="built_in">max</span>(<span class="built_in">size</span>(a))<span class="number">-1</span>;</span><br><span class="line">result=[];</span><br><span class="line"><span class="keyword">while</span> <span class="built_in">length</span>(result)&lt;loop</span><br><span class="line"> temp=<span class="built_in">min</span>(data(<span class="number">3</span>,:));</span><br><span class="line"> flag=<span class="built_in">find</span>(data(<span class="number">3</span>,:)==temp);</span><br><span class="line"> flag=flag(<span class="number">1</span>);</span><br><span class="line"> v1=index(<span class="number">1</span>,flag);v2=index(<span class="number">2</span>,flag);</span><br><span class="line"> <span class="keyword">if</span> v1~=v2</span><br><span class="line"> result=[result,data(:,flag)];</span><br><span class="line"> <span class="keyword">end</span></span><br><span class="line"> index(<span class="built_in">find</span>(index==v2))=v1;</span><br><span class="line"> data(:,flag)=[];</span><br><span class="line"> index(:,flag)=[];</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">result</span><br></pre></td></tr></table></figure></div>
-              </div>
-            </details>
-
-
-
-<h3 id="网络最大流问题"><a href="#网络最大流问题" class="headerlink" title="网络最大流问题"></a>网络最大流问题</h3><p>这里我的笔记不全了原因如下</p>
-<ul>
-<li>本来作的笔记因为笔记本突然死机，重启之后就丢失了</li>
-<li>最大流这里以前没有学过，边听可边做笔记就过于慢了<br>网上找到了别人的一些笔记博客，直接放链接在这里<a class="button  center large" href='https://blog.nowcoder.net/n/6ef60bf52036463eb892c89bbdc178ed' title='最大流(网络流基础概念+三个算法)'><i class='fa-solid fa-download'></i> 最大流(网络流基础概念+三个算法)</a></li>
-</ul>
-<p><a class="link"   href="https://blog.csdn.net/wmhsjtu/article/details/104149007" >图的最大流问题（含matlab函数使用方法） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h4 id="基本概念与基本定理"><a href="#基本概念与基本定理" class="headerlink" title="基本概念与基本定理"></a>基本概念与基本定理</h4><h5 id="网络与流"><a href="#网络与流" class="headerlink" title="网络与流"></a>网络与流</h5><p>给一个有向图D&#x3D;(V,4)，其中A为弧集在V中指定了一点，称为发点 (记为$v_s$)，和另一点，称为收点 (记为$v_t$)，其余的点叫中间点，对于每一条弧($v_i$,$v_j$)$\in$A，对应有一个c($v_i$,$v_j$)$\ge$0 (或简写为$c_{ij}$)，称为<strong>弧的容量</strong>。通常我们就把这样的有向图D叫作一个<strong>网络</strong>.<br>记作D&#x3D;(V,A)，其中C&#x3D;c{$c_{ij}$}.<br>所谓网络上的<strong>流</strong>，是指定义在弧集合4上的一个函<br>数f&#x3D;_fa&#x3D;ff(，并称f为弧(,y)上的流量。</p>
-<h3 id="最小费用最大流问题"><a href="#最小费用最大流问题" class="headerlink" title="最小费用最大流问题"></a>最小费用最大流问题</h3><p><a class="link"   href="https://www.zhihu.com/question/571595904" >假定要设计一个有9个通讯站点的局部网络，使其造价最低。这9个站的直角坐标为： a(0,15), b(5,20), c(16,24), d(20,20), e(33,25), f(23,11), g(35,7), h(25,0), i(10,3)。 求出联结这9个通讯站的最小Steiner树 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h4 id="最小费用最大流"><a href="#最小费用最大流" class="headerlink" title="最小费用最大流"></a>最小费用最大流</h4><p>给定网络D&#x3D;(V,A,C)，每一弧($v_i$,$v_j$)$\in$A上，除了已给容量$c_{ij}$外，还给了一个单位流量的费用b($v_i$,$v_j$)$\ge$0(简记为$b_{ij}$)。所谓最小费用最大流问题就是要求一个从发点”,到<br>收点”,的最大流，使流的总输送费用 $\sum_{(v_i,v_j)\in A}b_{ij}f_{ij}$取最小值<br>最小费用最大流问题可以归结为两个线性规划问题,首先用(4.1) 的线性规划模型求出最大流量$v_{(f_max)}$，然后用如下的线性规划模型求出最大流对应的最小费用<br>$$min\sum_{(v_i,v_j)\in A}b_{ij}f_{ij}$$<br>$$s.t. 0\ge f_{ij}\ge c_{ij},\forall (v_i,v_j) \in A$$<br>$$ \sum_{j:(v_i,v_j)\in A}f_{ij} - \sum_{j:(v_j,v_i)\in A} &#x3D; d_i$$<br>其中<br>$$ d_i&#x3D;\left{<br>\begin{array}{rcl}<br>v_{(f_{max})}      &amp;      &amp; {i&#x3D;s}\<br>-v_{(f_{max})}     &amp;      &amp; {i&#x3D;t}\<br>0                  &amp;      &amp; {i≠s,t}<br>\end{array} \right. $$<br>这里v($f_{max}$)表示(4.1)线性规划模型求得的最大流的流量。</p>
-<p>当我们使用滚动平均值时，我们会计算一系列数据的平均值，但只考虑最近的一部分数据。在每一步中，我们将最新的数据加入计算，并从计算中移除最旧的数据，从而保持数据窗口的大小不变。这样做的好处是可以平滑数据，减少噪音和异常值的影响，并更好地反映数据的长期趋势。</p>
-<p>滚动平均的数学公式如下：</p>
-<p>设有一列数据 $x_1, x_2, x_3, \ldots, x_n$，滚动平均的窗口大小为 $k$。</p>
-<p>在滚动平均的初始阶段，我们先计算前 $k$ 个数据的平均值，表示为 $m_1$：</p>
-<p>$$m_1 &#x3D; \frac{1}{k} \sum_{i&#x3D;1}^{k} x_i$$</p>
-<p>然后，随着数据的逐步增加，我们更新滚动平均值的计算。在第 $i$ 步，我们将新数据 $x_i$ 加入滚动窗口，并从计算中移除最旧的数据 $x_{i-k}$，更新滚动平均值 $m_i$ 如下：</p>
-<p>$$m_i &#x3D; m_{i-1} + \frac{1}{k} (x_i - x_{i-k})$$</p>
-<p>在这个公式中，$m_{i-1}$ 表示第 $i-1$ 步的滚动平均值，$x_i$ 表示新加入的数据，$x_{i-k}$ 表示移除的最旧数据。</p>
-<p>通过这种方式，滚动平均可以动态地保持数据窗口大小，对数据进行平滑处理，同时在计算过程中不需要保留所有数据，只需要保存上一步的滚动平均值和相关的数据。</p>
-<p>滚动平均常用于时间序列数据的平滑处理，例如股票价格的移动平均线就是一种常见的滚动平均应用。在处理具有较大波动或不连贯性的数据时，滚动平均可以提供更稳定和可靠的结果，减少异常值的影响，帮助我们更好地分析数据的趋势和变化。</p>
-<p>当处理时间序列数据时，我们经常会遇到一些具有周期性或趋势性的数据。滞后期平滑和指数加权移动平均是两种常见的平滑方法，用于去除数据中的噪音和突发变化，从而更好地反映数据的长期趋势。</p>
-<ol>
-<li>滞后期平滑（Lag Smoothing）：<br>滞后期平滑是一种简单的平滑方法，它通过将当前数据点与之前的数据点进行平均来生成平滑后的数据。滞后期平滑的数学公式如下：</li>
-</ol>
-<p>设有一列数据 $x_1, x_2, x_3, \ldots, x_n$，滞后期平滑的滞后期数为 $p$。</p>
-<p>在滞后期平滑中，第 $i$ 个平滑后的数据点 $y_i$ 是前 $p$ 个原始数据点 $x_{i-p}, x_{i-p+1}, \ldots, x_{i-1}, x_i$ 的平均值，即：</p>
-<p>$$y_i &#x3D; \frac{1}{p} \sum_{j&#x3D;1}^{p} x_{i-j}$$</p>
-<p>滞后期平滑的主要优点是简单易懂，易于计算。它可以一定程度上平滑数据，去除一些短期内的波动，但对于长期趋势的反映较差。</p>
-<ol start="2">
-<li>指数加权移动平均（Exponential Moving Average，EMA）：<br>指数加权移动平均是一种对最近的数据点进行加权的平滑方法，它给予较新的数据点较大的权重，较旧的数据点较小的权重。指数加权移动平均的数学公式如下：</li>
-</ol>
-<p>设有一列数据 $x_1, x_2, x_3, \ldots, x_n$，指数加权移动平均的平滑因子为 $\alpha$（通常取一个接近于1的值，如0.1、0.3等）。</p>
-<p>在指数加权移动平均中，第 $i$ 个平滑后的数据点 $y_i$ 由以下公式计算得出：</p>
-<p>$$y_i &#x3D; \alpha \cdot x_i + (1 - \alpha) \cdot y_{i-1}$$</p>
-<p>其中，$y_{i-1}$ 表示第 $i-1$ 个平滑后的数据点。指数加权移动平均对最近的数据点赋予较大的权重，随着数据点的逐渐远离，权重逐渐减小，因此能够更好地反映数据的短期变化。</p>
-<p>指数加权移动平均通常用于平滑数据并提取长期趋势。与滞后期平滑相比，指数加权移动平均对数据的响应更加敏感，可以更好地捕捉数据中的变化，但在数据中存在较多噪音或异常值时，可能会受到这些值的影响。</p>
-<p>总体而言，滞后期平滑和指数加权移动平均都是常见的平滑方法，可以根据数据的特点和需要选择合适的方法来处理时间序列数据，从而更好地分析数据的趋势和规律。</p>
-]]></content>
-      <categories>
-        <category>数模</category>
-      </categories>
-      <tags>
-        <tag>数模</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>江汉大学vlog</title>
-    <url>/2023/04/07/%E6%B1%9F%E6%B1%89%E5%A4%A7%E5%AD%A6vlog/</url>
-    <content><![CDATA[<p>昨天跟朋友去看超级马里奥兄弟大电影，他貌似很喜欢马里奥,今天的衣服上都有那个小蘑菇人。</p>
-<p>决定自行车骑去电影院看</p>
-<img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/江汉大学vlog/出发.jpg"
-                      alt="出发" width="30%" height="30%"
-                >
-
-<p>路上风景还蛮好的<br>经过一个国风小区，好牛<br><video src="/videos/江汉大学vlog/国风小区.mp4" width="800px" height="600px" controls="controls"></video></p>
-<p>还看到一个夏威夷小区，好好看，很有情书中和死去男主同名的女生的住处一样的感觉。</p>
-<p>经过一个桥，休息了一会儿，看下面的人钓鱼<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/江汉大学vlog/钓鱼1.jpg"
-                      alt="钓鱼1" width="70%" height="70%"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/江汉大学vlog/钓鱼2.jpg"
-                      alt="钓鱼2" width="70%" height="70%"
-                ><br>突然发现这个票上的电影院名字不对？<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/江汉大学vlog/后脑勺.jpg"
-                      alt="后脑勺" width="70%" height="70%"
-                ><br>我们去的是大地。<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/江汉大学vlog/电影票.jpg"
-                      alt="电影票" width="70%" height="70%"
-                ><br>看完了之后发现附近江汉大学很近啊，出于某种心理，我们决定混进去逛逛。</p>
-<div class="note-large blue"><div class="notel-title"><p>vlog</p>
-</div><div class="notel-content"><p>视频发布在了b站  省的往网站上整hhh</p>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="//player.bilibili.com/player.html?aid=909599040&bvid=BV1EM4y1m7MX&cid=1084566002&page=1&danmaku=0&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
-</div></div></div>
-
-<div class="note-large green"><div class="notel-title"><p>想要实现向上面这样的bi站嵌入视频？</p>
-</div><div class="notel-content"><p><a class="button  large center" href='https://blog.nofated.win/2020/09/21/bilibili-player/' title='B 站外嵌视频播放器防踩坑'><i class='fa-solid fa-arrow-right'></i> B 站外嵌视频播放器防踩坑</a></p>
-</div></div>
-
-<p>回来的时候下雨了，还碰到了校友，也是骑行hhh<br>一边淋着雨，一边在马路上狂飙是真的爽hhh，可惜，要是我带了耳机就好了，带上耳机听着音乐，想想都…啧啧啧<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/江汉大学vlog/返回.jpg"
-                      alt="返回" width="30%" height="30%"
-                ></p>
-]]></content>
-      <categories>
-        <category>Vlogs</category>
-      </categories>
-      <tags>
-        <tag>Vlog</tag>
       </tags>
   </entry>
   <entry>
@@ -1685,6 +1417,293 @@
       </tags>
   </entry>
   <entry>
+    <title>图与网络模型及方法</title>
+    <url>/2023/07/21/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="图与网络模型及方法"><a href="#图与网络模型及方法" class="headerlink" title="图与网络模型及方法"></a>图与网络模型及方法</h2><h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><h3 id="基本背景"><a href="#基本背景" class="headerlink" title="基本背景"></a>基本背景</h3><p>图论起源于 18 世纪。第一篇图论论文是瑞上数学家欧拉于 1736 年发表的</p>
+<details class="gray" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>“哥尼斯堡的七座桥” </summary>
+              <div class='content'>
+              <p>哥尼斯堡有七座桥将普莱格尔河中的两个岛及岛与河岸联结起来，问题是要从这四块陆地中的任何一块开始通过每一座桥正好一次，再回到起点。</p><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E4%B8%83%E6%A1%A51.png"
+                     
+                ></p><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E4%B8%83%E6%A1%A52.png"
+                     
+                ></p><p>欧拉：七桥问题无解</p><p>无法“一笔画”，因为都是奇数点</p><p><a class="link"   href="https://zhuanlan.zhihu.com/p/389188296" >秒杀行测图形推理！你不可不知的一笔画小tips - 知乎 (zhihu.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+              </div>
+            </details>
+
+<p>1847年，克希霍夫为了给出电网络方程而引进了“树”的概念。1857 年，凯莱在计数烷 C <del>n</del> H,,的同分异构物时，也发现了“树”。哈密尔顿于 1859 年提出“周游世界”游戏，用图论的术语，就是如何找出一个连通图中的生成圈近几十年来，由于计算机技术和科学的飞速发展，大大<br>地促进了图论研究和应用，图论的理论和方法已经渗透<br>到物理、化学、通讯科学、建筑学、运筹学、生物遗传<br>学、心理学、经济学、社会学等学科中。</p>
+<p>图论中所谓的“图”是指<em>某类具体事物和这些事物之间的联系</em>。如果我们用点表示这些具体事物，用连接两点的线段 (直的或曲的) 表示两个事物的特定的联系，就得到了描述这个“图”的几何形象。图论为任何一个包合了一种二元关系的离散系统提供了一个数学模型，借助于图论的概念、理论和方法，可以对该模型求解。哥尼斯堡七桥问题就是一个典型的例子</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="图-项点集-边集"><a href="#图-项点集-边集" class="headerlink" title="图 项点集 边集"></a>图 项点集 边集</h4><p>所谓的图，直观地讲就是在平面上n个点，把其中的些点对用曲线或直线连接起来，不考虑点的位置与连线曲直长短，这样形成一个关系结构就是一个<strong>图</strong>。记成<strong>G&#x3D;(V,E)<strong>，V是以上述点为元素的</strong>顶点集</strong>，E是以上述连线为元素的<strong>边集</strong>。</p>
+<div class="note default"><p>G graph; V vertex; E edge</p>
+</div>
+
+<h4 id="有向图-无向图-混合图"><a href="#有向图-无向图-混合图" class="headerlink" title="有向图 无向图 混合图"></a>有向图 无向图 混合图</h4><p><em>如果各条边都加上方向，则称为 <strong>有向图</strong>  ，否则称为 <strong>无向图</strong> 。如果有的边有方向，有的边无方向，则称为 <strong>混合图</strong> 。</em></p>
+<h4 id="简单图-完全图-非完全图"><a href="#简单图-完全图-非完全图" class="headerlink" title="简单图 完全图 非完全图"></a>简单图 完全图 非完全图</h4><p><em>如果任两顶点间最多有一条边，且每条边的两个端点皆不重合的图，称为 <strong>简单图</strong></em></p>
+<p><em>如果图的两顶点间有边相连，则称此两顶点 <strong>相邻</strong> .每一对顶点都相邻的图称为 <strong>完全图</strong> ，否则称为 <strong>非完全图</strong> ，完全图记为K<sub>|n|</sub>。</em></p>
+<h4 id="二分图-完全二分图"><a href="#二分图-完全二分图" class="headerlink" title="二分图 完全二分图"></a>二分图 完全二分图</h4><p>若V&#x3D;X  $\bigcup$  Y，X $\bigcap$ Y&#x3D;重，|X|·|Y|≠ 0（这里|X|表示顶点集X中元素的个数)，且X中无相邻的顶点对，Y中亦然，则称图G为<strong>二分图</strong>;特别地，若对任意u∈X，u与Y中每个顶点相邻，则称图G为<strong>完全二分图</strong>，记为K<sub>|X|,|Y|</sub>。</p>
+<h4 id="顶点的度-奇顶点-偶顶点"><a href="#顶点的度-奇顶点-偶顶点" class="headerlink" title="顶点的度 奇顶点 偶顶点"></a>顶点的度 奇顶点 偶顶点</h4><p>设v∈V是边e ∈ E的端点，则称y与e相关联，与顶点v关联的边数称为该<strong>顶点的度</strong>，记为d(v)，度为奇数的顶点称为<strong>奇顶点</strong>，度为偶数的顶点称为<strong>偶顶点</strong>。可以证明$\sum_{v∈V(G)}$ d(v)&#x3D;2|E|，即所有顶点的度数之和是边数的两倍且由此可知奇顶点的总数是偶数(d-degree)</p>
+<h4 id="轨道-回路-圈-连通图"><a href="#轨道-回路-圈-连通图" class="headerlink" title="轨道 回路 圈 连通图"></a>轨道 回路 圈 连通图</h4><p>设w&#x3D;v<del>0</del>e<del>1</del>v<del>1</del>e<del>2</del>···e<del>k</del>v<del>k</del>，其中e<del>i</del>∈E,1≤i≤k,v<del>j</del>∈V,0≤j≤k，e<del>i</del>与v-和v<del>i-1</del>关联，称W是图G的一条道路，k为路长，v<del>0</del>为起点，v<del>k</del>为终点; 各边相异的道路称为迹:各顶点相异的道路称为<strong>轨道</strong>。若W是一轨道，可记为P(v<del>0</del>,v<del>k</del>);起点与终点重合的道路称为<strong>回路</strong>;起点与终点重合的轨道称为<strong>圈</strong>，即对轨道P(v<del>0</del>,v<del>k</del>)，当v<del>0</del>&#x3D;v<del>k</del>时成为一圈;图中任两顶点之间都存在道路的图，称为<strong>连通图</strong>。图中含有所有顶点的轨道称为* Hamilton 轨<em>，闭的 Hamilton 轨称为 <em>Hamilton 圈</em>；含有 Hamilton 圈的图称为</em> Hamilton 图*。</p>
+<p>称两顶点u,v分别为起点和终点的最短轨道之长为顶点u，v的距离;在完全二分图K<del>|X|,|Y|</del>中，X中两顶点之间的距离为偶数，X中的顶点与Y中的顶点的距离为奇数。</p>
+<h4 id="赋权图"><a href="#赋权图" class="headerlink" title="赋权图"></a>赋权图</h4><p>赋权图是指每条边都有一个(或多个)实数对应的图这个(些)实数称为这条边的<strong>权</strong>(每条边可以具有多个权）<br>赋权图在实际问题中非常有用。根据不同的实际情况，权数的含义可以各不相同。例如，可用权数代表两地之间的实际距离或行车时间，也可用权数代表某工序所男的加工时间等。</p>
+<h5 id="邻接矩阵表示法"><a href="#邻接矩阵表示法" class="headerlink" title="邻接矩阵表示法"></a>邻接矩阵表示法</h5><p>邻接矩阵是表示顶点之间相邻关系的矩阵</p>
+<p>邻接矩阵记作W&#x3D;(w<del>ij</del>)<del>n*n</del></p>
+<p>当G为赋权图时</p>
+<p>$$ W_{ij}&#x3D;\left{<br>\begin{array}{rcl}<br>权值       &amp;      &amp; {当v_i与v_j之间有边时}\<br>0或∞     &amp;      &amp; {当v_i与v_j之间无边时}<br>\end{array} \right. $$</p>
+<p>当G为非赋权图时</p>
+<p>$$ W_{ij}&#x3D;\left{<br>\begin{array}{rcl}<br>0       &amp;      &amp; {当v_i与v_j之间有边时}\<br>1       &amp;      &amp; {当v_i与v_j之间无边时}<br>\end{array} \right. $$</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5.png"
+                     
+                ></p>
+<h5 id="稀疏矩阵表示法"><a href="#稀疏矩阵表示法" class="headerlink" title="稀疏矩阵表示法"></a>稀疏矩阵表示法</h5><p>稀疏矩阵是指矩陈中零元素很多，非零元素很少的矩阵对于稀疏矩阵，只要存放非零元素的行标、列标、非零元素的值即可，可以按如下方式存儒(非零元素的行地址，非零元素的列地址)，非零元素的值</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:\Users\22251\AppData\Roaming\Typora\typora-user-images\image-20230721152102189.png"
+                      alt="image-20230721152102189"
+                ></p>
+<p>(1)令I(u<del>0</del>)&#x3D;0,对v≠u<del>0</del>，令l(v) &#x3D; ∞, S<del>0</del> &#x3D;{u<del>0</del>},i&#x3D;0<br>(2)对每个v属于$\overline{S_i}$ ($\overline{S_i}$ &#x3D;V\S<del>i</del>),用$\mathop{\min}\limits_{u∈S_i}${l(v),l(u)+w(uv)}代替l(v),这里w(uv)表示顶点u和v之间边的权值。计算把达到这个最小值的一个顶点记为u<del>i+1</del>，令 S<del>i+1</del>&#x3D;S <del>i</del> $\cup$ {u<del>i+1</del>}.<br>(3) 若i&#x3D;|V|-1，停止;若i&lt;|V|-1，用i+1代替i，转(2).</p>
+<p>算法结束时，从u<del>0</del>到各顶点v的距离由v的最后一次标号I(v)给出。在v进入S<del>i</del>之前的标号I(v)叫 T 标号，进入S<del>i</del>时的标号I(v)叫P标号。</p>
+<div class="note-large blue"><div class="notel-title"><p>例</p>
+</div><div class="notel-content"><p>某公司在六个城市c<del>1</del>,c<del>2</del>,···,c<del>6</del>,中有分公司,从c<del>i</del>到c<del>j</del>的直接航程票价记在下述矩阵的(i,j)位置上(∞表示无直接航路)，请帮助该公司设计一张城市c<del>1</del>到其他城市间的票价最便宜的路线图<br>$$<br>\begin{bmatrix}<br>   0 &amp; 50 &amp; ∞ &amp; 40 &amp; 25 &amp; 10 \<br>   50 &amp; 0 &amp; 15 &amp; 20 &amp; ∞ &amp; 25 \<br>   ∞ &amp; 15 &amp; 0 &amp; 10 &amp; 20 &amp; ∞ \<br>   40&amp; 20 &amp; 10 &amp; 0 &amp; 10 &amp; 25 \<br>   25 &amp; ∞ &amp; 20 &amp; 10 &amp; 0 &amp; 55 \<br>   10 &amp; 25 &amp; ∞ &amp; 25 &amp; 55 &amp; 0<br>  \end{bmatrix}<br>$$</p>
+</div></div>
+
+<p>用矩阵 a<del>n*n</del> (n为顶点个数)存放各边权的邻接矩阵,行向量<em>pb、index<del>1</del>、index<del>2</del>,、d</em>分别用来存放P标号信息标号顶点顺序、标号顶点索引、最短通路的值。其中分量</p>
+<p>​					$$ pb_{(i)}&#x3D;\left{<br>\begin{array}{rcl}<br>1       &amp;      &amp; {当第i顶点的标号已成为P标号}\<br>0     &amp;      &amp; {当第i顶点的标号未成为P标号}<br>\end{array} \right. $$</p>
+<p>index<del>2</del>(i) 存放始点到第i顶点最短通路中第i顶点前<br>顶点的序号;<br>d(i) 存放由始点到第i项点最短通路的值.<br>求得c<del>1</del>到c<del>2</del>,···,c<del>6</del>的最便宜票价分别为35，45，35，25，10。</p>
+<h4 id="两个指定顶点之间最短路问题的数学规划模型"><a href="#两个指定顶点之间最短路问题的数学规划模型" class="headerlink" title="两个指定顶点之间最短路问题的数学规划模型"></a>两个指定顶点之间最短路问题的数学规划模型</h4><p>假设有向图有n个顶点，现需要求从顶点v<del>1</del>到顶点v<del>n</del>的最短路。设W &#x3D;(w<del>ij</del>)<del>n*n</del>为邻接矩阵，其分量为</p>
+<p>$$ w_{ij}&#x3D;\left{<br>\begin{array}{rcl}<br>边v_iv_j的权值&amp;      &amp; {v_iv_j∈E}\<br>∞  &amp;      &amp; {其他}<br>\end{array} \right. $$</p>
+<p>决策变量为x<del>ij</del>，当x<del>ij</del> &#x3D;1，说明弧v<del>i</del>v<del>j</del>位于顶点至顶点v<del>n</del>的最短路上;否则 x<del>ij</del> &#x3D; 0。</p>
+<p>其数学规划表达式为</p>
+<p>${min}\sum_{v_iv_j∈E}{w_{ij}x_{ij}}$</p>
+<p>$$ {s.t.}\sum^n_{j&#x3D;1，v_iv_j∈E}{x_{ij}}-\sum^n_{j&#x3D;1,v_iv_j∈E}{x_{ij}}&#x3D;\left{<br>\begin{array}{rcl}<br>1       &amp;      &amp; {i &#x3D; 1}\<br>-1     &amp;      &amp; {i &#x3D; n}\<br>0     &amp;      &amp; {i≠1,n}<br>\end{array} \tag{$x_{ij}$&#x3D;0或1} \right. $$</p>
+<h5 id="有向"><a href="#有向" class="headerlink" title="有向"></a>有向</h5><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>有向图的最短路问题 </summary>
+              <div class='content'>
+              <p>在下图中，用点表示城市，现有A,B<del>1</del>,B<del>2</del>,C<del>1</del>,C<del>2</del>,C,<del>3</del>,D共 7 个城市。点与点之间的连线表示城市间有道路相连。连线旁的数字表示道路的长度现计划从城市4到城市D铺设一条天然气管道，请设计出最小长度管道铺设方案。</p><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E4%B8%83%E4%B8%AA%E5%9F%8E%E5%B8%82%E9%97%B4%E7%9A%84%E8%BF%9E%E7%BA%BF%E5%9B%BE.png"
+                      alt="七个城市间的连线图"
+                ></p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">model:</span><br><span class="line">sets:</span><br><span class="line">cities/A,B1,B2,C1,C2,C3,D/;</span><br><span class="line">roads(cities,cities)/A B1,A B2,B1 C1,B1 C2,B1 C3,B2 C1,</span><br><span class="line">B2 C2,B2 C3,C1 D,C2 D,C3 D/:w,x;</span><br><span class="line">endsets</span><br><span class="line">data:</span><br><span class="line">w=2 4 3 3 1 2 3 1 1 3 4;</span><br><span class="line">enddata</span><br><span class="line">n=@size(cities); !城市的个数;</span><br><span class="line">min=@sum(roads:w*x);</span><br><span class="line">@for(cities(i)|i #ne#1 #and# i #ne#n:</span><br><span class="line">@sum(roads(i,j):x(i,j))=@sum(roads(j,i):x(j,i)));</span><br><span class="line">@sum(roads(i,j)|i #eq#1:x(i,j))=1;</span><br><span class="line">@sum(roads(i,j)|j #eq#n:x(i,j))=1;</span><br><span class="line">end</span><br></pre></td></tr></table></figure></div>
+              </div>
+            </details>
+<h5 id="无向"><a href="#无向" class="headerlink" title="无向"></a>无向</h5><details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>无向图的最短路问题 </summary>
+              <div class='content'>
+              <p>下图中的最短路。</p><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E8%B5%8B%E6%9D%83%E6%97%A0%E5%90%91%E5%9B%BE.png"
+                      alt="赋权无向图"
+                ></p><p>分析 上一例处理的问题属于有向图的最短路问题，本例是处理无向图的最短路问题，在处理方式上与有向图的最短路问题有一些差别，这里选择赋权邻接矩阵的方法编写LINGO程序。</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">model:</span><br><span class="line">sets:</span><br><span class="line">cities/1..11/;</span><br><span class="line">roads(cities,cities):w,x;</span><br><span class="line">endsets</span><br><span class="line">data:</span><br><span class="line">w=0;</span><br><span class="line">enddata</span><br><span class="line">calc:</span><br><span class="line">w(1,2)=2;w(1,3)=8;w(1,4)=1;</span><br><span class="line">w(2,3)=6;w(2,5)=1;</span><br><span class="line">w(3,4)=7;w(3,5)=5;w(3,6)=1;w(3,7)=2;</span><br><span class="line">w(4,7)=9;</span><br><span class="line">w(5,6)=3;w(5,8)=2;w(5,9)=9;</span><br><span class="line">w(6,7)=4;w(6,9)=6;</span><br><span class="line">w(7,9)=3;w(7,10)=1;</span><br><span class="line">w(8,9)=7;w(8,11)=9;</span><br><span class="line">w(9,10)=1;w(9,11)=2;w(10,11)=4;</span><br><span class="line">@for(roads(i,j):w(i,j)=w(i,j)+w(j,i));</span><br><span class="line">@for(roads(i,j):w(i,j)=@if(w(i,j) #eq# 0, 1000,w(i,j)));</span><br><span class="line">endcalc</span><br><span class="line">n=@size(cities); !城市的个数;</span><br><span class="line">min=@sum(roads:w*x);</span><br><span class="line">@for(cities(i)|i #ne#1 #and# i #ne# </span><br><span class="line">n:@sum(cities(j):x(i,j))=@sum(cities(j):x(j,i)));</span><br><span class="line">@sum(cities(j):x(1,j))=1;</span><br><span class="line">@sum(cities(j):x(j,1))=0; !不能回到顶点1; </span><br><span class="line">@sum(cities(j):x(j,n))=1;</span><br><span class="line">@for(roads:@bin(x));</span><br><span class="line">end</span><br></pre></td></tr></table></figure></div><p>与有向图相比较，在程序中只增加了一个语句@sum(cities(j):x(j,1))&#x3D;0，即<br>从顶点 1 离开后，再不能回到该顶点。<br>求得的最短路径为 1→2→5→6→3→7→10→9→11，最短路径长度为 13。</p>
+              </div>
+            </details>
+
+
+
+<h5 id="Floyd算法"><a href="#Floyd算法" class="headerlink" title="Floyd算法"></a>Floyd算法</h5><h6 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h6><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/Floyd%E6%80%9D%E8%B7%AF.png"
+                      alt="Floyd思路"
+                ></p>
+<p>A<del>k</del>(i,j)&#x3D; min(A<del>k-1</del>(i,j),A<del>k-1</del>(i,k)+A<del>k-1</del>(k,j))</p>
+<h6 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h6><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:\Users\22251\AppData\Roaming\Typora\typora-user-images\image-20230721170453764.png"
+                      alt="image-20230721170453764"
+                ></p>
+<p>Floyd 算法的基本思想是递推产生一个矩阵序$A_1,···,A_k,···,A_n$，其中矩阵$A_k$,的第i行第j列元素$A_k(i,j)$表示从顶点v<del>i</del>到顶点v<del>j</del>;的路径上所经过的顶点序号不大于的最短路径长度。</p>
+<p>计算时用迭代公式</p>
+<p>​	$A_k(i,j)&#x3D; min(A_{k-1}(i,j),A_{k-1}(i,k)+A_{k-1}(k,j))$</p>
+<p>k是迭代次数，i,j,k &#x3D;1,2,…,n。</p>
+<p>最后，当 k&#x3D;n 时，A<del>n</del>即是各顶点之间的最短通路值。</p>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><p>某出版社准备在某市两个区建立两个销售代理点向大学生售书，每个区大学生数量如图，每个销售代理点只能向本区和一个相邻区的大学生售书，问两个代理点建立在何处，才能使供应量最大？试建立图论模型求解。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E7%BB%83%E4%B9%A0.png"
+                      alt="Floyd思路"
+                ></p>
+<h3 id="最小生成树问题"><a href="#最小生成树问题" class="headerlink" title="最小生成树问题"></a>最小生成树问题</h3><h4 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h4><p>连通的无圈图叫做<strong>树</strong>，记之为T;其度为 1 的顶点称为<strong>叶子顶点</strong>;显然有边的树至少有两个叶子顶点。</p>
+<p>若图 G&#x3D;(V(G),E(G)) 和树 T&#x3D;(V(T),E(T)) 满足V(G)&#x3D;V(T)，E(T) C E(G)，则称T是G的<strong>生成树</strong>。图G连通的充分必要条件为G有生成树，一个连通图的生成树的个数很多。</p>
+<p>树有下面常用的五个要条件<br>(1) G&#x3D;(V,E)是树当且仅当G中任二顶点之间有且仅有一条轨道<br>(2) G是树当且仅当G无圈，且 |E|&#x3D;|V|-1。<br>(3) G是树当且仅当G连通，且 |E| &#x3D;|V|-1。<br>(4) G是树当且仅当G连通，且 $\forall$ e ∈|E|，G - e 不连通。<br>(5) G是树当且仅当G无圈， $\forall$e $\notin $E，G+e恰有一个圈。</p>
+<p>欲修筑连接n个城市的铁路，已知i城与j城之间的铁路造价为$c_{ij}$，设计一个线路图，使总造价最低</p>
+<h4 id="prim-算法构造最小生成树"><a href="#prim-算法构造最小生成树" class="headerlink" title="prim 算法构造最小生成树"></a>prim 算法构造最小生成树</h4><p>构造连通赋权图G&#x3D;(V,E,W)的最小生成树，设置两个集合P和Q,其中P用于存放G的最小生成树中的顶点集合Q存放G的最小生成树中的边。今集合P的初值为P &#x3D;{$v_1$}(假设构造最小生成树时，从顶点”出发)，集合Q的初值为Q&#x3D;$\phi$(空集)。prim 算法的思想是,从所有p ∈ Pv∈V-P的边中，选取具有最小权值的边 pv，将顶点v加入集合P中，将边pv加入集合Q中，如此不断重复，直到P&#x3D;V时，最小生成树构造完毕，这时集合Q中包合了最小生成树的所有边。</p>
+<p>用 prim 算法求下图的最小生成树。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91.png"
+                     
+                ></p>
+<h4 id="Kruskal-算法构造最小生成树"><a href="#Kruskal-算法构造最小生成树" class="headerlink" title="Kruskal 算法构造最小生成树"></a>Kruskal 算法构造最小生成树</h4><p>科斯克尔(Kruskal) 算法是一个好算法.Kruskal算法如下<br>(1) 选e $\in$ E(G)，使得$e_1$是权值最小的边。(w($e_1$)&#x3D;min)<br>(2)若$e_1;e_2,···,e_i$已选好,则从E(G)-{$e_1,e_2,···,e_i$}中选取$e_{i+1}$，使得</p>
+<ul>
+<li>i) G[{$e_1,e_2,···,e_i,e_{i+1}$}]无圈，且</li>
+<li>ii) w($e_{i+i}$)是E(G)-e,,e}中权值最小的边(w($e_{i+i}$)&#x3D;min)</li>
+</ul>
+<p>(3) 直到选得$e_{v-1}$为止。</p>
+<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Kruskal算法构造上一例的最小生成树 </summary>
+              <div class='content'>
+              <p>用$index_{2*n}$存放各边端点的信息，当选中某一边之后就将此边对应的顶点序号中较大序号u改为此边的另一序号v，同时把后面边中所有序号为u的改为v。<br>此方法的几何意义是:将序号u的这个顶点收缩到v顶点，u顶点不复存在。后面继续寻查时，发现某边的两个预点序号相同时认为已被收缩掉，失去了被选取的资格.<br>求解结果和例4.5相同。</p><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">clc;clear;</span><br><span class="line">a(<span class="number">1</span>,<span class="number">2</span>)=<span class="number">50</span>; a(<span class="number">1</span>,<span class="number">3</span>)=<span class="number">60</span>; a(<span class="number">2</span>,<span class="number">4</span>)=<span class="number">65</span>; a(<span class="number">2</span>,<span class="number">5</span>)=<span class="number">40</span>;</span><br><span class="line">a(<span class="number">3</span>,<span class="number">4</span>)=<span class="number">52</span>;a(<span class="number">3</span>,<span class="number">7</span>)=<span class="number">45</span>; a(<span class="number">4</span>,<span class="number">5</span>)=<span class="number">50</span>; a(<span class="number">4</span>,<span class="number">6</span>)=<span class="number">30</span>;</span><br><span class="line">a(<span class="number">4</span>,<span class="number">7</span>)=<span class="number">42</span>; a(<span class="number">5</span>,<span class="number">6</span>)=<span class="number">70</span>; </span><br><span class="line">[<span class="built_in">i</span>,<span class="built_in">j</span>,b]=<span class="built_in">find</span>(a);</span><br><span class="line">data=[i&#x27;;j&#x27;;b&#x27;];index=data(<span class="number">1</span>:<span class="number">2</span>,:);</span><br><span class="line">loop=<span class="built_in">max</span>(<span class="built_in">size</span>(a))<span class="number">-1</span>;</span><br><span class="line">result=[];</span><br><span class="line"><span class="keyword">while</span> <span class="built_in">length</span>(result)&lt;loop</span><br><span class="line"> temp=<span class="built_in">min</span>(data(<span class="number">3</span>,:));</span><br><span class="line"> flag=<span class="built_in">find</span>(data(<span class="number">3</span>,:)==temp);</span><br><span class="line"> flag=flag(<span class="number">1</span>);</span><br><span class="line"> v1=index(<span class="number">1</span>,flag);v2=index(<span class="number">2</span>,flag);</span><br><span class="line"> <span class="keyword">if</span> v1~=v2</span><br><span class="line"> result=[result,data(:,flag)];</span><br><span class="line"> <span class="keyword">end</span></span><br><span class="line"> index(<span class="built_in">find</span>(index==v2))=v1;</span><br><span class="line"> data(:,flag)=[];</span><br><span class="line"> index(:,flag)=[];</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">result</span><br></pre></td></tr></table></figure></div>
+              </div>
+            </details>
+
+
+
+<h3 id="网络最大流问题"><a href="#网络最大流问题" class="headerlink" title="网络最大流问题"></a>网络最大流问题</h3><p>这里我的笔记不全了原因如下</p>
+<ul>
+<li>本来作的笔记因为笔记本突然死机，重启之后就丢失了</li>
+<li>最大流这里以前没有学过，边听可边做笔记就过于慢了<br>网上找到了别人的一些笔记博客，直接放链接在这里<a class="button  center large" href='https://blog.nowcoder.net/n/6ef60bf52036463eb892c89bbdc178ed' title='最大流(网络流基础概念+三个算法)'><i class='fa-solid fa-download'></i> 最大流(网络流基础概念+三个算法)</a></li>
+</ul>
+<p><a class="link"   href="https://blog.csdn.net/wmhsjtu/article/details/104149007" >图的最大流问题（含matlab函数使用方法） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="基本概念与基本定理"><a href="#基本概念与基本定理" class="headerlink" title="基本概念与基本定理"></a>基本概念与基本定理</h4><h5 id="网络与流"><a href="#网络与流" class="headerlink" title="网络与流"></a>网络与流</h5><p>给一个有向图D&#x3D;(V,4)，其中A为弧集在V中指定了一点，称为发点 (记为$v_s$)，和另一点，称为收点 (记为$v_t$)，其余的点叫中间点，对于每一条弧($v_i$,$v_j$)$\in$A，对应有一个c($v_i$,$v_j$)$\ge$0 (或简写为$c_{ij}$)，称为<strong>弧的容量</strong>。通常我们就把这样的有向图D叫作一个<strong>网络</strong>.<br>记作D&#x3D;(V,A)，其中C&#x3D;c{$c_{ij}$}.<br>所谓网络上的<strong>流</strong>，是指定义在弧集合4上的一个函<br>数f&#x3D;_fa&#x3D;ff(，并称f为弧(,y)上的流量。</p>
+<h3 id="最小费用最大流问题"><a href="#最小费用最大流问题" class="headerlink" title="最小费用最大流问题"></a>最小费用最大流问题</h3><p><a class="link"   href="https://www.zhihu.com/question/571595904" >假定要设计一个有9个通讯站点的局部网络，使其造价最低。这9个站的直角坐标为： a(0,15), b(5,20), c(16,24), d(20,20), e(33,25), f(23,11), g(35,7), h(25,0), i(10,3)。 求出联结这9个通讯站的最小Steiner树 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="最小费用最大流"><a href="#最小费用最大流" class="headerlink" title="最小费用最大流"></a>最小费用最大流</h4><p>给定网络D&#x3D;(V,A,C)，每一弧($v_i$,$v_j$)$\in$A上，除了已给容量$c_{ij}$外，还给了一个单位流量的费用b($v_i$,$v_j$)$\ge$0(简记为$b_{ij}$)。所谓最小费用最大流问题就是要求一个从发点”,到<br>收点”,的最大流，使流的总输送费用 $\sum_{(v_i,v_j)\in A}b_{ij}f_{ij}$取最小值<br>最小费用最大流问题可以归结为两个线性规划问题,首先用(4.1) 的线性规划模型求出最大流量$v_{(f_max)}$，然后用如下的线性规划模型求出最大流对应的最小费用<br>$$min\sum_{(v_i,v_j)\in A}b_{ij}f_{ij}$$<br>$$s.t. 0\ge f_{ij}\ge c_{ij},\forall (v_i,v_j) \in A$$<br>$$ \sum_{j:(v_i,v_j)\in A}f_{ij} - \sum_{j:(v_j,v_i)\in A} &#x3D; d_i$$<br>其中<br>$$ d_i&#x3D;\left{<br>\begin{array}{rcl}<br>v_{(f_{max})}      &amp;      &amp; {i&#x3D;s}\<br>-v_{(f_{max})}     &amp;      &amp; {i&#x3D;t}\<br>0                  &amp;      &amp; {i≠s,t}<br>\end{array} \right. $$<br>这里v($f_{max}$)表示(4.1)线性规划模型求得的最大流的流量。</p>
+<p>当我们使用滚动平均值时，我们会计算一系列数据的平均值，但只考虑最近的一部分数据。在每一步中，我们将最新的数据加入计算，并从计算中移除最旧的数据，从而保持数据窗口的大小不变。这样做的好处是可以平滑数据，减少噪音和异常值的影响，并更好地反映数据的长期趋势。</p>
+<p>滚动平均的数学公式如下：</p>
+<p>设有一列数据 $x_1, x_2, x_3, \ldots, x_n$，滚动平均的窗口大小为 $k$。</p>
+<p>在滚动平均的初始阶段，我们先计算前 $k$ 个数据的平均值，表示为 $m_1$：</p>
+<p>$$m_1 &#x3D; \frac{1}{k} \sum_{i&#x3D;1}^{k} x_i$$</p>
+<p>然后，随着数据的逐步增加，我们更新滚动平均值的计算。在第 $i$ 步，我们将新数据 $x_i$ 加入滚动窗口，并从计算中移除最旧的数据 $x_{i-k}$，更新滚动平均值 $m_i$ 如下：</p>
+<p>$$m_i &#x3D; m_{i-1} + \frac{1}{k} (x_i - x_{i-k})$$</p>
+<p>在这个公式中，$m_{i-1}$ 表示第 $i-1$ 步的滚动平均值，$x_i$ 表示新加入的数据，$x_{i-k}$ 表示移除的最旧数据。</p>
+<p>通过这种方式，滚动平均可以动态地保持数据窗口大小，对数据进行平滑处理，同时在计算过程中不需要保留所有数据，只需要保存上一步的滚动平均值和相关的数据。</p>
+<p>滚动平均常用于时间序列数据的平滑处理，例如股票价格的移动平均线就是一种常见的滚动平均应用。在处理具有较大波动或不连贯性的数据时，滚动平均可以提供更稳定和可靠的结果，减少异常值的影响，帮助我们更好地分析数据的趋势和变化。</p>
+<p>当处理时间序列数据时，我们经常会遇到一些具有周期性或趋势性的数据。滞后期平滑和指数加权移动平均是两种常见的平滑方法，用于去除数据中的噪音和突发变化，从而更好地反映数据的长期趋势。</p>
+<ol>
+<li>滞后期平滑（Lag Smoothing）：<br>滞后期平滑是一种简单的平滑方法，它通过将当前数据点与之前的数据点进行平均来生成平滑后的数据。滞后期平滑的数学公式如下：</li>
+</ol>
+<p>设有一列数据 $x_1, x_2, x_3, \ldots, x_n$，滞后期平滑的滞后期数为 $p$。</p>
+<p>在滞后期平滑中，第 $i$ 个平滑后的数据点 $y_i$ 是前 $p$ 个原始数据点 $x_{i-p}, x_{i-p+1}, \ldots, x_{i-1}, x_i$ 的平均值，即：</p>
+<p>$$y_i &#x3D; \frac{1}{p} \sum_{j&#x3D;1}^{p} x_{i-j}$$</p>
+<p>滞后期平滑的主要优点是简单易懂，易于计算。它可以一定程度上平滑数据，去除一些短期内的波动，但对于长期趋势的反映较差。</p>
+<ol start="2">
+<li>指数加权移动平均（Exponential Moving Average，EMA）：<br>指数加权移动平均是一种对最近的数据点进行加权的平滑方法，它给予较新的数据点较大的权重，较旧的数据点较小的权重。指数加权移动平均的数学公式如下：</li>
+</ol>
+<p>设有一列数据 $x_1, x_2, x_3, \ldots, x_n$，指数加权移动平均的平滑因子为 $\alpha$（通常取一个接近于1的值，如0.1、0.3等）。</p>
+<p>在指数加权移动平均中，第 $i$ 个平滑后的数据点 $y_i$ 由以下公式计算得出：</p>
+<p>$$y_i &#x3D; \alpha \cdot x_i + (1 - \alpha) \cdot y_{i-1}$$</p>
+<p>其中，$y_{i-1}$ 表示第 $i-1$ 个平滑后的数据点。指数加权移动平均对最近的数据点赋予较大的权重，随着数据点的逐渐远离，权重逐渐减小，因此能够更好地反映数据的短期变化。</p>
+<p>指数加权移动平均通常用于平滑数据并提取长期趋势。与滞后期平滑相比，指数加权移动平均对数据的响应更加敏感，可以更好地捕捉数据中的变化，但在数据中存在较多噪音或异常值时，可能会受到这些值的影响。</p>
+<p>总体而言，滞后期平滑和指数加权移动平均都是常见的平滑方法，可以根据数据的特点和需要选择合适的方法来处理时间序列数据，从而更好地分析数据的趋势和规律。</p>
+]]></content>
+      <categories>
+        <category>数模</category>
+      </categories>
+      <tags>
+        <tag>数模</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>找亲和数</title>
+    <url>/2023/03/21/%E6%89%BE%E4%BA%B2%E5%92%8C%E6%95%B0/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>如果整数A的全部因子（包括1，不包括A本身）之和等于B；且整数B的全部因子（包括1，不包括B本身）之和等于A，则A和B称为亲密数。求10000以内的亲密数。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>直接遍历到10000，每个数a找一次因子，计算因子和为b,再找b的因子，计算因子和是否等于a<br>跑肯定是能跑，但是这样未免也太过无聊，于是我在网上想找一下有没有什么好的算法研究一下</p>
+<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="code"><pre><span class="line">N=<span class="number">1e05</span>;                 <span class="comment">% 所取数范围</span></span><br><span class="line">fac_sum=<span class="built_in">zeros</span>();    </span><br><span class="line"><span class="keyword">for</span> A=<span class="number">1</span>:N               <span class="comment">% 被除数</span></span><br><span class="line">    fac_sum(A)=<span class="number">0</span>;       <span class="comment">% 所有因式和</span></span><br><span class="line">    <span class="keyword">for</span> x=<span class="number">1</span>:(A<span class="number">-1</span>)       <span class="comment">% 除数</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">mod</span>(A,x)==<span class="number">0</span>) </span><br><span class="line">            fac_sum(A)=fac_sum(A)+x;    <span class="comment">% 每个数所有真因式之和</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">fprintf(<span class="string">&#x27;%g范围内的亲和数:\n&#x27;</span>,N);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N</span><br><span class="line">    B=fac_sum(<span class="built_in">i</span>);   </span><br><span class="line">    <span class="keyword">if</span> B&gt;<span class="number">0</span> &amp;&amp; B&lt;= N                     <span class="comment">% 使得数字B在数组的索引范围内</span></span><br><span class="line">        <span class="keyword">if</span> fac_sum(B) == <span class="built_in">i</span> &amp;&amp; (B~=<span class="built_in">i</span>)    <span class="comment">% 亲和数的条件，同时剔除本身相等情况</span></span><br><span class="line">            fprintf(<span class="string">&#x27;%g,%g\n&#x27;</span>,B,<span class="built_in">i</span>);</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></div>
+<p>然后看到了c语言的代码实现，细细观察了一下，感觉发现了Matlab的最大特点——矩阵！<br>如此的话，也怪不得数模需要用Matlab了<br>网上查了一下，发现Matlab就是“矩阵实验室”😓汗。。。</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a, b, i, n;</span><br><span class="line">    <span class="keyword">for</span> (a = <span class="number">1</span>; a &lt; <span class="number">10000</span>; a++)</span><br><span class="line">    &#123;</span><br><span class="line">        b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= a / <span class="number">2</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a % i == <span class="number">0</span>)</span><br><span class="line">                b += i;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        n = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= b / <span class="number">2</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (b % i == <span class="number">0</span>)</span><br><span class="line">                n += i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n == a &amp;&amp; a &lt; b)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;(%4d,%4d)\n&quot;</span>, a, b);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="头脑风暴"><a href="#头脑风暴" class="headerlink" title="头脑风暴"></a>头脑风暴</h2><p>上面Matlab的思路是直接一个a[]数组，a[i]放的就是第i个数的因数和<br>所以第一次for循环就是在做这个数组，做完之后我只要看a[i]与a[(a[i])]是否相等就能判断是不是亲和数<br>不过很容易想到的一个弊端：</p>
+<ul>
+<li>会出现重复比较的情况—— <strong>一对亲和数出现两次</strong> ，比如：<ul>
+<li>220,284</li>
+<li>284,220</li>
+</ul>
+</li>
+</ul>
+<p>目前解决办法只想到链表代替，找到一个之后立刻删除另外一个对应结点，但是只用链表显然无法做到立刻删除一个index为i的结点，或许加一个 <strong>黑名单</strong> ，每次比较之前判断在不在黑名单内？<br>但是这样有明显画蛇添足，还不如就让他多比较一次，因为本身亲和数就是相对于范围来说很少的(目前已经知道的有1000多对亲和数，而10000以内的只有5对，在100000以内有13对)，为了这少量的几次比较反而用更复杂的链表实在是。。。<br>不过貌似可以使用哈希表，嗯，非常可行，嗯对，可以。<br>突然想到这是Matlab啊，链表哈希表都没有！<br>唉，不考虑编程语言的话哈希表确实是比较完美的解决方案了，不过我貌似又忽略了使用哈希表本身也降低了程序的处理速度啊</p>
+<p>如果你有更完美的方案，欢迎与我交流！</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这次最大的收获是意识到了Matlab的一个重要特点，今后写Matlab一定要着重发挥矩阵的作用。</p>
+<h3 id="解决了什么问题"><a href="#解决了什么问题" class="headerlink" title="解决了什么问题"></a>解决了什么问题</h3><ul>
+<li>怎样寻找最大亲和数<ul>
+<li>最大亲和数的标准</li>
+<li>怎样实现，怎样不暴力地实现</li>
+</ul>
+</li>
+</ul>
+<h3 id="得到了什么结果"><a href="#得到了什么结果" class="headerlink" title="得到了什么结果"></a>得到了什么结果</h3><ul>
+<li>寻找因数时快速减少运算量的标志—— <strong>x&#x2F;2</strong> </li>
+<li>Matlab的重要特性—— <strong>矩阵</strong></li>
+</ul>
+<h3 id="形成了什么结论"><a href="#形成了什么结论" class="headerlink" title="形成了什么结论"></a>形成了什么结论</h3><p>想要最大发挥Matlab的特性，一定要活用矩阵</p>
+]]></content>
+      <categories>
+        <category>Activity</category>
+        <category>数模</category>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>数模</tag>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>江汉大学vlog</title>
+    <url>/2023/04/07/%E6%B1%9F%E6%B1%89%E5%A4%A7%E5%AD%A6vlog/</url>
+    <content><![CDATA[<p>昨天跟朋友去看超级马里奥兄弟大电影，他貌似很喜欢马里奥,今天的衣服上都有那个小蘑菇人。</p>
+<p>决定自行车骑去电影院看</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/江汉大学vlog/出发.jpg"
+                      alt="出发" width="30%" height="30%"
+                >
+
+<p>路上风景还蛮好的<br>经过一个国风小区，好牛<br><video src="/videos/江汉大学vlog/国风小区.mp4" width="800px" height="600px" controls="controls"></video></p>
+<p>还看到一个夏威夷小区，好好看，很有情书中和死去男主同名的女生的住处一样的感觉。</p>
+<p>经过一个桥，休息了一会儿，看下面的人钓鱼<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/江汉大学vlog/钓鱼1.jpg"
+                      alt="钓鱼1" width="70%" height="70%"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/江汉大学vlog/钓鱼2.jpg"
+                      alt="钓鱼2" width="70%" height="70%"
+                ><br>突然发现这个票上的电影院名字不对？<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/江汉大学vlog/后脑勺.jpg"
+                      alt="后脑勺" width="70%" height="70%"
+                ><br>我们去的是大地。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/江汉大学vlog/电影票.jpg"
+                      alt="电影票" width="70%" height="70%"
+                ><br>看完了之后发现附近江汉大学很近啊，出于某种心理，我们决定混进去逛逛。</p>
+<div class="note-large blue"><div class="notel-title"><p>vlog</p>
+</div><div class="notel-content"><p>视频发布在了b站  省的往网站上整hhh</p>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?aid=909599040&bvid=BV1EM4y1m7MX&cid=1084566002&page=1&danmaku=0&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+</div></div></div>
+
+<div class="note-large green"><div class="notel-title"><p>想要实现向上面这样的bi站嵌入视频？</p>
+</div><div class="notel-content"><p><a class="button  large center" href='https://blog.nofated.win/2020/09/21/bilibili-player/' title='B 站外嵌视频播放器防踩坑'><i class='fa-solid fa-arrow-right'></i> B 站外嵌视频播放器防踩坑</a></p>
+</div></div>
+
+<p>回来的时候下雨了，还碰到了校友，也是骑行hhh<br>一边淋着雨，一边在马路上狂飙是真的爽hhh，可惜，要是我带了耳机就好了，带上耳机听着音乐，想想都…啧啧啧<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/江汉大学vlog/返回.jpg"
+                      alt="返回" width="30%" height="30%"
+                ></p>
+]]></content>
+      <categories>
+        <category>Vlogs</category>
+      </categories>
+      <tags>
+        <tag>Vlog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>爱欲闪光</title>
     <url>/2023/01/24/%E7%88%B1%E6%AC%B2%E9%97%AA%E5%85%89/</url>
     <content><![CDATA[<h1 id="诗"><a href="#诗" class="headerlink" title="诗"></a>诗</h1><p>找到自己以前写的一些东西，暂时没有更好的地方放，先做一个单独的文章，时间即为随笔写的时间</p>
@@ -1779,8 +1798,8 @@
 ]]></content>
       <categories>
         <category>GIS</category>
-        <category>ArcGIS</category>
         <category>Tools</category>
+        <category>ArcGIS</category>
       </categories>
       <tags>
         <tag>GIS</tag>
